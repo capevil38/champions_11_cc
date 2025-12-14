@@ -1,22 +1,211 @@
 {
-  "meta": {
-    "team_name": "Champions 11 CC",
-    "generated_on": "2025-12-14",
-    "source_file": "Champions_11_CC_Master_DB.xlsx"
-  },
-  "team_stats": [
+  "matches": [
     {
-      "Matches": 9,
-      "Won": 0,
-      "Lost": 7,
-      "Tie": 1,
-      "No Result": 1,
-      "Win %": 0,
-      "Avg Team Runs": 145.78,
-      "Avg Opp Runs": 181.89,
-      "Avg Team RR": 6.41,
-      "Avg Opp RR": 7.79,
-      "Net RR": -1.38
+      "MatchID": 18418557,
+      "Opponent": "APJ Kalam Team",
+      "Team Runs": 119,
+      "Team Wickets Lost": 10,
+      "Team Overs Played": 19.2,
+      "Opponent Runs": 268,
+      "Opponent Wickets Lost": 3,
+      "Opponent Overs Played": 23,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 23,
+      "Date": "2025-07-26",
+      "Time": "14:00:00",
+      "Venue": "SGB ground",
+      "Ball Material": "Leather",
+      "Ball Color": "Red",
+      "Toss": "Lost",
+      "Decision": null,
+      "Innings Type": "Chasing",
+      "Match Result": "Lost"
+    },
+    {
+      "MatchID": 18642464,
+      "Opponent": "Katta 11s",
+      "Team Runs": 225,
+      "Team Wickets Lost": 10,
+      "Team Overs Played": 29.2,
+      "Opponent Runs": 250,
+      "Opponent Wickets Lost": 6,
+      "Opponent Overs Played": 30,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 30,
+      "Date": "2025-08-09",
+      "Time": "07:35:00",
+      "Venue": "Youth Ground Madhavaram",
+      "Ball Material": "Leather",
+      "Ball Color": "Red",
+      "Toss": "Lost",
+      "Decision": null,
+      "Innings Type": "Chasing",
+      "Match Result": "Lost"
+    },
+    {
+      "MatchID": 19019010,
+      "Opponent": "Rising Mavericks CC",
+      "Team Runs": 141,
+      "Team Wickets Lost": 8,
+      "Team Overs Played": 25.5,
+      "Opponent Runs": 164,
+      "Opponent Wickets Lost": 10,
+      "Opponent Overs Played": 29.5,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 30,
+      "Date": "2025-09-06",
+      "Time": "12:59:00",
+      "Venue": "Youth Ground Madhavaram",
+      "Ball Material": "Leather",
+      "Ball Color": "Red",
+      "Toss": "Lost",
+      "Decision": null,
+      "Innings Type": "Chasing",
+      "Match Result": "No Result"
+    },
+    {
+      "MatchID": 19112746,
+      "Opponent": "Dangerous Youth B",
+      "Team Runs": 227,
+      "Team Wickets Lost": 10,
+      "Team Overs Played": 29.5,
+      "Opponent Runs": 227,
+      "Opponent Wickets Lost": 10,
+      "Opponent Overs Played": 29.4,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 30,
+      "Date": "2025-09-13",
+      "Time": "13:33:00",
+      "Venue": "Youth Ground Madhavaram",
+      "Ball Material": "Leather",
+      "Ball Color": "Red",
+      "Toss": "Won",
+      "Decision": "Batting First",
+      "Innings Type": "Batting First",
+      "Match Result": "Tie"
+    },
+    {
+      "MatchID": 19859354,
+      "Opponent": "Team 404\n",
+      "Team Runs": 153,
+      "Team Wickets Lost": 8,
+      "Team Overs Played": 21,
+      "Opponent Runs": 210,
+      "Opponent Wickets Lost": 5,
+      "Opponent Overs Played": 21,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 21,
+      "Date": "2025-10-29",
+      "Time": "18:36:00",
+      "Venue": "Agni College Ground",
+      "Ball Material": "Leather",
+      "Ball Color": "White",
+      "Toss": "Lost",
+      "Decision": null,
+      "Innings Type": "Chasing",
+      "Match Result": "Lost"
+    },
+    {
+      "MatchID": 19989363,
+      "Opponent": "Real Rulers\n",
+      "Team Runs": 67,
+      "Team Wickets Lost": 10,
+      "Team Overs Played": 17.2,
+      "Opponent Runs": 83,
+      "Opponent Wickets Lost": 10,
+      "Opponent Overs Played": 15.4,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 25,
+      "Date": "2025-11-08",
+      "Time": "10:40:00",
+      "Venue": "BELIEVERS EDEN GARDEN GROUND",
+      "Ball Material": "Leather",
+      "Ball Color": "Red",
+      "Toss": "Lost",
+      "Decision": null,
+      "Innings Type": "Chasing",
+      "Match Result": "Lost"
+    },
+    {
+      "MatchID": 20156519,
+      "Opponent": "Tea Kada Rajassss",
+      "Team Runs": 126,
+      "Team Wickets Lost": 10,
+      "Team Overs Played": 18.3,
+      "Opponent Runs": 127,
+      "Opponent Wickets Lost": 5,
+      "Opponent Overs Played": 18.1,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 22,
+      "Date": "2025-11-15",
+      "Time": "10:41:00",
+      "Venue": "BELIEVERS EDEN GARDEN GROUND",
+      "Ball Material": "Leather",
+      "Ball Color": "Red",
+      "Toss": "Won",
+      "Decision": "Batting First",
+      "Innings Type": "Batting FIrst",
+      "Match Result": "Lost"
+    },
+    {
+      "MatchID": 13848394,
+      "Opponent": "Deadly Elevens",
+      "Team Runs": 110,
+      "Team Wickets Lost": 10,
+      "Team Overs Played": 20.3,
+      "Opponent Runs": 161,
+      "Opponent Wickets Lost": 8,
+      "Opponent Overs Played": 25,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 25,
+      "Date": "2025-12-05",
+      "Time": "23:26:00",
+      "Venue": "Agni College Ground",
+      "Ball Material": "Leather",
+      "Ball Color": "White",
+      "Toss": "Lost",
+      "Decision": null,
+      "Innings Type": "Chasing",
+      "Match Result": "Lost"
+    },
+    {
+      "MatchID": 20648752,
+      "Opponent": "Shadowfax Hurricanes",
+      "Team Runs": 144,
+      "Team Wickets Lost": 6,
+      "Team Overs Played": 23,
+      "Opponent Runs": 147,
+      "Opponent Wickets Lost": 3,
+      "Opponent Overs Played": 17.5,
+      "Tournament": "Practice Match",
+      "Round": NaN,
+      "MatchType": "Limited Overs",
+      "Overs": 23,
+      "Date": "2025-12-13",
+      "Time": "10:30:00",
+      "Venue": "BELIEVERS EDEN GARDEN GROUND",
+      "Ball Material": "Leather",
+      "Ball Color": "White",
+      "Toss": "Lost",
+      "Decision": null,
+      "Innings Type": "Batting FIrst",
+      "Match Result": "Lost"
     }
   ],
   "players": [
@@ -210,218 +399,9 @@
       "Bowl Style": null
     }
   ],
-  "matches": [
-    {
-      "MatchID": "18418557",
-      "Opponent": "APJ Kalam Team",
-      "Team Runs": 119,
-      "Team Wickets Lost": 10,
-      "Team Overs Played": 19.2,
-      "Opponent Runs": 268,
-      "Opponent Wickets Lost": 3,
-      "Opponent Overs Played": 23.0,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 23,
-      "Date": "2025-07-26",
-      "Time": "14:00:00",
-      "Venue": "SGB ground",
-      "Ball Material": "Leather",
-      "Ball Color": "Red",
-      "Toss": "Lost",
-      "Decision": null,
-      "Innings Type": "Chasing",
-      "Match Result": "Lost"
-    },
-    {
-      "MatchID": "18642464",
-      "Opponent": "Katta 11s",
-      "Team Runs": 225,
-      "Team Wickets Lost": 10,
-      "Team Overs Played": 29.2,
-      "Opponent Runs": 250,
-      "Opponent Wickets Lost": 6,
-      "Opponent Overs Played": 30.0,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 30,
-      "Date": "2025-08-09",
-      "Time": "07:35:00",
-      "Venue": "Youth Ground Madhavaram",
-      "Ball Material": "Leather",
-      "Ball Color": "Red",
-      "Toss": "Lost",
-      "Decision": null,
-      "Innings Type": "Chasing",
-      "Match Result": "Lost"
-    },
-    {
-      "MatchID": "19019010",
-      "Opponent": "Rising Mavericks CC",
-      "Team Runs": 141,
-      "Team Wickets Lost": 8,
-      "Team Overs Played": 25.5,
-      "Opponent Runs": 164,
-      "Opponent Wickets Lost": 10,
-      "Opponent Overs Played": 29.5,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 30,
-      "Date": "2025-09-06",
-      "Time": "12:59:00",
-      "Venue": "Youth Ground Madhavaram",
-      "Ball Material": "Leather",
-      "Ball Color": "Red",
-      "Toss": "Lost",
-      "Decision": null,
-      "Innings Type": "Chasing",
-      "Match Result": "No Result"
-    },
-    {
-      "MatchID": "19112746",
-      "Opponent": "Dangerous Youth B",
-      "Team Runs": 227,
-      "Team Wickets Lost": 10,
-      "Team Overs Played": 29.5,
-      "Opponent Runs": 227,
-      "Opponent Wickets Lost": 10,
-      "Opponent Overs Played": 29.4,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 30,
-      "Date": "2025-09-13",
-      "Time": "13:33:00",
-      "Venue": "Youth Ground Madhavaram",
-      "Ball Material": "Leather",
-      "Ball Color": "Red",
-      "Toss": "Won",
-      "Decision": "Batting First",
-      "Innings Type": "Batting First",
-      "Match Result": "Tie"
-    },
-    {
-      "MatchID": "19859354",
-      "Opponent": "Team 404\n",
-      "Team Runs": 153,
-      "Team Wickets Lost": 8,
-      "Team Overs Played": 21.0,
-      "Opponent Runs": 210,
-      "Opponent Wickets Lost": 5,
-      "Opponent Overs Played": 21.0,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 21,
-      "Date": "2025-10-29",
-      "Time": "18:36:00",
-      "Venue": "Agni College Ground",
-      "Ball Material": "Leather",
-      "Ball Color": "White",
-      "Toss": "Lost",
-      "Decision": null,
-      "Innings Type": "Chasing",
-      "Match Result": "Lost"
-    },
-    {
-      "MatchID": "19989363",
-      "Opponent": "Real Rulers\n",
-      "Team Runs": 67,
-      "Team Wickets Lost": 10,
-      "Team Overs Played": 17.2,
-      "Opponent Runs": 83,
-      "Opponent Wickets Lost": 10,
-      "Opponent Overs Played": 15.4,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 25,
-      "Date": "2025-11-08",
-      "Time": "10:40:00",
-      "Venue": "BELIEVERS EDEN GARDEN GROUND",
-      "Ball Material": "Leather",
-      "Ball Color": "Red",
-      "Toss": "Lost",
-      "Decision": null,
-      "Innings Type": "Chasing",
-      "Match Result": "Lost"
-    },
-    {
-      "MatchID": "20156519",
-      "Opponent": "Tea Kada Rajassss",
-      "Team Runs": 126,
-      "Team Wickets Lost": 10,
-      "Team Overs Played": 18.3,
-      "Opponent Runs": 127,
-      "Opponent Wickets Lost": 5,
-      "Opponent Overs Played": 18.1,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 22,
-      "Date": "2025-11-15",
-      "Time": "10:41:00",
-      "Venue": "BELIEVERS EDEN GARDEN GROUND",
-      "Ball Material": "Leather",
-      "Ball Color": "Red",
-      "Toss": "Won",
-      "Decision": "Batting First",
-      "Innings Type": "Batting FIrst",
-      "Match Result": "Lost"
-    },
-    {
-      "MatchID": "13848394",
-      "Opponent": "Deadly Elevens",
-      "Team Runs": 110,
-      "Team Wickets Lost": 10,
-      "Team Overs Played": 20.3,
-      "Opponent Runs": 161,
-      "Opponent Wickets Lost": 8,
-      "Opponent Overs Played": 25.0,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 25,
-      "Date": "2025-12-05",
-      "Time": "23:26:00",
-      "Venue": "Agni College Ground",
-      "Ball Material": "Leather",
-      "Ball Color": "White",
-      "Toss": "Lost",
-      "Decision": null,
-      "Innings Type": "Chasing",
-      "Match Result": "Lost"
-    },
-    {
-      "MatchID": "20648752",
-      "Opponent": "Shadowfax Hurricanes",
-      "Team Runs": 144,
-      "Team Wickets Lost": 6,
-      "Team Overs Played": 23.0,
-      "Opponent Runs": 147,
-      "Opponent Wickets Lost": 3,
-      "Opponent Overs Played": 17.5,
-      "Tournament": "Practice Match",
-      "Round": null,
-      "MatchType": "Limited Overs",
-      "Overs": 23,
-      "Date": "2025-12-13",
-      "Time": "10:30:00",
-      "Venue": "BELIEVERS EDEN GARDEN GROUND",
-      "Ball Material": "Leather",
-      "Ball Color": "White",
-      "Toss": "Lost",
-      "Decision": null,
-      "Innings Type": "Batting FIrst",
-      "Match Result": "Lost"
-    }
-  ],
   "batting": [
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P01",
       "Runs": 53,
       "Balls": 41,
@@ -429,10 +409,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 129.27
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P02",
       "Runs": 3,
       "Balls": 9,
@@ -440,10 +420,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 33.33
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P09",
       "Runs": 5,
       "Balls": 12,
@@ -451,10 +431,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 41.67
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P07",
       "Runs": 4,
       "Balls": 8,
@@ -462,10 +442,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 50.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P06",
       "Runs": 13,
       "Balls": 13,
@@ -473,10 +453,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 100.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P04",
       "Runs": 1,
       "Balls": 6,
@@ -484,10 +464,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 16.67
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P03",
       "Runs": 13,
       "Balls": 16,
@@ -495,10 +475,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 81.25
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P10",
       "Runs": 0,
       "Balls": 1,
@@ -506,10 +486,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P08",
       "Runs": 1,
       "Balls": 6,
@@ -517,10 +497,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": 16.67
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P11",
       "Runs": 0,
       "Balls": 1,
@@ -528,10 +508,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P05",
       "Runs": 4,
       "Balls": 6,
@@ -539,10 +519,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 66.67
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P09",
       "Runs": 48,
       "Balls": 38,
@@ -550,10 +530,10 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 126.32
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P06",
       "Runs": 26,
       "Balls": 38,
@@ -561,10 +541,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 68.42
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P01",
       "Runs": 35,
       "Balls": 29,
@@ -572,10 +552,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 120.69
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P04",
       "Runs": 7,
       "Balls": 10,
@@ -583,10 +563,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 70.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P03",
       "Runs": 24,
       "Balls": 27,
@@ -594,10 +574,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 88.89
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P08",
       "Runs": 16,
       "Balls": 18,
@@ -605,10 +585,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 88.89
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P12",
       "Runs": 1,
       "Balls": 5,
@@ -616,10 +596,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": 20.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P11",
       "Runs": 0,
       "Balls": 1,
@@ -627,10 +607,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P13",
       "Runs": 25,
       "Balls": 12,
@@ -638,10 +618,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 208.33
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P14",
       "Runs": 1,
       "Balls": 4,
@@ -649,10 +629,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 25.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P15",
       "Runs": 0,
       "Balls": 1,
@@ -660,10 +640,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P04",
       "Runs": 13,
       "Balls": 22,
@@ -671,10 +651,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 59.09
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P09",
       "Runs": 0,
       "Balls": 1,
@@ -682,10 +662,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P06",
       "Runs": 0,
       "Balls": 11,
@@ -693,10 +673,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P16",
       "Runs": 19,
       "Balls": 27,
@@ -704,10 +684,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": 70.37
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P17",
       "Runs": 7,
       "Balls": 9,
@@ -715,10 +695,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 77.78
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P07",
       "Runs": 10,
       "Balls": 9,
@@ -726,10 +706,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 111.11
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P01",
       "Runs": 15,
       "Balls": 14,
@@ -737,10 +717,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 107.14
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P03",
       "Runs": 28,
       "Balls": 33,
@@ -748,10 +728,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 84.85
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P18",
       "Runs": 7,
       "Balls": 7,
@@ -759,10 +739,10 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 100.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P19",
       "Runs": 14,
       "Balls": 23,
@@ -770,10 +750,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 60.87
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P01",
       "Runs": 55,
       "Balls": 41,
@@ -781,10 +761,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 134.15
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P09",
       "Runs": 3,
       "Balls": 16,
@@ -792,10 +772,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 18.75
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P03",
       "Runs": 2,
       "Balls": 10,
@@ -803,10 +783,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 20.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P18",
       "Runs": 21,
       "Balls": 19,
@@ -814,10 +794,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 110.53
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P16",
       "Runs": 4,
       "Balls": 9,
@@ -825,10 +805,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 44.44
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P06",
       "Runs": 56,
       "Balls": 36,
@@ -836,10 +816,10 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 155.56
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P07",
       "Runs": 8,
       "Balls": 13,
@@ -847,10 +827,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": 61.54
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P10",
       "Runs": 1,
       "Balls": 4,
@@ -858,10 +838,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 25.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P04",
       "Runs": 50,
       "Balls": 28,
@@ -869,10 +849,10 @@
       "Sixes": 4,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": 178.57
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P08",
       "Runs": 0,
       "Balls": 4,
@@ -880,10 +860,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P14",
       "Runs": 0,
       "Balls": 1,
@@ -891,10 +871,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P01",
       "Runs": 15,
       "Balls": 6,
@@ -902,10 +882,10 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 250.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P09",
       "Runs": 47,
       "Balls": 49,
@@ -913,10 +893,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 95.92
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P03",
       "Runs": 4,
       "Balls": 5,
@@ -924,10 +904,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 80.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P18",
       "Runs": 10,
       "Balls": 12,
@@ -935,10 +915,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 83.33
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P16",
       "Runs": 2,
       "Balls": 12,
@@ -946,10 +926,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 16.67
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P07",
       "Runs": 3,
       "Balls": 9,
@@ -957,10 +937,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": 33.33
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P10",
       "Runs": 7,
       "Balls": 5,
@@ -968,10 +948,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 140.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P04",
       "Runs": 21,
       "Balls": 15,
@@ -979,10 +959,10 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": 140.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P13",
       "Runs": 6,
       "Balls": 7,
@@ -990,10 +970,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": 85.71
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P14",
       "Runs": 4,
       "Balls": 5,
@@ -1001,10 +981,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 80.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P09",
       "Runs": 8,
       "Balls": 10,
@@ -1012,10 +992,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 80.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P17",
       "Runs": 19,
       "Balls": 13,
@@ -1023,10 +1003,10 @@
       "Sixes": 2,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 146.15
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P18",
       "Runs": 15,
       "Balls": 32,
@@ -1034,10 +1014,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 46.88
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P03",
       "Runs": 4,
       "Balls": 7,
@@ -1045,10 +1025,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 57.14
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P01",
       "Runs": 20,
       "Balls": 23,
@@ -1056,10 +1036,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": 86.96
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P16",
       "Runs": 6,
       "Balls": 19,
@@ -1067,10 +1047,10 @@
       "Sixes": 9,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 31.58
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P04",
       "Runs": 1,
       "Balls": 6,
@@ -1078,10 +1058,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 16.67
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P02",
       "Runs": 0,
       "Balls": 3,
@@ -1089,10 +1069,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P21",
       "Runs": 0,
       "Balls": 2,
@@ -1100,10 +1080,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P14",
       "Runs": 0,
       "Balls": 2,
@@ -1111,10 +1091,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P10",
       "Runs": 5,
       "Balls": 6,
@@ -1122,10 +1102,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 83.33
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P01",
       "Runs": 7,
       "Balls": 11,
@@ -1133,10 +1113,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 63.64
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P04",
       "Runs": 11,
       "Balls": 11,
@@ -1144,10 +1124,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 100.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P09",
       "Runs": 21,
       "Balls": 38,
@@ -1155,10 +1135,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 55.26
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P02",
       "Runs": 1,
       "Balls": 8,
@@ -1166,10 +1146,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 12.5
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P03",
       "Runs": 1,
       "Balls": 5,
@@ -1177,10 +1157,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 20.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P07",
       "Runs": 0,
       "Balls": 5,
@@ -1188,10 +1168,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P21",
       "Runs": 0,
       "Balls": 4,
@@ -1199,10 +1179,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P22",
       "Runs": 2,
       "Balls": 12,
@@ -1210,10 +1190,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 16.67
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P08",
       "Runs": 1,
       "Balls": 7,
@@ -1221,10 +1201,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 14.29
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P14",
       "Runs": 1,
       "Balls": 3,
@@ -1232,10 +1212,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 33.33
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P15",
       "Runs": 0,
       "Balls": 1,
@@ -1243,10 +1223,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P23",
       "Runs": 16,
       "Balls": 13,
@@ -1254,10 +1234,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 123.08
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P09",
       "Runs": 7,
       "Balls": 11,
@@ -1265,10 +1245,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 63.64
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P01",
       "Runs": 39,
       "Balls": 38,
@@ -1276,10 +1256,10 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 102.63
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P06",
       "Runs": 6,
       "Balls": 5,
@@ -1287,10 +1267,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 120.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P13",
       "Runs": 10,
       "Balls": 17,
@@ -1298,10 +1278,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 58.82
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P24",
       "Runs": 1,
       "Balls": 7,
@@ -1309,10 +1289,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 14.29
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P07",
       "Runs": 30,
       "Balls": 30,
@@ -1320,10 +1300,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 100.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P04",
       "Runs": 26,
       "Balls": 17,
@@ -1331,10 +1311,10 @@
       "Sixes": 1,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 152.94
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P01",
       "Runs": 10,
       "Balls": 9,
@@ -1342,10 +1322,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 111.11
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P04",
       "Runs": 33,
       "Balls": 32,
@@ -1353,10 +1333,10 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 103.12
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P23",
       "Runs": 0,
       "Balls": 1,
@@ -1364,10 +1344,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P09",
       "Runs": 7,
       "Balls": 12,
@@ -1375,10 +1355,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 58.33
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P06",
       "Runs": 18,
       "Balls": 14,
@@ -1386,10 +1366,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 128.57
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P03",
       "Runs": 9,
       "Balls": 10,
@@ -1397,10 +1377,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 90.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P07",
       "Runs": 0,
       "Balls": 5,
@@ -1408,10 +1388,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P16",
       "Runs": 3,
       "Balls": 6,
@@ -1419,10 +1399,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": 50.0
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P10",
       "Runs": 7,
       "Balls": 8,
@@ -1430,10 +1410,10 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": 87.5
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P14",
       "Runs": 5,
       "Balls": 9,
@@ -1441,10 +1421,10 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": 55.56
+      "Strike Rate": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P21",
       "Runs": 0,
       "Balls": 5,
@@ -1452,1113 +1432,1113 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": 0.0
+      "Strike Rate": NaN
     }
   ],
   "bowling": [
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P01",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 23,
       "Wickets": 0,
-      "Dots": 8.0,
-      "Fours": 3.0,
-      "Sixes": 0.0,
-      "Wides": 3.0,
-      "No-Balls": 0.0,
-      "Economy": 7.67
+      "Dots": 8,
+      "Fours": 3,
+      "Sixes": 0,
+      "Wides": 3,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P02",
-      "Overs": 4.0,
+      "Overs": 4,
       "Maidens": 0,
       "Runs": 43,
       "Wickets": 1,
-      "Dots": 11.0,
-      "Fours": 6.0,
-      "Sixes": 2.0,
-      "Wides": 0.0,
-      "No-Balls": 1.0,
-      "Economy": 10.75
+      "Dots": 11,
+      "Fours": 6,
+      "Sixes": 2,
+      "Wides": 0,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P03",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 29,
       "Wickets": 0,
-      "Dots": 10.0,
-      "Fours": 4.0,
-      "Sixes": 1.0,
-      "Wides": 4.0,
-      "No-Balls": 0.0,
-      "Economy": 9.67
+      "Dots": 10,
+      "Fours": 4,
+      "Sixes": 1,
+      "Wides": 4,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P05",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 32,
       "Wickets": 0,
-      "Dots": 4.0,
-      "Fours": 5.0,
-      "Sixes": 1.0,
-      "Wides": 3.0,
-      "No-Balls": 0.0,
-      "Economy": 16.0
+      "Dots": 4,
+      "Fours": 5,
+      "Sixes": 1,
+      "Wides": 3,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P06",
-      "Overs": 1.0,
+      "Overs": 1,
       "Maidens": 0,
       "Runs": 9,
       "Wickets": 0,
-      "Dots": 2.0,
-      "Fours": 1.0,
-      "Sixes": 0.0,
-      "Wides": 0.0,
-      "No-Balls": 1.0,
-      "Economy": 9.0
+      "Dots": 2,
+      "Fours": 1,
+      "Sixes": 0,
+      "Wides": 0,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P07",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 17,
       "Wickets": 1,
-      "Dots": 3.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 1.0,
-      "No-Balls": 0.0,
-      "Economy": 8.5
+      "Dots": 3,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 1,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P08",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 42,
       "Wickets": 1,
-      "Dots": 8.0,
-      "Fours": 4.0,
-      "Sixes": 2.0,
-      "Wides": 7.0,
-      "No-Balls": 1.0,
-      "Economy": 14.0
+      "Dots": 8,
+      "Fours": 4,
+      "Sixes": 2,
+      "Wides": 7,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P09",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 45,
       "Wickets": 0,
-      "Dots": 5.0,
-      "Fours": 4.0,
-      "Sixes": 3.0,
-      "Wides": 1.0,
-      "No-Balls": 2.0,
-      "Economy": 15.0
+      "Dots": 5,
+      "Fours": 4,
+      "Sixes": 3,
+      "Wides": 1,
+      "No-Balls": 2,
+      "Economy": NaN
     },
     {
-      "MatchID": "18418557",
+      "MatchID": 18418557,
       "PlayerID": "P11",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 22,
       "Wickets": 0,
-      "Dots": 2.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 2.0,
-      "No-Balls": 0.0,
-      "Economy": 11.0
+      "Dots": 2,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 2,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P14",
-      "Overs": 6.0,
+      "Overs": 6,
       "Maidens": 0,
       "Runs": 59,
       "Wickets": 1,
-      "Dots": 18.0,
-      "Fours": 9.0,
-      "Sixes": 0.0,
-      "Wides": 8.0,
-      "No-Balls": 2.0,
-      "Economy": 9.83
+      "Dots": 18,
+      "Fours": 9,
+      "Sixes": 0,
+      "Wides": 8,
+      "No-Balls": 2,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P03",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 27,
       "Wickets": 1,
-      "Dots": 6.0,
-      "Fours": 3.0,
-      "Sixes": 1.0,
-      "Wides": 5.0,
-      "No-Balls": 0.0,
-      "Economy": 13.5
+      "Dots": 6,
+      "Fours": 3,
+      "Sixes": 1,
+      "Wides": 5,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P09",
-      "Overs": 6.0,
+      "Overs": 6,
       "Maidens": 0,
       "Runs": 33,
       "Wickets": 1,
-      "Dots": 18.0,
-      "Fours": 3.0,
-      "Sixes": 0.0,
-      "Wides": 4.0,
-      "No-Balls": 0.0,
-      "Economy": 5.5
+      "Dots": 18,
+      "Fours": 3,
+      "Sixes": 0,
+      "Wides": 4,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P04",
-      "Overs": 6.0,
+      "Overs": 6,
       "Maidens": 0,
       "Runs": 39,
       "Wickets": 1,
-      "Dots": 19.0,
-      "Fours": 5.0,
-      "Sixes": 0.0,
-      "Wides": 4.0,
-      "No-Balls": 2.0,
-      "Economy": 6.5
+      "Dots": 19,
+      "Fours": 5,
+      "Sixes": 0,
+      "Wides": 4,
+      "No-Balls": 2,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P08",
-      "Overs": 1.0,
+      "Overs": 1,
       "Maidens": 0,
       "Runs": 18,
       "Wickets": 0,
-      "Dots": 1.0,
-      "Fours": 2.0,
-      "Sixes": 1.0,
-      "Wides": 1.0,
-      "No-Balls": 0.0,
-      "Economy": 18.0
+      "Dots": 1,
+      "Fours": 2,
+      "Sixes": 1,
+      "Wides": 1,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P13",
-      "Overs": 6.0,
+      "Overs": 6,
       "Maidens": 1,
       "Runs": 36,
       "Wickets": 1,
-      "Dots": 19.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 10.0,
-      "No-Balls": 1.0,
-      "Economy": 6.0
+      "Dots": 19,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 10,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P11",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 12,
       "Wickets": 1,
-      "Dots": 10.0,
-      "Fours": 0.0,
-      "Sixes": 0.0,
-      "Wides": 6.0,
-      "No-Balls": 3.0,
-      "Economy": 6.0
+      "Dots": 10,
+      "Fours": 0,
+      "Sixes": 0,
+      "Wides": 6,
+      "No-Balls": 3,
+      "Economy": NaN
     },
     {
-      "MatchID": "18642464",
+      "MatchID": 18642464,
       "PlayerID": "P15",
-      "Overs": 1.0,
+      "Overs": 1,
       "Maidens": 0,
       "Runs": 11,
       "Wickets": 0,
-      "Dots": 3.0,
-      "Fours": 1.0,
-      "Sixes": 0.0,
-      "Wides": 3.0,
-      "No-Balls": 2.0,
-      "Economy": 11.0
+      "Dots": 3,
+      "Fours": 1,
+      "Sixes": 0,
+      "Wides": 3,
+      "No-Balls": 2,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P14",
       "Overs": 3.5,
       "Maidens": 0,
       "Runs": 10,
       "Wickets": 1,
-      "Dots": 18.0,
-      "Fours": 0.0,
-      "Sixes": 0.0,
-      "Wides": 4.0,
-      "No-Balls": 0.0,
-      "Economy": 2.86
+      "Dots": 18,
+      "Fours": 0,
+      "Sixes": 0,
+      "Wides": 4,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P03",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 18,
       "Wickets": 1,
-      "Dots": 4.0,
-      "Fours": 1.0,
-      "Sixes": 0.0,
-      "Wides": 4.0,
-      "No-Balls": 1.0,
-      "Economy": 9.0
+      "Dots": 4,
+      "Fours": 1,
+      "Sixes": 0,
+      "Wides": 4,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P19",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 14,
       "Wickets": 0,
-      "Dots": 14.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 2.0,
-      "No-Balls": 0.0,
-      "Economy": 4.67
+      "Dots": 14,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 2,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P04",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 33,
       "Wickets": 1,
-      "Dots": 16.0,
-      "Fours": 5.0,
-      "Sixes": 0.0,
-      "Wides": 3.0,
-      "No-Balls": 0.0,
-      "Economy": 6.6
+      "Dots": 16,
+      "Fours": 5,
+      "Sixes": 0,
+      "Wides": 3,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P01",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 25,
       "Wickets": 1,
-      "Dots": 15.0,
-      "Fours": 1.0,
-      "Sixes": 0.0,
-      "Wides": 2.0,
-      "No-Balls": 1.0,
-      "Economy": 5.0
+      "Dots": 15,
+      "Fours": 1,
+      "Sixes": 0,
+      "Wides": 2,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P18",
-      "Overs": 4.0,
+      "Overs": 4,
       "Maidens": 0,
       "Runs": 25,
       "Wickets": 2,
-      "Dots": 13.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 7.0,
-      "No-Balls": 0.0,
-      "Economy": 6.25
+      "Dots": 13,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 7,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P20",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 15,
       "Wickets": 0,
-      "Dots": 10.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 1.0,
-      "No-Balls": 0.0,
-      "Economy": 5.0
+      "Dots": 10,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 1,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19019010",
+      "MatchID": 19019010,
       "PlayerID": "P09",
-      "Overs": 4.0,
+      "Overs": 4,
       "Maidens": 0,
       "Runs": 21,
       "Wickets": 2,
-      "Dots": 14.0,
-      "Fours": 3.0,
-      "Sixes": 0.0,
-      "Wides": 0.0,
-      "No-Balls": 0.0,
-      "Economy": 5.25
+      "Dots": 14,
+      "Fours": 3,
+      "Sixes": 0,
+      "Wides": 0,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P14",
-      "Overs": 6.0,
+      "Overs": 6,
       "Maidens": 0,
       "Runs": 43,
       "Wickets": 1,
-      "Dots": 18.0,
-      "Fours": 6.0,
-      "Sixes": 0.0,
-      "Wides": 4.0,
-      "No-Balls": 0.0,
-      "Economy": 7.17
+      "Dots": 18,
+      "Fours": 6,
+      "Sixes": 0,
+      "Wides": 4,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P09",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 53,
       "Wickets": 0,
-      "Dots": 9.0,
-      "Fours": 8.0,
-      "Sixes": 1.0,
-      "Wides": 0.0,
-      "No-Balls": 0.0,
-      "Economy": 10.6
+      "Dots": 9,
+      "Fours": 8,
+      "Sixes": 1,
+      "Wides": 0,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P06",
-      "Overs": 1.0,
+      "Overs": 1,
       "Maidens": 0,
       "Runs": 15,
       "Wickets": 0,
-      "Dots": 1.0,
-      "Fours": 3.0,
-      "Sixes": 0.0,
-      "Wides": 0.0,
-      "No-Balls": 0.0,
-      "Economy": 15.0
+      "Dots": 1,
+      "Fours": 3,
+      "Sixes": 0,
+      "Wides": 0,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P01",
-      "Overs": 6.0,
+      "Overs": 6,
       "Maidens": 1,
       "Runs": 30,
       "Wickets": 3,
-      "Dots": 26.0,
-      "Fours": 2.0,
-      "Sixes": 2.0,
-      "Wides": 2.0,
-      "No-Balls": 0.0,
-      "Economy": 5.0
+      "Dots": 26,
+      "Fours": 2,
+      "Sixes": 2,
+      "Wides": 2,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P04",
-      "Overs": 6.0,
+      "Overs": 6,
       "Maidens": 0,
       "Runs": 51,
       "Wickets": 2,
-      "Dots": 17.0,
-      "Fours": 7.0,
-      "Sixes": 0.0,
-      "Wides": 7.0,
-      "No-Balls": 1.0,
-      "Economy": 8.5
+      "Dots": 17,
+      "Fours": 7,
+      "Sixes": 0,
+      "Wides": 7,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "19112746",
+      "MatchID": 19112746,
       "PlayerID": "P18",
       "Overs": 5.4,
       "Maidens": 0,
       "Runs": 32,
       "Wickets": 3,
-      "Dots": 19.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 6.0,
-      "No-Balls": 1.0,
-      "Economy": 5.93
+      "Dots": 19,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 6,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P03",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 26,
       "Wickets": 2,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 8.67
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P09",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 20,
       "Wickets": 0,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 6.67
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P14",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 33,
       "Wickets": 0,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 16.5
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P18",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 30,
       "Wickets": 1,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 10.0
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P04",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 44,
       "Wickets": 2,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 8.8
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P01",
-      "Overs": 4.0,
+      "Overs": 4,
       "Maidens": 0,
       "Runs": 44,
       "Wickets": 0,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 11.0
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "19859354",
+      "MatchID": 19859354,
       "PlayerID": "P13",
-      "Overs": 1.0,
+      "Overs": 1,
       "Maidens": 0,
       "Runs": 9,
       "Wickets": 0,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 9.0
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P14",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 23,
       "Wickets": 2,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 7.67
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P02",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 22,
       "Wickets": 2,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 7.33
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P03",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 9,
       "Wickets": 0,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 4.5
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P09",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 18,
       "Wickets": 3,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 6.0
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P04",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 20,
       "Wickets": 1,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 4.0
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P01",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 41,
       "Wickets": 0,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 8.2
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "13848394",
+      "MatchID": 13848394,
       "PlayerID": "P18",
-      "Overs": 4.0,
+      "Overs": 4,
       "Maidens": 0,
       "Runs": 24,
       "Wickets": 0,
-      "Dots": null,
-      "Fours": null,
-      "Sixes": null,
-      "Wides": null,
-      "No-Balls": null,
-      "Economy": 6.0
+      "Dots": NaN,
+      "Fours": NaN,
+      "Sixes": NaN,
+      "Wides": NaN,
+      "No-Balls": NaN,
+      "Economy": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P03",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 13,
       "Wickets": 0,
-      "Dots": 12.0,
-      "Fours": 0.0,
-      "Sixes": 0.0,
-      "Wides": 5.0,
-      "No-Balls": 1.0,
-      "Economy": 4.33
+      "Dots": 12,
+      "Fours": 0,
+      "Sixes": 0,
+      "Wides": 5,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P14",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 1,
       "Runs": 5,
       "Wickets": 6,
-      "Dots": 15.0,
-      "Fours": 0.0,
-      "Sixes": 0.0,
-      "Wides": 2.0,
-      "No-Balls": 0.0,
-      "Economy": 1.67
+      "Dots": 15,
+      "Fours": 0,
+      "Sixes": 0,
+      "Wides": 2,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P08",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 31,
       "Wickets": 1,
-      "Dots": 15.0,
-      "Fours": 0.0,
-      "Sixes": 1.0,
-      "Wides": 7.0,
-      "No-Balls": 2.0,
-      "Economy": 6.2
+      "Dots": 15,
+      "Fours": 0,
+      "Sixes": 1,
+      "Wides": 7,
+      "No-Balls": 2,
+      "Economy": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P22",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 13,
       "Wickets": 0,
-      "Dots": 9.0,
-      "Fours": 0.0,
-      "Sixes": 1.0,
-      "Wides": 3.0,
-      "No-Balls": 0.0,
-      "Economy": 6.5
+      "Dots": 9,
+      "Fours": 0,
+      "Sixes": 1,
+      "Wides": 3,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P15",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 17,
       "Wickets": 1,
-      "Dots": 6.0,
-      "Fours": 1.0,
-      "Sixes": 0.0,
-      "Wides": 6.0,
-      "No-Balls": 0.0,
-      "Economy": 8.5
+      "Dots": 6,
+      "Fours": 1,
+      "Sixes": 0,
+      "Wides": 6,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "19989363",
+      "MatchID": 19989363,
       "PlayerID": "P02",
       "Overs": 0.4,
       "Maidens": 0,
       "Runs": 1,
       "Wickets": 1,
-      "Dots": 4.0,
-      "Fours": 0.0,
-      "Sixes": 0.0,
-      "Wides": 1.0,
-      "No-Balls": 0.0,
-      "Economy": 2.5
+      "Dots": 4,
+      "Fours": 0,
+      "Sixes": 0,
+      "Wides": 1,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P14",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 22,
       "Wickets": 0,
-      "Dots": 11.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 7.0,
-      "No-Balls": 0.0,
-      "Economy": 7.33
+      "Dots": 11,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 7,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P25",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 27,
       "Wickets": 0,
-      "Dots": 5.0,
-      "Fours": 6.0,
-      "Sixes": 0.0,
-      "Wides": 2.0,
-      "No-Balls": 0.0,
-      "Economy": 13.5
+      "Dots": 5,
+      "Fours": 6,
+      "Sixes": 0,
+      "Wides": 2,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P23",
-      "Overs": 4.0,
+      "Overs": 4,
       "Maidens": 0,
       "Runs": 16,
       "Wickets": 3,
-      "Dots": 15.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 0.0,
-      "No-Balls": 0.0,
-      "Economy": 4.0
+      "Dots": 15,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 0,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P09",
-      "Overs": 2.0,
+      "Overs": 2,
       "Maidens": 0,
       "Runs": 10,
       "Wickets": 0,
-      "Dots": 8.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 0.0,
-      "No-Balls": 0.0,
-      "Economy": 5.0
+      "Dots": 8,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 0,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P04",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 31,
       "Wickets": 0,
-      "Dots": 7.0,
-      "Fours": 2.0,
-      "Sixes": 2.0,
-      "Wides": 4.0,
-      "No-Balls": 0.0,
-      "Economy": 10.33
+      "Dots": 7,
+      "Fours": 2,
+      "Sixes": 2,
+      "Wides": 4,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P01",
       "Overs": 2.5,
       "Maidens": 0,
       "Runs": 26,
       "Wickets": 0,
-      "Dots": 7.0,
-      "Fours": 3.0,
-      "Sixes": 1.0,
-      "Wides": 0.0,
-      "No-Balls": 1.0,
-      "Economy": 10.4
+      "Dots": 7,
+      "Fours": 3,
+      "Sixes": 1,
+      "Wides": 0,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "20648752",
+      "MatchID": 20648752,
       "PlayerID": "P13",
-      "Overs": 1.0,
+      "Overs": 1,
       "Maidens": 0,
       "Runs": 14,
       "Wickets": 0,
-      "Dots": 1.0,
-      "Fours": 0.0,
-      "Sixes": 1.0,
-      "Wides": 2.0,
-      "No-Balls": 0.0,
-      "Economy": 14.0
+      "Dots": 1,
+      "Fours": 0,
+      "Sixes": 1,
+      "Wides": 2,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P14",
-      "Overs": 3.0,
+      "Overs": 3,
       "Maidens": 0,
       "Runs": 37,
       "Wickets": 0,
-      "Dots": 9.0,
-      "Fours": 3.0,
-      "Sixes": 2.0,
-      "Wides": 9.0,
-      "No-Balls": 0.0,
-      "Economy": 12.33
+      "Dots": 9,
+      "Fours": 3,
+      "Sixes": 2,
+      "Wides": 9,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P01",
-      "Overs": 4.0,
+      "Overs": 4,
       "Maidens": 0,
       "Runs": 29,
       "Wickets": 0,
-      "Dots": 13.0,
-      "Fours": 2.0,
-      "Sixes": 1.0,
-      "Wides": 3.0,
-      "No-Balls": 0.0,
-      "Economy": 7.25
+      "Dots": 13,
+      "Fours": 2,
+      "Sixes": 1,
+      "Wides": 3,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P04",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 25,
       "Wickets": 4,
-      "Dots": 17.0,
-      "Fours": 2.0,
-      "Sixes": 0.0,
-      "Wides": 3.0,
-      "No-Balls": 0.0,
-      "Economy": 5.0
+      "Dots": 17,
+      "Fours": 2,
+      "Sixes": 0,
+      "Wides": 3,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P23",
-      "Overs": 5.0,
+      "Overs": 5,
       "Maidens": 0,
       "Runs": 26,
       "Wickets": 0,
-      "Dots": 18.0,
-      "Fours": 3.0,
-      "Sixes": 0.0,
-      "Wides": 1.0,
-      "No-Balls": 1.0,
-      "Economy": 5.2
+      "Dots": 18,
+      "Fours": 3,
+      "Sixes": 0,
+      "Wides": 1,
+      "No-Balls": 1,
+      "Economy": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P09",
-      "Overs": 1.0,
+      "Overs": 1,
       "Maidens": 0,
       "Runs": 9,
       "Wickets": 0,
-      "Dots": 2.0,
-      "Fours": 1.0,
-      "Sixes": 0.0,
-      "Wides": 2.0,
-      "No-Balls": 0.0,
-      "Economy": 9.0
+      "Dots": 2,
+      "Fours": 1,
+      "Sixes": 0,
+      "Wides": 2,
+      "No-Balls": 0,
+      "Economy": NaN
     },
     {
-      "MatchID": "20156519",
+      "MatchID": 20156519,
       "PlayerID": "P03",
       "Overs": 0.1,
       "Maidens": 0,
       "Runs": 1,
       "Wickets": 0,
-      "Dots": 1.0,
-      "Fours": 0.0,
-      "Sixes": 0.0,
-      "Wides": 1.0,
-      "No-Balls": 0.0,
-      "Economy": 10.0
+      "Dots": 1,
+      "Fours": 0,
+      "Sixes": 0,
+      "Wides": 1,
+      "No-Balls": 0,
+      "Economy": NaN
     }
   ],
   "fielding": [
     {
-      "MatchID": "18418557",
-      "PlayerID": "P02",
+      "MatchID": 18418557,
+      " PlayerID": "P02",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "18418557",
-      "PlayerID": "P06",
+      "MatchID": 18418557,
+      " PlayerID": "P06",
       "Catches": 2,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "18642464",
-      "PlayerID": "P01",
+      "MatchID": 18642464,
+      " PlayerID": "P01",
       "Catches": 2,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "18642464",
-      "PlayerID": "P15",
+      "MatchID": 18642464,
+      " PlayerID": "P15",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "18642464",
-      "PlayerID": "P06",
+      "MatchID": 18642464,
+      " PlayerID": "P06",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "18642464",
-      "PlayerID": "P09",
+      "MatchID": 18642464,
+      " PlayerID": "P09",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19019010",
-      "PlayerID": "P18",
+      "MatchID": 19019010,
+      " PlayerID": "P18",
       "Catches": 3,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19019010",
-      "PlayerID": "P16",
+      "MatchID": 19019010,
+      " PlayerID": "P16",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19019010",
-      "PlayerID": "P04",
+      "MatchID": 19019010,
+      " PlayerID": "P04",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19019010",
-      "PlayerID": "P01",
+      "MatchID": 19019010,
+      " PlayerID": "P01",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19112746",
-      "PlayerID": "P01",
+      "MatchID": 19112746,
+      " PlayerID": "P01",
       "Catches": 2,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19112746",
-      "PlayerID": "P08",
+      "MatchID": 19112746,
+      " PlayerID": "P08",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19112746",
-      "PlayerID": "P06",
+      "MatchID": 19112746,
+      " PlayerID": "P06",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19112746",
-      "PlayerID": "P04",
+      "MatchID": 19112746,
+      " PlayerID": "P04",
       "Catches": 2,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19112746",
-      "PlayerID": "P10",
+      "MatchID": 19112746,
+      " PlayerID": "P10",
       "Catches": 0,
       "Run Outs": 0,
       "Stumpings": 1
     },
     {
-      "MatchID": "19112746",
-      "PlayerID": "P14",
+      "MatchID": 19112746,
+      " PlayerID": "P14",
       "Catches": 0,
       "Run Outs": 1,
       "Stumpings": 0
     },
     {
-      "MatchID": "19859354",
-      "PlayerID": "P01",
+      "MatchID": 19859354,
+      " PlayerID": "P01",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19859354",
-      "PlayerID": "P07",
+      "MatchID": 19859354,
+      " PlayerID": "P07",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19859354",
-      "PlayerID": "P10",
+      "MatchID": 19859354,
+      " PlayerID": "P10",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "13848394",
-      "PlayerID": "P09",
+      "MatchID": 13848394,
+      " PlayerID": "P09",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "13848394",
-      "PlayerID": "P18",
+      "MatchID": 13848394,
+      " PlayerID": "P18",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "13848394",
-      "PlayerID": "P04",
+      "MatchID": 13848394,
+      " PlayerID": "P04",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "13848394",
-      "PlayerID": "P01",
+      "MatchID": 13848394,
+      " PlayerID": "P01",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "19989363",
-      "PlayerID": "P01",
+      "MatchID": 19989363,
+      " PlayerID": "P01",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "20648752",
-      "PlayerID": "P23",
+      "MatchID": 20648752,
+      " PlayerID": "P23",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "20156519",
-      "PlayerID": "P09",
+      "MatchID": 20156519,
+      " PlayerID": "P09",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     },
     {
-      "MatchID": "20156519",
-      "PlayerID": "P03",
+      "MatchID": 20156519,
+      " PlayerID": "P03",
       "Catches": 1,
       "Run Outs": 1,
       "Stumpings": 0
     },
     {
-      "MatchID": "20156519",
-      "PlayerID": "P23",
+      "MatchID": 20156519,
+      " PlayerID": "P23",
       "Catches": 0,
       "Run Outs": 1,
       "Stumpings": 0
     },
     {
-      "MatchID": "20156519",
-      "PlayerID": "P04",
+      "MatchID": 20156519,
+      " PlayerID": "P04",
       "Catches": 1,
       "Run Outs": 0,
       "Stumpings": 0
     }
   ],
-  "career": [
+  "player_career_stats": [
     {
       "PlayerID": "P01",
       "Player Name": "Sriram A",
@@ -2582,9 +2562,9 @@
       "No-Balls": 2,
       "Fours Conceded": 11,
       "Sixes Conceded": 4,
-      "Catches": 8.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 8,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P02",
@@ -2597,7 +2577,7 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": 1.33,
-      "SR": 20.0,
+      "SR": 20,
       "Balls Bowled": 46,
       "Overs": 7.4,
       "Bowl Runs": 66,
@@ -2609,9 +2589,9 @@
       "No-Balls": 1,
       "Fours Conceded": 6,
       "Sixes Conceded": 2,
-      "Catches": 1.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 1,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P03",
@@ -2636,9 +2616,9 @@
       "No-Balls": 2,
       "Fours Conceded": 8,
       "Sixes Conceded": 2,
-      "Catches": 1.0,
-      "Run Outs": 1.0,
-      "Stumpings": 0.0
+      "Catches": 1,
+      "Run Outs": 1,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P04",
@@ -2653,7 +2633,7 @@
       "Avg": 20.38,
       "SR": 110.88,
       "Balls Bowled": 210,
-      "Overs": 35.0,
+      "Overs": 35,
       "Bowl Runs": 243,
       "Wkts": 11,
       "Econ": 6.94,
@@ -2663,9 +2643,9 @@
       "No-Balls": 3,
       "Fours Conceded": 21,
       "Sixes Conceded": 2,
-      "Catches": 5.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 5,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P05",
@@ -2680,19 +2660,19 @@
       "Avg": 4,
       "SR": 66.67,
       "Balls Bowled": 12,
-      "Overs": 2.0,
+      "Overs": 2,
       "Bowl Runs": 32,
       "Wkts": 0,
-      "Econ": 16.0,
+      "Econ": 16,
       "Dot Balls": 4,
       "Maidens": 0,
       "Wides": 3,
       "No-Balls": 0,
       "Fours Conceded": 5,
       "Sixes Conceded": 1,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P06",
@@ -2707,19 +2687,19 @@
       "Avg": 19.83,
       "SR": 101.71,
       "Balls Bowled": 12,
-      "Overs": 2.0,
+      "Overs": 2,
       "Bowl Runs": 24,
       "Wkts": 0,
-      "Econ": 12.0,
+      "Econ": 12,
       "Dot Balls": 3,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 1,
       "Fours Conceded": 4,
       "Sixes Conceded": 0,
-      "Catches": 4.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 4,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P07",
@@ -2734,7 +2714,7 @@
       "Avg": 9.17,
       "SR": 69.62,
       "Balls Bowled": 12,
-      "Overs": 2.0,
+      "Overs": 2,
       "Bowl Runs": 17,
       "Wkts": 1,
       "Econ": 8.5,
@@ -2744,9 +2724,9 @@
       "No-Balls": 0,
       "Fours Conceded": 2,
       "Sixes Conceded": 0,
-      "Catches": 1.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 1,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P08",
@@ -2761,7 +2741,7 @@
       "Avg": 6,
       "SR": 51.43,
       "Balls Bowled": 54,
-      "Overs": 9.0,
+      "Overs": 9,
       "Bowl Runs": 91,
       "Wkts": 2,
       "Econ": 10.11,
@@ -2771,9 +2751,9 @@
       "No-Balls": 3,
       "Fours Conceded": 6,
       "Sixes Conceded": 4,
-      "Catches": 1.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 1,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P09",
@@ -2788,7 +2768,7 @@
       "Avg": 20.86,
       "SR": 78.07,
       "Balls Bowled": 162,
-      "Overs": 27.0,
+      "Overs": 27,
       "Bowl Runs": 209,
       "Wkts": 6,
       "Econ": 7.74,
@@ -2798,9 +2778,9 @@
       "No-Balls": 2,
       "Fours Conceded": 21,
       "Sixes Conceded": 4,
-      "Catches": 3.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 3,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P10",
@@ -2815,19 +2795,19 @@
       "Avg": 4,
       "SR": 83.33,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": 1.0,
-      "Run Outs": 0.0,
-      "Stumpings": 1.0
+      "Catches": 1,
+      "Run Outs": 0,
+      "Stumpings": 1
     },
     {
       "PlayerID": "P11",
@@ -2840,9 +2820,9 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": 0,
-      "SR": 0.0,
+      "SR": 0,
       "Balls Bowled": 24,
-      "Overs": 4.0,
+      "Overs": 4,
       "Bowl Runs": 34,
       "Wkts": 1,
       "Econ": 8.5,
@@ -2852,9 +2832,9 @@
       "No-Balls": 3,
       "Fours Conceded": 2,
       "Sixes Conceded": 0,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P12",
@@ -2867,21 +2847,21 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": 1,
-      "SR": 20.0,
+      "SR": 20,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P13",
@@ -2896,7 +2876,7 @@
       "Avg": 13.67,
       "SR": 113.89,
       "Balls Bowled": 48,
-      "Overs": 8.0,
+      "Overs": 8,
       "Bowl Runs": 59,
       "Wkts": 1,
       "Econ": 7.38,
@@ -2906,9 +2886,9 @@
       "No-Balls": 1,
       "Fours Conceded": 2,
       "Sixes Conceded": 1,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P14",
@@ -2933,9 +2913,9 @@
       "No-Balls": 2,
       "Fours Conceded": 20,
       "Sixes Conceded": 2,
-      "Catches": 0.0,
-      "Run Outs": 1.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 1,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P15",
@@ -2948,9 +2928,9 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": 0,
-      "SR": 0.0,
+      "SR": 0,
       "Balls Bowled": 18,
-      "Overs": 3.0,
+      "Overs": 3,
       "Bowl Runs": 28,
       "Wkts": 1,
       "Econ": 9.33,
@@ -2960,9 +2940,9 @@
       "No-Balls": 2,
       "Fours Conceded": 2,
       "Sixes Conceded": 0,
-      "Catches": 1.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 1,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P16",
@@ -2977,19 +2957,19 @@
       "Avg": 6.8,
       "SR": 46.58,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": 1.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 1,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P17",
@@ -3004,19 +2984,19 @@
       "Avg": 13,
       "SR": 118.18,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P18",
@@ -3041,9 +3021,9 @@
       "No-Balls": 1,
       "Fours Conceded": 4,
       "Sixes Conceded": 0,
-      "Catches": 4.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 4,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P19",
@@ -3058,7 +3038,7 @@
       "Avg": "-",
       "SR": 60.87,
       "Balls Bowled": 18,
-      "Overs": 3.0,
+      "Overs": 3,
       "Bowl Runs": 14,
       "Wkts": 0,
       "Econ": 4.67,
@@ -3068,9 +3048,9 @@
       "No-Balls": 0,
       "Fours Conceded": 2,
       "Sixes Conceded": 0,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P20",
@@ -3083,21 +3063,21 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": "-",
-      "SR": 0.0,
+      "SR": 0,
       "Balls Bowled": 18,
-      "Overs": 3.0,
+      "Overs": 3,
       "Bowl Runs": 15,
       "Wkts": 0,
-      "Econ": 5.0,
+      "Econ": 5,
       "Dot Balls": 10,
       "Maidens": 0,
       "Wides": 1,
       "No-Balls": 0,
       "Fours Conceded": 2,
       "Sixes Conceded": 0,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P21",
@@ -3110,21 +3090,21 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": 0,
-      "SR": 0.0,
+      "SR": 0,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": 0.0,
-      "Run Outs": 0.0,
-      "Stumpings": 0.0
+      "Catches": 0,
+      "Run Outs": 0,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P22",
@@ -3139,7 +3119,7 @@
       "Avg": 2,
       "SR": 16.67,
       "Balls Bowled": 12,
-      "Overs": 2.0,
+      "Overs": 2,
       "Bowl Runs": 13,
       "Wkts": 0,
       "Econ": 6.5,
@@ -3149,9 +3129,9 @@
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 1,
-      "Catches": null,
-      "Run Outs": null,
-      "Stumpings": 0.0
+      "Catches": NaN,
+      "Run Outs": NaN,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P23",
@@ -3166,7 +3146,7 @@
       "Avg": 8,
       "SR": 114.29,
       "Balls Bowled": 54,
-      "Overs": 9.0,
+      "Overs": 9,
       "Bowl Runs": 42,
       "Wkts": 3,
       "Econ": 4.67,
@@ -3176,9 +3156,9 @@
       "No-Balls": 1,
       "Fours Conceded": 5,
       "Sixes Conceded": 0,
-      "Catches": null,
-      "Run Outs": null,
-      "Stumpings": 0.0
+      "Catches": NaN,
+      "Run Outs": NaN,
+      "Stumpings": 0
     },
     {
       "PlayerID": "P24",
@@ -3193,19 +3173,19 @@
       "Avg": 1,
       "SR": 14.29,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": null,
-      "Run Outs": null,
-      "Stumpings": null
+      "Catches": NaN,
+      "Run Outs": NaN,
+      "Stumpings": NaN
     },
     {
       "PlayerID": "P25",
@@ -3218,9 +3198,9 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": "-",
-      "SR": 0.0,
+      "SR": 0,
       "Balls Bowled": 12,
-      "Overs": 2.0,
+      "Overs": 2,
       "Bowl Runs": 27,
       "Wkts": 0,
       "Econ": 13.5,
@@ -3230,9 +3210,9 @@
       "No-Balls": 0,
       "Fours Conceded": 6,
       "Sixes Conceded": 0,
-      "Catches": null,
-      "Run Outs": null,
-      "Stumpings": null
+      "Catches": NaN,
+      "Run Outs": NaN,
+      "Stumpings": NaN
     },
     {
       "PlayerID": "P26",
@@ -3245,21 +3225,21 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": "-",
-      "SR": 0.0,
+      "SR": 0,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": null,
-      "Run Outs": null,
-      "Stumpings": null
+      "Catches": NaN,
+      "Run Outs": NaN,
+      "Stumpings": NaN
     },
     {
       "PlayerID": "P27",
@@ -3272,21 +3252,332 @@
       "Fours": 0,
       "Sixes": 0,
       "Avg": "-",
-      "SR": 0.0,
+      "SR": 0,
       "Balls Bowled": 0,
-      "Overs": 0.0,
+      "Overs": 0,
       "Bowl Runs": 0,
       "Wkts": 0,
-      "Econ": 0.0,
+      "Econ": 0,
       "Dot Balls": 0,
       "Maidens": 0,
       "Wides": 0,
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": null,
-      "Run Outs": null,
-      "Stumpings": null
+      "Catches": NaN,
+      "Run Outs": NaN,
+      "Stumpings": NaN
+    }
+  ],
+  "leaderboards": [
+    {
+      "Top Runs": "Player Name",
+      "Unnamed: 1": "Matches",
+      "Unnamed: 2": "Runs",
+      "Unnamed: 3": "Avg",
+      "Top Wickets": "Player Name",
+      "Unnamed: 5": "Overs",
+      "Unnamed: 6": "Wkts",
+      "Unnamed: 7": "Econ",
+      "Most Catches": "Player Name",
+      "Unnamed: 9": "Matches",
+      "Unnamed: 10": "Catches",
+      "Unnamed: 11": "Run Outs"
+    },
+    {
+      "Top Runs": "Sriram A",
+      "Unnamed: 1": 9,
+      "Unnamed: 2": 249,
+      "Unnamed: 3": 27.67,
+      "Top Wickets": "Jeeva",
+      "Unnamed: 5": 35,
+      "Unnamed: 6": 11,
+      "Unnamed: 7": 6.94,
+      "Most Catches": "Sriram A",
+      "Unnamed: 9": 9,
+      "Unnamed: 10": 8,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Jeeva",
+      "Unnamed: 1": 9,
+      "Unnamed: 2": 163,
+      "Unnamed: 3": 20.38,
+      "Top Wickets": "Ravi Shankar",
+      "Unnamed: 5": 29.5,
+      "Unnamed: 6": 11,
+      "Unnamed: 7": 7.78,
+      "Most Catches": "Jeeva",
+      "Unnamed: 9": 9,
+      "Unnamed: 10": 5,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Shivaganesh",
+      "Unnamed: 1": 9,
+      "Unnamed: 2": 146,
+      "Unnamed: 3": 20.86,
+      "Top Wickets": "Bhuvaneshvaran A",
+      "Unnamed: 5": 16.4,
+      "Unnamed: 6": 6,
+      "Unnamed: 7": 6.66,
+      "Most Catches": "Sanjay V",
+      "Unnamed: 9": 6,
+      "Unnamed: 10": 4,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Sanjay V",
+      "Unnamed: 1": 6,
+      "Unnamed: 2": 119,
+      "Unnamed: 3": 19.83,
+      "Top Wickets": "Shivaganesh",
+      "Unnamed: 5": 27,
+      "Unnamed: 6": 6,
+      "Unnamed: 7": 7.74,
+      "Most Catches": "Bhuvaneshvaran A",
+      "Unnamed: 9": 4,
+      "Unnamed: 10": 4,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Jai",
+      "Unnamed: 1": 8,
+      "Unnamed: 2": 85,
+      "Unnamed: 3": 14.17,
+      "Top Wickets": "Sriram A",
+      "Unnamed: 5": 29.5,
+      "Unnamed: 6": 4,
+      "Unnamed: 7": 7.31,
+      "Most Catches": "Shivaganesh",
+      "Unnamed: 9": 9,
+      "Unnamed: 10": 3,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Saravanan G",
+      "Unnamed: 1": 7,
+      "Unnamed: 2": 55,
+      "Unnamed: 3": 9.17,
+      "Top Wickets": "Jai",
+      "Unnamed: 5": 15.1,
+      "Unnamed: 6": 4,
+      "Unnamed: 7": 8.11,
+      "Most Catches": "Gautam Raj",
+      "Unnamed: 9": 3,
+      "Unnamed: 10": 1,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Bhuvaneshvaran A",
+      "Unnamed: 1": 4,
+      "Unnamed: 2": 53,
+      "Unnamed: 3": 13.25,
+      "Top Wickets": "Gautam Raj",
+      "Unnamed: 5": 7.4,
+      "Unnamed: 6": 4,
+      "Unnamed: 7": 8.61,
+      "Most Catches": "Jai",
+      "Unnamed: 9": 8,
+      "Unnamed: 10": 1,
+      "Unnamed: 11": 1
+    },
+    {
+      "Top Runs": "Padhu",
+      "Unnamed: 1": 3,
+      "Unnamed: 2": 41,
+      "Unnamed: 3": 13.67,
+      "Top Wickets": "Manoj",
+      "Unnamed: 5": 9,
+      "Unnamed: 6": 3,
+      "Unnamed: 7": 4.67,
+      "Most Catches": "Saravanan G",
+      "Unnamed: 9": 7,
+      "Unnamed: 10": 1,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Vivek",
+      "Unnamed: 1": 5,
+      "Unnamed: 2": 34,
+      "Unnamed: 3": 6.8,
+      "Top Wickets": "Senthil kumar",
+      "Unnamed: 5": 9,
+      "Unnamed: 6": 2,
+      "Unnamed: 7": 10.11,
+      "Most Catches": "Senthil kumar",
+      "Unnamed: 9": 4,
+      "Unnamed: 10": 1,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Ahil",
+      "Unnamed: 1": 2,
+      "Unnamed: 2": 26,
+      "Unnamed: 3": 13,
+      "Top Wickets": "Padhu",
+      "Unnamed: 5": 8,
+      "Unnamed: 6": 1,
+      "Unnamed: 7": 7.38,
+      "Most Catches": "Tharun M",
+      "Unnamed: 9": 5,
+      "Unnamed: 10": 1,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Tharun M",
+      "Unnamed: 1": 5,
+      "Unnamed: 2": 20,
+      "Unnamed: 3": 4,
+      "Top Wickets": "Saravanan G",
+      "Unnamed: 5": 2,
+      "Unnamed: 6": 1,
+      "Unnamed: 7": 8.5,
+      "Most Catches": "Mahesh",
+      "Unnamed: 9": 2,
+      "Unnamed: 10": 1,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Senthil kumar",
+      "Unnamed: 1": 4,
+      "Unnamed: 2": 18,
+      "Unnamed: 3": 6,
+      "Top Wickets": "Vikram",
+      "Unnamed: 5": 4,
+      "Unnamed: 6": 1,
+      "Unnamed: 7": 8.5,
+      "Most Catches": "Vivek",
+      "Unnamed: 9": 5,
+      "Unnamed: 10": 1,
+      "Unnamed: 11": 0
+    },
+    {
+      "Top Runs": "Manoj",
+      "Unnamed: 1": 2,
+      "Unnamed: 2": 16,
+      "Unnamed: 3": 8,
+      "Top Wickets": "Mahesh",
+      "Unnamed: 5": 3,
+      "Unnamed: 6": 1,
+      "Unnamed: 7": 9.33,
+      "Most Catches": "Ravi Shankar",
+      "Unnamed: 9": 8,
+      "Unnamed: 10": 0,
+      "Unnamed: 11": 1
+    },
+    {
+      "Top Runs": "Karthik",
+      "Unnamed: 1": 1,
+      "Unnamed: 2": 14,
+      "Unnamed: 3": "-",
+      "Top Wickets": null,
+      "Unnamed: 5": null,
+      "Unnamed: 6": null,
+      "Unnamed: 7": null,
+      "Most Catches": null,
+      "Unnamed: 9": null,
+      "Unnamed: 10": null,
+      "Unnamed: 11": null
+    },
+    {
+      "Top Runs": "Ravi Shankar",
+      "Unnamed: 1": 8,
+      "Unnamed: 2": 11,
+      "Unnamed: 3": 5.5,
+      "Top Wickets": null,
+      "Unnamed: 5": null,
+      "Unnamed: 6": null,
+      "Unnamed: 7": null,
+      "Most Catches": null,
+      "Unnamed: 9": null,
+      "Unnamed: 10": null,
+      "Unnamed: 11": null
+    },
+    {
+      "Top Runs": "Gautam Raj",
+      "Unnamed: 1": 3,
+      "Unnamed: 2": 4,
+      "Unnamed: 3": 1.33,
+      "Top Wickets": null,
+      "Unnamed: 5": null,
+      "Unnamed: 6": null,
+      "Unnamed: 7": null,
+      "Most Catches": null,
+      "Unnamed: 9": null,
+      "Unnamed: 10": null,
+      "Unnamed: 11": null
+    },
+    {
+      "Top Runs": "Naveen",
+      "Unnamed: 1": 1,
+      "Unnamed: 2": 4,
+      "Unnamed: 3": 4,
+      "Top Wickets": null,
+      "Unnamed: 5": null,
+      "Unnamed: 6": null,
+      "Unnamed: 7": null,
+      "Most Catches": null,
+      "Unnamed: 9": null,
+      "Unnamed: 10": null,
+      "Unnamed: 11": null
+    },
+    {
+      "Top Runs": "Prasanth G",
+      "Unnamed: 1": 1,
+      "Unnamed: 2": 2,
+      "Unnamed: 3": 2,
+      "Top Wickets": null,
+      "Unnamed: 5": null,
+      "Unnamed: 6": null,
+      "Unnamed: 7": null,
+      "Most Catches": null,
+      "Unnamed: 9": null,
+      "Unnamed: 10": null,
+      "Unnamed: 11": null
+    },
+    {
+      "Top Runs": "Mukundhan S\n",
+      "Unnamed: 1": 1,
+      "Unnamed: 2": 1,
+      "Unnamed: 3": 1,
+      "Top Wickets": null,
+      "Unnamed: 5": null,
+      "Unnamed: 6": null,
+      "Unnamed: 7": null,
+      "Most Catches": null,
+      "Unnamed: 9": null,
+      "Unnamed: 10": null,
+      "Unnamed: 11": null
+    },
+    {
+      "Top Runs": "Imtiyaz",
+      "Unnamed: 1": 1,
+      "Unnamed: 2": 1,
+      "Unnamed: 3": 1,
+      "Top Wickets": null,
+      "Unnamed: 5": null,
+      "Unnamed: 6": null,
+      "Unnamed: 7": null,
+      "Most Catches": null,
+      "Unnamed: 9": null,
+      "Unnamed: 10": null,
+      "Unnamed: 11": null
+    }
+  ],
+  "team_stats": [
+    {
+      "Matches": 9,
+      "Won": 0,
+      "Lost": 7,
+      "Tie": 1,
+      "No Result": 1,
+      "Win %": 0,
+      "Avg Team Runs": 145.78,
+      "Avg Opp Runs": 181.89,
+      "Avg Team RR": 6.41,
+      "Avg Opp RR": 7.79,
+      "Net RR": -1.38
     }
   ]
 }
