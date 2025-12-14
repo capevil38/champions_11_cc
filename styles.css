@@ -1,26 +1,165 @@
-/* Custom styles for Champions 11 CC website */
+/* Base styling for Champions 11 CC Website */
 
-body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    sans-serif;
+:root {
+  --primary-color: #0f4c75;
+  --secondary-color: #3282b8;
+  --accent-color: #bbe1fa;
+  --light-color: #f7f7f7;
+  --dark-color: #1b262c;
+  --card-shadow: rgba(0, 0, 0, 0.1);
 }
 
-/* Hero styling */
-section.bg-light {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
+}
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav a {
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+.navbar-nav a.active,
+.navbar-nav a:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Hero section */
+.hero {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
     url('https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-position: center;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: var(--dark-color);
 }
 
-/* Card hover effect */
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease-in-out;
+/* Card */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px var(--card-shadow);
+  margin-bottom: 1rem;
+}
+.card-title {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
-/* Footer styling */
+/* Grid */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+}
+th {
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+/* Progress bar for stats */
+.progress-bar {
+  background-color: var(--accent-color);
+  height: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-bar > div {
+  background-color: var(--primary-color);
+  height: 100%;
+  width: 0;
+}
+
+/* Footer */
 footer {
-  margin-top: auto;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }

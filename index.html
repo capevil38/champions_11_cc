@@ -3,194 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Champions 11 CC – Team Statistics</title>
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoM9T5aBaMRhfZ7zvjwX8vl+3Z2VXG5PM7UibXc0xos2b+M"
-      crossorigin="anonymous"
-    />
+    <title>Champions 11 CC – Team Stats</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-      <div class="container-fluid">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
         <a class="navbar-brand" href="index.html">Champions 11 CC</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="players.html">Players</a></li>
-            <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
-            <li class="nav-item"><a class="nav-link" href="leaderboards.html">Leaderboards</a></li>
-          </ul>
-        </div>
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="leaderboards.html">Leaderboards</a></li>
+        </ul>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-5 text-center bg-light">
+    <section class="hero">
       <div class="container">
-        <h1 class="display-5 fw-bold">Champions 11 Cricket Club</h1>
-        <p class="lead mb-0">
-          Welcome to the official statistics hub for Champions 11 CC! Browse player
-          performances, match results, and leaderboards that define our journey.
-        </p>
+        <h1>Champions 11 Cricket Club</h1>
+        <p>Explore comprehensive stats of our players and matches. Celebrate our achievements and track our journey.</p>
       </div>
     </section>
 
-    <!-- Team Summary Cards -->
-    <section class="container my-5">
-      <div class="row" id="team-summary"></div>
-    </section>
+    <!-- Team Summary -->
+    <main class="container">
+      <h2>Team Summary</h2>
+      <div id="summary-grid" class="grid grid-3"></div>
 
-    <!-- Charts Section -->
-    <section class="container my-5">
-      <h2 class="mb-4">Top Performers</h2>
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Top Run Scorers</h5>
-              <canvas id="runsChart"></canvas>
-            </div>
-          </div>
+      <!-- Top Players -->
+      <div class="grid grid-2" style="margin-top:2rem;">
+        <div>
+          <h3>Top Run Scorers</h3>
+          <div id="top-runs" class="card"></div>
         </div>
-        <div class="col-md-6 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Top Wicket Takers</h5>
-              <canvas id="wicketsChart"></canvas>
-            </div>
-          </div>
+        <div>
+          <h3>Top Wicket Takers</h3>
+          <div id="top-wickets" class="card"></div>
         </div>
       </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-auto">
-      <div class="container text-center">
-        <small>
-          &copy; <span id="year"></span> Champions 11 CC. All rights reserved.
-        </small>
-      </div>
+    <footer>
+      © <span id="year"></span> Champions 11 CC
     </footer>
 
-    <!-- Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Q6EaC+w63pGpjz8Xc2qwstoqkMJmVmsPR7dWznHgDjncH81Q1+HUkOg1yVZ9Wbl8"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
     <script>
-      // Load and display team summary and charts
       document.addEventListener('DOMContentLoaded', async () => {
-        try {
-          const data = await loadData();
-          const teamStats = getTeamStats(data);
-          const summaryContainer = document.getElementById('team-summary');
+        const data = await loadData();
+        // Team summary cards
+        const summary = data.team_stats && data.team_stats.length ? data.team_stats[0] : {};
+        const items = [
+          { label: 'Matches', value: summary.Matches },
+          { label: 'Wins', value: summary.Won },
+          { label: 'Losses', value: summary.Lost },
+          { label: 'Ties', value: summary.Tie },
+          { label: 'No Result', value: summary['No Result'] },
+          { label: 'Highest Total', value: summary['Highest Team Total'] },
+        ];
+        const grid = document.getElementById('summary-grid');
+        items.forEach((item) => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `<div class="card-title">${item.label}</div><div class="card-value">${formatNumber(item.value)}</div>`;
+          grid.appendChild(card);
+        });
 
-          // Create summary cards for key team statistics
-          const summaryItems = [
-            { label: 'Matches Played', value: teamStats.Matches },
-            { label: 'Wins', value: teamStats.Won },
-            { label: 'Losses', value: teamStats.Lost },
-            { label: 'Ties', value: teamStats.Tie },
-            { label: 'No Results', value: teamStats['No Result'] },
-            { label: 'Highest Team Total', value: teamStats['Highest Team Total'] },
-          ];
-          summaryItems.forEach((item) => {
-            const card = document.createElement('div');
-            card.className = 'col-6 col-md-4 col-lg-2 mb-3';
-            card.innerHTML = `
-              <div class="card shadow-sm h-100 text-center">
-                <div class="card-body">
-                  <h5 class="card-title">${item.label}</h5>
-                  <p class="card-text fs-4 fw-bold">${formatNumber(item.value)}</p>
-                </div>
-              </div>
-            `;
-            summaryContainer.appendChild(card);
+        // Top runs and wickets
+        const topRuns = getTopPlayers(data, 'Runs', 5);
+        const topWkts = getTopPlayers(data, 'Wkts', 5);
+        const runsContainer = document.getElementById('top-runs');
+        const wicketsContainer = document.getElementById('top-wickets');
+        // function to build list
+        function buildList(container, arr, field) {
+          const list = document.createElement('ul');
+          list.style.listStyle = 'none';
+          list.style.padding = '0';
+          arr.forEach((stat, i) => {
+            const player = getPlayerById(data, stat['PlayerID']);
+            const li = document.createElement('li');
+            li.style.marginBottom = '0.5rem';
+            li.innerHTML = `<strong>${i + 1}. <a href="player.html?id=${stat['PlayerID']}">${player['Player Name']}</a></strong> – ${formatNumber(stat[field])}`;
+            list.appendChild(li);
           });
-
-          // Prepare data for charts
-          const topRuns = getTopPlayersByField(data, 'Runs', 5);
-          const topWickets = getTopPlayersByField(data, 'Wkts', 5);
-          const runNames = topRuns.map((p) => p['Player Name']);
-          const runValues = topRuns.map((p) => p.Runs);
-          const wicketNames = topWickets.map((p) => p['Player Name']);
-          const wicketValues = topWickets.map((p) => p.Wkts);
-
-          // Create bar charts
-          const runsCtx = document.getElementById('runsChart').getContext('2d');
-          new Chart(runsCtx, {
-            type: 'bar',
-            data: {
-              labels: runNames,
-              datasets: [
-                {
-                  label: 'Runs',
-                  data: runValues,
-                  backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                  borderColor: 'rgba(54, 162, 235, 1)',
-                  borderWidth: 1,
-                },
-              ],
-            },
-            options: {
-              scales: {
-                y: {
-                  beginAtZero: true,
-                },
-              },
-            },
-          });
-
-          const wicketsCtx = document.getElementById('wicketsChart').getContext('2d');
-          new Chart(wicketsCtx, {
-            type: 'bar',
-            data: {
-              labels: wicketNames,
-              datasets: [
-                {
-                  label: 'Wickets',
-                  data: wicketValues,
-                  backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
-                  borderWidth: 1,
-                },
-              ],
-            },
-            options: {
-              scales: {
-                y: {
-                  beginAtZero: true,
-                },
-              },
-            },
-          });
-
-          // Set footer year
-          document.getElementById('year').textContent = new Date().getFullYear();
-        } catch (err) {
-          console.error(err);
+          container.appendChild(list);
         }
+        buildList(runsContainer, topRuns, 'Runs');
+        buildList(wicketsContainer, topWkts, 'Wkts');
+        document.getElementById('year').textContent = new Date().getFullYear();
       });
     </script>
   </body>
