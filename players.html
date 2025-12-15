@@ -25,22 +25,62 @@
       <div style="margin-bottom:1rem;">
         <input type="text" id="playerSearch" placeholder="Search players..." style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px;" />
       </div>
-      <div class="table-responsive">
-        <table id="playersTable">
-          <thead>
-            <tr>
-              <th data-field="name">Name</th>
-              <th data-field="role">Role</th>
-              <th data-field="matches">Matches</th>
-              <th data-field="runs">Runs</th>
-              <th data-field="wkts">Wkts</th>
-              <th data-field="avg">Avg</th>
-              <th data-field="econ">Econ</th>
-            </tr>
-          </thead>
-          <tbody id="playersBody"></tbody>
-        </table>
-      </div>
+      <section style="margin-top:1.5rem;">
+        <h3>Batting</h3>
+        <div class="table-responsive">
+          <table id="battingTable">
+            <thead>
+              <tr>
+                <th data-field="name">Name</th>
+                <th data-field="role">Role</th>
+                <th data-field="matches">Matches</th>
+                <th data-field="innings">Innings</th>
+                <th data-field="runs">Runs</th>
+                <th data-field="avg">Avg</th>
+                <th data-field="sr">SR</th>
+              </tr>
+            </thead>
+            <tbody id="battingBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section style="margin-top:2rem;">
+        <h3>Bowling</h3>
+        <div class="table-responsive">
+          <table id="bowlingTable">
+            <thead>
+              <tr>
+                <th data-field="name">Name</th>
+                <th data-field="overs">Overs</th>
+                <th data-field="wkts">Wkts</th>
+                <th data-field="econ">Econ</th>
+                <th data-field="maidens">Maidens</th>
+                <th data-field="dots">Dot Balls</th>
+              </tr>
+            </thead>
+            <tbody id="bowlingBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section style="margin-top:2rem;">
+        <h3>Fielding</h3>
+        <div class="table-responsive">
+          <table id="fieldingTable">
+            <thead>
+              <tr>
+                <th data-field="name">Name</th>
+                <th data-field="matches">Matches</th>
+                <th data-field="catches">Catches</th>
+                <th data-field="runouts">Run Outs</th>
+                <th data-field="stumpings">Stumpings</th>
+              </tr>
+            </thead>
+            <tbody id="fieldingBody"></tbody>
+          </table>
+        </div>
+      </section>
     </main>
     <footer>
       © <span id="year"></span> Champions 11 CC
@@ -50,95 +90,159 @@
       document.addEventListener('DOMContentLoaded', async () => {
         const data = await loadData();
         const searchInput = document.getElementById('playerSearch');
-        const tbody = document.getElementById('playersBody');
-        const headers = document.querySelectorAll('#playersTable th');
-        let sortField = '';
-        let ascending = true;
-        function buildRows(list) {
-          tbody.innerHTML = '';
-          list.forEach((stat) => {
-            const player = getPlayerById(data, stat['PlayerID']);
-            const tr = document.createElement('tr');
-            const avg = stat.Avg != null ? parseFloat(stat.Avg).toFixed(2) : '-';
-            const econ = stat.Econ != null ? parseFloat(stat.Econ).toFixed(2) : '-';
-            tr.innerHTML = `
+        const formatDecimal = (value) =>
+          value != null ? parseFloat(value).toFixed(2) : '-';
+        const sections = {
+          batting: {
+            tbody: document.getElementById('battingBody'),
+            headers: document.querySelectorAll('#battingTable th'),
+            sortField: '',
+            ascending: true,
+            getValue: (stat, field) => {
+              const player = getPlayerById(data, stat['PlayerID']);
+              switch (field) {
+                case 'name':
+                  return player ? player['Player Name'].toLowerCase() : '';
+                case 'role':
+                  return player && player['Role']
+                    ? player['Role'].toLowerCase()
+                    : '';
+                case 'matches':
+                  return stat.Matches || 0;
+                case 'innings':
+                  return stat.Innings || 0;
+                case 'runs':
+                  return stat.Runs || 0;
+                case 'avg':
+                  return stat.Avg || 0;
+                case 'sr':
+                  return stat.SR || 0;
+                default:
+                  return 0;
+              }
+            },
+            buildRow: (stat, player) => `
               <td><a href="player.html?id=${stat['PlayerID']}">${player['Player Name']}</a></td>
               <td>${player['Role'] || '-'}</td>
               <td>${formatNumber(stat.Matches)}</td>
+              <td>${formatNumber(stat.Innings)}</td>
               <td>${formatNumber(stat.Runs)}</td>
-              <td>${formatNumber(stat.Wkts)}</td>
-              <td>${avg}</td>
-              <td>${econ}</td>
-            `;
-            tbody.appendChild(tr);
-          });
-        }
-        function updateTable() {
-          let list = filterPlayers(data, searchInput.value);
-          if (sortField) {
-            // Map field names to stat properties or computed values
-            list = list.slice().sort((a, b) => {
-              let aVal, bVal;
-              switch (sortField) {
+              <td>${formatDecimal(stat.Avg)}</td>
+              <td>${formatDecimal(stat.SR)}</td>
+            `,
+          },
+          bowling: {
+            tbody: document.getElementById('bowlingBody'),
+            headers: document.querySelectorAll('#bowlingTable th'),
+            sortField: '',
+            ascending: true,
+            getValue: (stat, field) => {
+              const player = getPlayerById(data, stat['PlayerID']);
+              switch (field) {
                 case 'name':
-                  aVal = getPlayerById(data, a['PlayerID'])['Player Name'];
-                  bVal = getPlayerById(data, b['PlayerID'])['Player Name'];
-                  return ascending
-                    ? aVal.localeCompare(bVal)
-                    : bVal.localeCompare(aVal);
-                case 'role':
-                  aVal = getPlayerById(data, a['PlayerID'])['Role'] || '';
-                  bVal = getPlayerById(data, b['PlayerID'])['Role'] || '';
-                  return ascending
-                    ? aVal.localeCompare(bVal)
-                    : bVal.localeCompare(aVal);
-                case 'matches':
-                  aVal = a.Matches || 0;
-                  bVal = b.Matches || 0;
-                  break;
-                case 'runs':
-                  aVal = a.Runs || 0;
-                  bVal = b.Runs || 0;
-                  break;
+                  return player ? player['Player Name'].toLowerCase() : '';
+                case 'overs':
+                  return stat.Overs != null ? parseFloat(stat.Overs) : 0;
                 case 'wkts':
-                  aVal = a.Wkts || 0;
-                  bVal = b.Wkts || 0;
-                  break;
-                case 'avg':
-                  aVal = a.Avg || 0;
-                  bVal = b.Avg || 0;
-                  break;
+                  return stat.Wkts || 0;
                 case 'econ':
-                  aVal = a.Econ || 0;
-                  bVal = b.Econ || 0;
-                  break;
+                  return stat.Econ || 0;
+                case 'maidens':
+                  return stat.Maidens || 0;
+                case 'dots':
+                  return stat['Dot Balls'] || 0;
                 default:
-                  aVal = 0;
-                  bVal = 0;
+                  return 0;
               }
-              return ascending ? aVal - bVal : bVal - aVal;
-            });
-          }
-          buildRows(list);
-        }
-        // Header click to sort
-        headers.forEach((th) => {
-          th.addEventListener('click', () => {
-            const field = th.getAttribute('data-field');
-            if (sortField === field) {
-              ascending = !ascending;
-            } else {
-              sortField = field;
-              ascending = true;
+            },
+            buildRow: (stat, player) => `
+              <td><a href="player.html?id=${stat['PlayerID']}">${player['Player Name']}</a></td>
+              <td>${stat.Overs != null ? stat.Overs : '-'}</td>
+              <td>${formatNumber(stat.Wkts)}</td>
+              <td>${formatDecimal(stat.Econ)}</td>
+              <td>${formatNumber(stat.Maidens)}</td>
+              <td>${formatNumber(stat['Dot Balls'])}</td>
+            `,
+          },
+          fielding: {
+            tbody: document.getElementById('fieldingBody'),
+            headers: document.querySelectorAll('#fieldingTable th'),
+            sortField: '',
+            ascending: true,
+            getValue: (stat, field) => {
+              const player = getPlayerById(data, stat['PlayerID']);
+              switch (field) {
+                case 'name':
+                  return player ? player['Player Name'].toLowerCase() : '';
+                case 'matches':
+                  return stat.Matches || 0;
+                case 'catches':
+                  return stat.Catches || 0;
+                case 'runouts':
+                  return stat['Run Outs'] || 0;
+                case 'stumpings':
+                  return stat.Stumpings || 0;
+                default:
+                  return 0;
+              }
+            },
+            buildRow: (stat, player) => `
+              <td><a href="player.html?id=${stat['PlayerID']}">${player['Player Name']}</a></td>
+              <td>${formatNumber(stat.Matches)}</td>
+              <td>${formatNumber(stat.Catches)}</td>
+              <td>${formatNumber(stat['Run Outs'])}</td>
+              <td>${formatNumber(stat.Stumpings)}</td>
+            `,
+          },
+        };
+        function sortSection(list, section) {
+          if (!section.sortField) return list.slice();
+          return list.slice().sort((a, b) => {
+            const aVal = section.getValue(a, section.sortField);
+            const bVal = section.getValue(b, section.sortField);
+            if (typeof aVal === 'string' || typeof bVal === 'string') {
+              const aStr = (aVal || '').toString();
+              const bStr = (bVal || '').toString();
+              return section.ascending
+                ? aStr.localeCompare(bStr)
+                : bStr.localeCompare(aStr);
             }
-            updateTable();
+            return section.ascending ? aVal - bVal : bVal - aVal;
+          });
+        }
+        function renderSection(section, list) {
+          section.tbody.innerHTML = '';
+          list.forEach((stat) => {
+            const player = getPlayerById(data, stat['PlayerID']);
+            if (!player) return;
+            const tr = document.createElement('tr');
+            tr.innerHTML = section.buildRow(stat, player);
+            section.tbody.appendChild(tr);
+          });
+        }
+        function updateTables() {
+          const filtered = filterPlayers(data, searchInput.value);
+          Object.values(sections).forEach((section) => {
+            const rows = sortSection(filtered, section);
+            renderSection(section, rows);
+          });
+        }
+        Object.values(sections).forEach((section) => {
+          section.headers.forEach((th) => {
+            const field = th.getAttribute('data-field');
+            th.addEventListener('click', () => {
+              if (section.sortField === field) {
+                section.ascending = !section.ascending;
+              } else {
+                section.sortField = field;
+                section.ascending = true;
+              }
+              updateTables();
+            });
           });
         });
-        // Search input
-        searchInput.addEventListener('input', () => {
-          updateTable();
-        });
-        updateTable();
+        searchInput.addEventListener('input', updateTables);
+        updateTables();
         document.getElementById('year').textContent = new Date().getFullYear();
       });
     </script>

@@ -34,13 +34,13 @@
           { title: 'Runs', field: 'Runs' },
           { title: 'Wickets', field: 'Wkts' },
           { title: 'Batting Average', field: 'Avg' },
-          { title: 'Economy', field: 'Econ' },
+          { title: 'Economy', field: 'Econ', ascending: true },
           { title: 'Strike Rate', field: 'SR' },
           { title: 'Catches', field: 'Catches' },
         ];
         const container = document.getElementById('leaderboards-container');
-        fields.forEach(({ title, field }) => {
-          const players = getTopPlayers(data, field, 10);
+        fields.forEach(({ title, field, ascending }) => {
+          const players = getTopPlayers(data, field, 10, ascending);
           const card = document.createElement('div');
           card.className = 'card';
           card.style.marginBottom = '1rem';

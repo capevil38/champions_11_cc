@@ -56,13 +56,17 @@
         const data = await loadData();
         // Team summary cards
         const summary = data.team_stats && data.team_stats.length ? data.team_stats[0] : {};
+        const highestTeamTotal =
+          data.matches && data.matches.length
+            ? data.matches.reduce((max, match) => Math.max(max, match['Team Runs'] || 0), 0)
+            : null;
         const items = [
           { label: 'Matches', value: summary.Matches },
           { label: 'Wins', value: summary.Won },
           { label: 'Losses', value: summary.Lost },
           { label: 'Ties', value: summary.Tie },
           { label: 'No Result', value: summary['No Result'] },
-          { label: 'Highest Total', value: summary['Highest Team Total'] },
+          { label: 'Highest Total', value: highestTeamTotal },
         ];
         const grid = document.getElementById('summary-grid');
         items.forEach((item) => {

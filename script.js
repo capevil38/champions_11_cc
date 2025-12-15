@@ -21,10 +21,20 @@ function getCareerStatsById(data, id) {
 }
 
 // Get top players by a numeric field (e.g., Runs, Wkts)
-function getTopPlayers(data, fieldName, limit = 5) {
+function getTopPlayers(data, fieldName, limit = 5, ascending = false) {
+  const normalize = (val) => {
+    if (val === null || val === undefined || val === '-') {
+      return ascending ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
+    }
+    return Number(val);
+  };
   return data.player_career_stats
-    .filter((p) => p[fieldName] != null)
-    .sort((a, b) => (b[fieldName] || 0) - (a[fieldName] || 0))
+    .filter((p) => p[fieldName] != null && p[fieldName] !== '-')
+    .sort((a, b) => {
+      const aVal = normalize(a[fieldName]);
+      const bVal = normalize(b[fieldName]);
+      return ascending ? aVal - bVal : bVal - aVal;
+    })
     .slice(0, limit);
 }
 
