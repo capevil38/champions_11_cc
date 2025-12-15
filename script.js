@@ -1,13 +1,74 @@
 // General utility functions for the Champions 11 CC website
 
-// Load the dataset from the provided JSON file
+function getApiBaseUrl() {
+  if (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL) {
+    return window.APP_CONFIG.API_BASE_URL;
+  }
+  try {
+    return window.localStorage.getItem('apiBaseUrl') || '';
+  } catch (err) {
+    return '';
+  }
+}
+
+function setApiBaseUrl(url) {
+  const normalized = (url || '').trim().replace(/\/+$/, '');
+  window.APP_CONFIG = window.APP_CONFIG || {};
+  if (normalized) {
+    window.APP_CONFIG.API_BASE_URL = normalized;
+  } else {
+    delete window.APP_CONFIG.API_BASE_URL;
+  }
+  try {
+    if (normalized) {
+      window.localStorage.setItem('apiBaseUrl', normalized);
+    } else {
+      window.localStorage.removeItem('apiBaseUrl');
+    }
+  } catch (err) {
+    // ignore storage errors
+  }
+  return normalized;
+}
+
+function clearApiBaseUrl() {
+  window.APP_CONFIG = window.APP_CONFIG || {};
+  delete window.APP_CONFIG.API_BASE_URL;
+  try {
+    window.localStorage.removeItem('apiBaseUrl');
+  } catch (err) {
+    // ignore
+  }
+}
+
+function resolveApiUrl(path) {
+  const base = getApiBaseUrl();
+  if (base) {
+    const normalizedBase = base.replace(/\/+$/, '');
+    const normalizedPath = path.replace(/^\/+/, '');
+    return `${normalizedBase}/${normalizedPath}`;
+  }
+  const localPath = path === 'data' ? 'data.json' : path;
+  return new URL(localPath, window.location.href).href;
+}
+
+// Load the dataset from the API (or fallback JSON)
 async function loadData() {
-  const dataUrl = new URL('data.json', window.location.href);
-  const response = await fetch(dataUrl.href);
+  const dataUrl = resolveApiUrl('data');
+  const response = await fetch(dataUrl, { cache: 'no-store' });
   if (!response.ok) {
     throw new Error('Unable to load data');
   }
   return response.json();
+}
+
+if (typeof window !== 'undefined') {
+  window.DataAPI = {
+    getApiBaseUrl,
+    setApiBaseUrl,
+    clearApiBaseUrl,
+    resolveApiUrl,
+  };
 }
 
 // Get player object by PlayerID

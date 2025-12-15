@@ -155,6 +155,36 @@ tr:hover {
   width: 0;
 }
 
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #0c3a59;
+}
+.btn-secondary {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+}
+.btn-secondary:hover {
+  background-color: #a6cde5;
+}
+.muted-text {
+  display: block;
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
 /* Collapsible stat sections */
 .stat-section {
   margin-top: 1.5rem;

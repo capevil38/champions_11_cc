@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin – Champions 11 CC</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+        <a class="navbar-brand" href="index.html">Champions 11 CC</a>
+        <ul class="navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="leaderboards.html">Leaderboards</a></li>
+          <li><a href="admin.html" class="active">Upload</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <h2>Data Management</h2>
+      <section class="card">
+        <h3>API Configuration</h3>
+        <p>Set the base URL of the Render backend (e.g., <code>https://champions11-api.onrender.com</code>).</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center;">
+          <input type="url" id="apiBaseInput" placeholder="https://your-api.onrender.com" style="flex:1; min-width:220px; padding:0.5rem; border-radius:4px; border:1px solid #ccc;" />
+          <button id="saveBaseBtn" class="btn-primary">Save</button>
+          <button id="clearBaseBtn" class="btn-secondary">Clear</button>
+        </div>
+        <small id="apiBaseStatus" class="muted-text"></small>
+      </section>
+
+      <section class="card">
+        <h3>Upload Latest Excel</h3>
+        <form id="uploadForm">
+          <input type="file" id="excelInput" accept=".xlsx,.xlsm,.xltx,.xltm" required style="display:block; margin-bottom:1rem;" />
+          <button type="submit" class="btn-primary">Upload &amp; Regenerate Dataset</button>
+        </form>
+        <div id="uploadStatus" class="muted-text"></div>
+      </section>
+
+      <section class="card">
+        <h3>Current Dataset Snapshot</h3>
+        <div id="dataSummary" class="muted-text">Loading…</div>
+      </section>
+    </main>
+    <footer>
+      © <span id="year"></span> Champions 11 CC
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearEl = document.getElementById('year');
+        yearEl.textContent = new Date().getFullYear();
+        const apiBaseInput = document.getElementById('apiBaseInput');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const apiStatus = document.getElementById('apiBaseStatus');
+        apiBaseInput.value = getApiBaseUrl();
+
+        function showStatus(target, message, isError = false) {
+          target.textContent = message;
+          target.style.color = isError ? '#b30021' : '#0f5132';
+        }
+
+        document.getElementById('saveBaseBtn').addEventListener('click', () => {
+          const value = apiBaseInput.value.trim();
+          if (!value) {
+            showStatus(apiStatus, 'Please enter a valid URL.', true);
+            return;
+          }
+          setApiBaseUrl(value);
+          showStatus(apiStatus, 'API base URL saved.');
+          refreshSummary();
+        });
+
+        document.getElementById('clearBaseBtn').addEventListener('click', () => {
+          clearApiBaseUrl();
+          apiBaseInput.value = '';
+          showStatus(apiStatus, 'API base URL cleared.');
+        });
+
+        document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+          event.preventDefault();
+          uploadStatus.textContent = '';
+          const apiBase = getApiBaseUrl();
+          if (!apiBase) {
+            showStatus(uploadStatus, 'Please configure the API base URL above.', true);
+            return;
+          }
+          const fileInput = document.getElementById('excelInput');
+          if (!fileInput.files.length) {
+            showStatus(uploadStatus, 'Select an Excel file before uploading.', true);
+            return;
+          }
+          const formData = new FormData();
+          formData.append('file', fileInput.files[0]);
+          try {
+            const response = await fetch(resolveApiUrl('upload'), {
+              method: 'POST',
+              body: formData,
+            });
+            if (!response.ok) {
+              const error = await response.json().catch(() => ({}));
+              throw new Error(error.detail || 'Upload failed');
+            }
+            const payload = await response.json();
+            showStatus(uploadStatus, payload.message || 'Dataset updated.');
+            fileInput.value = '';
+            refreshSummary();
+          } catch (err) {
+            showStatus(uploadStatus, err.message || 'Unable to upload.', true);
+          }
+        });
+
+        async function refreshSummary() {
+          const summaryEl = document.getElementById('dataSummary');
+          try {
+            const data = await loadData();
+            summaryEl.innerHTML = `
+              <ul style="margin:0; padding-left:1rem;">
+                <li>Matches: ${data.matches ? data.matches.length : 0}</li>
+                <li>Players: ${data.players ? data.players.length : 0}</li>
+                <li>Batting Records: ${data.batting ? data.batting.length : 0}</li>
+                <li>Bowling Records: ${data.bowling ? data.bowling.length : 0}</li>
+              </ul>
+            `;
+          } catch (err) {
+            summaryEl.textContent = getApiBaseUrl()
+              ? 'Cannot reach the API. Check the URL or deployment.'
+              : 'Dataset not available. Set an API base URL or ensure data.json exists.';
+          }
+        }
+
+        refreshSummary();
+      });
+    </script>
+  </body>
+</html>
