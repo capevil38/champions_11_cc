@@ -25,8 +25,23 @@
         <h2>Matches</h2>
         <span>Filter by opponent or venue</span>
       </div>
-      <div style="margin-bottom:1rem;">
-        <input type="text" id="matchSearch" class="input-control" placeholder="Search by opponent or venue..." />
+      <div class="filter-row">
+        <div>
+          <label for="matchSearch">Search</label>
+          <input type="text" id="matchSearch" class="input-control" placeholder="Search by opponent or venue..." />
+        </div>
+        <div>
+          <label for="opponentFilter">Opponent</label>
+          <select id="opponentFilter" class="input-control">
+            <option value="">All Opponents</option>
+          </select>
+        </div>
+        <div>
+          <label for="venueFilter">Venue</label>
+          <select id="venueFilter" class="input-control">
+            <option value="">All Venues</option>
+          </select>
+        </div>
       </div>
       <div class="table-responsive">
         <table id="matchesTable">
@@ -53,10 +68,30 @@
       document.addEventListener('DOMContentLoaded', async () => {
         const data = await loadData();
         const searchInput = document.getElementById('matchSearch');
+        const opponentSelect = document.getElementById('opponentFilter');
+        const venueSelect = document.getElementById('venueFilter');
         const tbody = document.getElementById('matchesBody');
         const headers = document.querySelectorAll('#matchesTable th');
         let sortField = '';
         let ascending = true;
+        const opponents = Array.from(
+          new Set((data.matches || []).map((m) => m.Opponent).filter(Boolean))
+        ).sort();
+        const venues = Array.from(
+          new Set((data.matches || []).map((m) => m.Venue).filter(Boolean))
+        ).sort();
+        opponents.forEach((opp) => {
+          const option = document.createElement('option');
+          option.value = opp;
+          option.textContent = opp;
+          opponentSelect.appendChild(option);
+        });
+        venues.forEach((venue) => {
+          const option = document.createElement('option');
+          option.value = venue;
+          option.textContent = venue;
+          venueSelect.appendChild(option);
+        });
         function render(list) {
           tbody.innerHTML = '';
           list.forEach((match) => {
@@ -73,17 +108,26 @@
             tbody.appendChild(row);
           });
         }
-        function filterMatches(term) {
-          const t = term.trim().toLowerCase();
-          if (!t) return data.matches;
-          return data.matches.filter((m) => {
-            const opp = (m.Opponent || '').toLowerCase();
-            const venue = (m.Venue || '').toLowerCase();
-            return opp.includes(t) || venue.includes(t);
-          });
+        function applyFilters() {
+          const term = searchInput.value.trim().toLowerCase();
+          let list = data.matches;
+          if (term) {
+            list = list.filter((m) => {
+              const opp = (m.Opponent || '').toLowerCase();
+              const venue = (m.Venue || '').toLowerCase();
+              return opp.includes(term) || venue.includes(term);
+            });
+          }
+          if (opponentSelect.value) {
+            list = list.filter((m) => m.Opponent === opponentSelect.value);
+          }
+          if (venueSelect.value) {
+            list = list.filter((m) => m.Venue === venueSelect.value);
+          }
+          return list;
         }
         function update() {
-          let list = filterMatches(searchInput.value);
+          let list = applyFilters();
           if (sortField) {
             list = list.slice().sort((a, b) => {
               let aVal = a[sortField];
@@ -120,6 +164,8 @@
         });
         // Search event
         searchInput.addEventListener('input', update);
+        opponentSelect.addEventListener('change', update);
+        venueSelect.addEventListener('change', update);
         update();
         document.getElementById('year').textContent = new Date().getFullYear();
       });

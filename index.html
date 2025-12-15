@@ -56,6 +56,27 @@
           <div id="top-fielders" class="stat-feed"></div>
         </div>
       </div>
+
+      <div class="section-heading">
+        <h2>Match Insights Dashboard</h2>
+        <span>Latest highlights & run rates</span>
+      </div>
+      <div class="grid grid-3" id="match-insights"></div>
+
+      <div class="section-heading">
+        <h2>Venue & Opponent Analytics</h2>
+        <span>Where we dominate</span>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-title">Top Venues</div>
+          <div id="venue-analytics" class="stat-feed"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Best Opponents</div>
+          <div id="opponent-analytics" class="stat-feed"></div>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -122,6 +143,71 @@
         buildList(runsContainer, topRuns, 'Runs');
         buildList(wicketsContainer, topWkts, 'Wkts');
         buildList(fieldersContainer, topFielders, 'Catches');
+
+        const insights = Analytics.getMatchInsights(data);
+        const insightsContainer = document.getElementById('match-insights');
+        if (insights && insightsContainer) {
+          const { latest, topBatter, topBowler, teamRunRate, oppRunRate } = insights;
+          const matchCard = document.createElement('div');
+          matchCard.className = 'card';
+          matchCard.innerHTML = `
+            <div class="card-title">Last Match</div>
+            <h3>${latest.Opponent}</h3>
+            <p>${latest.Date} • ${latest.Venue || 'Unknown Venue'}</p>
+            <p>Result: <strong>${latest['Match Result'] || 'N/A'}</strong></p>
+            <p>Run Rates: Us ${teamRunRate || '-'} vs Them ${oppRunRate || '-'}</p>
+          `;
+          const batterCard = document.createElement('div');
+          const batterPlayer = topBatter ? getPlayerById(data, topBatter.PlayerID) : null;
+          batterCard.className = 'card';
+          batterCard.innerHTML = `
+            <div class="card-title">Top Batter</div>
+            <h3>${batterPlayer ? batterPlayer['Player Name'] : 'N/A'}</h3>
+            <p>Runs: <strong>${formatNumber(topBatter ? topBatter.Runs : '-')}</strong></p>
+            <p>Match: ${topBatter ? topBatter.MatchID : '-'}</p>
+          `;
+          const bowlerCard = document.createElement('div');
+          const bowlerPlayer = topBowler ? getPlayerById(data, topBowler.PlayerID) : null;
+          bowlerCard.className = 'card';
+          bowlerCard.innerHTML = `
+            <div class="card-title">Top Bowler</div>
+            <h3>${bowlerPlayer ? bowlerPlayer['Player Name'] : 'N/A'}</h3>
+            <p>Wkts: <strong>${formatNumber(topBowler ? topBowler.Wkts : '-')}</strong></p>
+            <p>Economy: ${topBowler && topBowler.Economy != null ? parseFloat(topBowler.Economy).toFixed(2) : '-'}</p>
+          `;
+          insightsContainer.appendChild(matchCard);
+          insightsContainer.appendChild(batterCard);
+          insightsContainer.appendChild(bowlerCard);
+        }
+
+        function buildAnalyticsFeed(containerId, entries, formatter) {
+          const container = document.getElementById(containerId);
+          if (!container) return;
+          const list = document.createElement('ul');
+          list.style.listStyle = 'none';
+          list.style.padding = '0';
+          entries.forEach((entry, index) => {
+            const li = document.createElement('li');
+            li.style.display = 'flex';
+            li.style.justifyContent = 'space-between';
+            li.style.padding = '0.35rem 0';
+            li.innerHTML = `<strong>${index + 1}. ${formatter.label(entry)}</strong><span>${formatter.value(entry)}</span>`;
+            list.appendChild(li);
+          });
+          container.appendChild(list);
+        }
+
+        const venueAnalytics = Analytics.computeVenueAnalytics(data, 5);
+        const opponentAnalytics = Analytics.computeOpponentAnalytics(data, 5);
+        buildAnalyticsFeed('venue-analytics', venueAnalytics, {
+          label: (entry) => entry.venue,
+          value: (entry) => `${entry.average || '-'} avg`,
+        });
+        buildAnalyticsFeed('opponent-analytics', opponentAnalytics, {
+          label: (entry) => entry.opponent,
+          value: (entry) => `${entry.winPct}% wins`,
+        });
+
         document.getElementById('year').textContent = new Date().getFullYear();
       });
     </script>

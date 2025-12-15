@@ -62,23 +62,6 @@ async function loadData() {
   return response.json();
 }
 
-if (typeof window !== 'undefined') {
-  window.DataAPI = {
-    getApiBaseUrl,
-    setApiBaseUrl,
-    clearApiBaseUrl,
-    resolveApiUrl,
-  };
-  try {
-    const host = window.location.hostname || '';
-    if (host.includes('onrender.com') && !getApiBaseUrl()) {
-      setApiBaseUrl(window.location.origin);
-    }
-  } catch (err) {
-    // ignore
-  }
-}
-
 // Get player object by PlayerID
 function getPlayerById(data, id) {
   return data.players.find((p) => p['PlayerID'] === id);
@@ -177,4 +160,183 @@ function getQueryParams() {
 function formatNumber(num) {
   if (num == null || num === undefined || num === '') return '-';
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function parseMatchDate(match) {
+  if (!match || !match.Date) return null;
+  return new Date(match.Date);
+}
+
+function getMatchesSortedByDate(data) {
+  if (!data.matches) return [];
+  return data.matches
+    .slice()
+    .sort((a, b) => {
+      const dateA = parseMatchDate(a);
+      const dateB = parseMatchDate(b);
+      return (dateB || 0) - (dateA || 0);
+    });
+}
+
+function getMatchInsights(data) {
+  const matches = getMatchesSortedByDate(data);
+  if (!matches.length) return null;
+  const latest = matches[0];
+  const batting = getEntriesForMatch(data, latest.MatchID, 'batting');
+  const bowling = getEntriesForMatch(data, latest.MatchID, 'bowling');
+  const topBatter = batting.reduce((best, entry) => {
+    if (!entry) return best;
+    if (!best || (entry.Runs || 0) > (best.Runs || 0)) return entry;
+    return best;
+  }, null);
+  const topBowler = bowling.reduce((best, entry) => {
+    if (!entry) return best;
+    const wickets = entry.Wkts || 0;
+    if (!best) return entry;
+    const bestWkts = best.Wkts || 0;
+    if (wickets > bestWkts) return entry;
+    if (wickets === bestWkts) {
+      const econ = entry.Economy != null ? parseFloat(entry.Economy) : Infinity;
+      const bestEcon =
+        best.Economy != null ? parseFloat(best.Economy) : Infinity;
+      return econ < bestEcon ? entry : best;
+    }
+    return best;
+  }, null);
+  const teamOvers = latest['Team Overs Played'] || latest.Overs || null;
+  const oppOvers = latest['Opponent Overs Played'] || latest.Overs || null;
+  const teamRunRate =
+    teamOvers && latest['Team Runs']
+      ? (latest['Team Runs'] / teamOvers).toFixed(2)
+      : null;
+  const oppRunRate =
+    oppOvers && latest['Opponent Runs']
+      ? (latest['Opponent Runs'] / oppOvers).toFixed(2)
+      : null;
+  return {
+    latest,
+    topBatter,
+    topBowler,
+    teamRunRate,
+    oppRunRate,
+  };
+}
+
+function computeVenueAnalytics(data, limit = 5) {
+  const venues = {};
+  (data.matches || []).forEach((match) => {
+    const venue = match.Venue || 'Unknown';
+    if (!venues[venue]) {
+      venues[venue] = { venue, matches: 0, runs: 0 };
+    }
+    venues[venue].matches += 1;
+    venues[venue].runs += match['Team Runs'] || 0;
+  });
+  return Object.values(venues)
+    .map((entry) => ({
+      ...entry,
+      average: entry.matches ? (entry.runs / entry.matches).toFixed(1) : '-',
+    }))
+    .sort((a, b) => b.average - a.average)
+    .slice(0, limit);
+}
+
+function computeOpponentAnalytics(data, limit = 5) {
+  const opponents = {};
+  (data.matches || []).forEach((match) => {
+    const opp = match.Opponent || 'Unknown';
+    if (!opponents[opp]) {
+      opponents[opp] = { opponent: opp, matches: 0, wins: 0 };
+    }
+    opponents[opp].matches += 1;
+    if (match['Match Result'] && match['Match Result'].toLowerCase() === 'won') {
+      opponents[opp].wins += 1;
+    }
+  });
+  return Object.values(opponents)
+    .map((entry) => ({
+      ...entry,
+      winPct: entry.matches ? ((entry.wins / entry.matches) * 100).toFixed(1) : '0',
+    }))
+    .sort((a, b) => b.winPct - a.winPct)
+    .slice(0, limit);
+}
+
+function buildPlayerMatchIndex(data) {
+  const matchMap = new Map();
+  (data.matches || []).forEach((match) => {
+    matchMap.set(String(match.MatchID), match);
+  });
+  const opponents = new Set();
+  const venues = new Set();
+  const playerOpponents = {};
+  const playerVenues = {};
+  function addEntry(playerId, match) {
+    if (!playerId || !match) return;
+    if (match.Opponent) {
+      opponents.add(match.Opponent);
+      const set = playerOpponents[playerId] || new Set();
+      set.add(match.Opponent);
+      playerOpponents[playerId] = set;
+    }
+    if (match.Venue) {
+      venues.add(match.Venue);
+      const set = playerVenues[playerId] || new Set();
+      set.add(match.Venue);
+      playerVenues[playerId] = set;
+    }
+  }
+  ['batting', 'bowling', 'fielding'].forEach((section) => {
+    (data[section] || []).forEach((entry) => {
+      const match = matchMap.get(String(entry.MatchID));
+      addEntry(entry.PlayerID, match);
+    });
+  });
+  return {
+    opponents: Array.from(opponents).sort(),
+    venues: Array.from(venues).sort(),
+    playerOpponents,
+    playerVenues,
+  };
+}
+
+function getPlayerComparisonStats(data, playerId) {
+  const player = getPlayerById(data, playerId);
+  const career = getCareerStatsById(data, playerId);
+  const batting = getBattingEntries(data, playerId)
+    .slice()
+    .sort((a, b) => Number(a.MatchID) - Number(b.MatchID));
+  const bowling = getBowlingEntries(data, playerId)
+    .slice()
+    .sort((a, b) => Number(a.MatchID) - Number(b.MatchID));
+  return {
+    player,
+    career,
+    recentBatting: batting.slice(-3),
+    recentBowling: bowling.slice(-3),
+  };
+}
+
+if (typeof window !== 'undefined') {
+  window.DataAPI = {
+    getApiBaseUrl,
+    setApiBaseUrl,
+    clearApiBaseUrl,
+    resolveApiUrl,
+  };
+  window.Analytics = {
+    getMatchInsights,
+    computeVenueAnalytics,
+    computeOpponentAnalytics,
+    buildPlayerMatchIndex,
+    getPlayerComparisonStats,
+  };
+  try {
+    const host = window.location.hostname || '';
+    if (host.includes('onrender.com') && !getApiBaseUrl()) {
+      setApiBaseUrl(window.location.origin);
+    }
+  } catch (err) {
+    // ignore
+  }
 }

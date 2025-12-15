@@ -29,6 +29,20 @@
       <div style="margin-bottom:1rem;">
         <input type="text" id="playerSearch" class="input-control" placeholder="Search players..." />
       </div>
+      <div class="filter-row">
+        <div>
+          <label for="playerOpponentFilter">Opponent Filter</label>
+          <select id="playerOpponentFilter" class="input-control">
+            <option value="">All Opponents</option>
+          </select>
+        </div>
+        <div>
+          <label for="playerVenueFilter">Venue Filter</label>
+          <select id="playerVenueFilter" class="input-control">
+            <option value="">All Venues</option>
+          </select>
+        </div>
+      </div>
       <details class="stat-section" open>
         <summary>Batting</summary>
         <div class="table-responsive">
@@ -93,6 +107,18 @@
           </table>
         </div>
       </details>
+
+      <div class="section-heading">
+        <h2>Player Comparison</h2>
+        <span>Head-to-head metrics</span>
+      </div>
+      <div class="card comparison-card">
+        <div class="comparison-controls">
+          <select id="playerASelect" class="input-control"></select>
+          <select id="playerBSelect" class="input-control"></select>
+        </div>
+        <div class="grid grid-2" id="comparisonResults"></div>
+      </div>
     </main>
     <footer>
       © <span id="year"></span> Champions 11 CC
@@ -102,6 +128,40 @@
       document.addEventListener('DOMContentLoaded', async () => {
         const data = await loadData();
         const searchInput = document.getElementById('playerSearch');
+        const opponentFilter = document.getElementById('playerOpponentFilter');
+        const venueFilter = document.getElementById('playerVenueFilter');
+        const comparisonSelectA = document.getElementById('playerASelect');
+        const comparisonSelectB = document.getElementById('playerBSelect');
+        const comparisonResults = document.getElementById('comparisonResults');
+        const matchIndex = Analytics.buildPlayerMatchIndex(data);
+        matchIndex.opponents.forEach((opp) => {
+          const option = document.createElement('option');
+          option.value = opp;
+          option.textContent = opp;
+          opponentFilter.appendChild(option);
+        });
+        matchIndex.venues.forEach((venue) => {
+          const option = document.createElement('option');
+          option.value = venue;
+          option.textContent = venue;
+          venueFilter.appendChild(option);
+        });
+        data.players.forEach((player, idx) => {
+          [comparisonSelectA, comparisonSelectB].forEach((select) => {
+            const option = document.createElement('option');
+            option.value = player['PlayerID'];
+            option.textContent = player['Player Name'];
+            select.appendChild(option);
+          });
+        });
+        if (data.players.length >= 2) {
+          comparisonSelectA.value = data.players[0]['PlayerID'];
+          comparisonSelectB.value = data.players[1]['PlayerID'];
+        }
+        const playerFilterState = {
+          opponent: '',
+          venue: '',
+        };
         const formatDecimal = (value) =>
           value != null ? parseFloat(value).toFixed(2) : '-';
         const hasValue = (val) =>
@@ -287,8 +347,19 @@
             section.tbody.appendChild(tr);
           });
         }
+        function matchesFilters(stat) {
+          if (playerFilterState.opponent) {
+            const set = matchIndex.playerOpponents[stat['PlayerID']];
+            if (!set || !set.has(playerFilterState.opponent)) return false;
+          }
+          if (playerFilterState.venue) {
+            const set = matchIndex.playerVenues[stat['PlayerID']];
+            if (!set || !set.has(playerFilterState.venue)) return false;
+          }
+          return true;
+        }
         function updateTables() {
-          const filtered = filterPlayers(data, searchInput.value);
+          const filtered = filterPlayers(data, searchInput.value).filter(matchesFilters);
           Object.values(sections).forEach((section) => {
             const baseList = section.filterFn
               ? filtered.filter(section.filterFn)
@@ -312,7 +383,50 @@
           });
         });
         searchInput.addEventListener('input', updateTables);
+        opponentFilter.addEventListener('change', () => {
+          playerFilterState.opponent = opponentFilter.value;
+          updateTables();
+        });
+        venueFilter.addEventListener('change', () => {
+          playerFilterState.venue = venueFilter.value;
+          updateTables();
+        });
         updateTables();
+        function buildComparisonCard(info) {
+          if (!info || !info.player || !info.career) {
+            return `<div class="card">No data</div>`;
+          }
+          const { player, career, recentBatting, recentBowling } = info;
+          const battingSummary = recentBatting
+            .map((entry) => `${entry.MatchID}: ${formatNumber(entry.Runs)} runs`)
+            .join('<br />') || 'No recent batting records';
+          const bowlingSummary = recentBowling
+            .map((entry) => `${entry.MatchID}: ${formatNumber(entry.Wkts)} wkts`)
+            .join('<br />') || 'No recent bowling records';
+          return `
+            <div class="card">
+              <h3>${player['Player Name']}</h3>
+              <div class="stat-grid">
+                <div class="stat-pill"><span>Matches</span>${formatNumber(career.Matches)}</div>
+                <div class="stat-pill"><span>Runs</span>${formatNumber(career.Runs)}</div>
+                <div class="stat-pill"><span>Bat Avg</span>${formatDecimal(career.Avg)}</div>
+                <div class="stat-pill"><span>Strike Rate</span>${formatDecimal(career.SR)}</div>
+                <div class="stat-pill"><span>Wickets</span>${formatNumber(career.Wkts)}</div>
+                <div class="stat-pill"><span>Economy</span>${formatDecimal(career.Econ)}</div>
+              </div>
+              <div class="muted-text"><strong>Recent Batting:</strong><br />${battingSummary}</div>
+              <div class="muted-text" style="margin-top:0.5rem;"><strong>Recent Bowling:</strong><br />${bowlingSummary}</div>
+            </div>
+          `;
+        }
+        function renderComparison() {
+          const statsA = Analytics.getPlayerComparisonStats(data, comparisonSelectA.value);
+          const statsB = Analytics.getPlayerComparisonStats(data, comparisonSelectB.value);
+          comparisonResults.innerHTML = [statsA, statsB].map((info) => buildComparisonCard(info)).join('');
+        }
+        comparisonSelectA.addEventListener('change', renderComparison);
+        comparisonSelectB.addEventListener('change', renderComparison);
+        renderComparison();
         document.getElementById('year').textContent = new Date().getFullYear();
       });
     </script>
