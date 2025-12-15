@@ -25,8 +25,8 @@
       <div style="margin-bottom:1rem;">
         <input type="text" id="playerSearch" placeholder="Search players..." style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px;" />
       </div>
-      <section style="margin-top:1.5rem;">
-        <h3>Batting</h3>
+      <details class="stat-section" open>
+        <summary>Batting</summary>
         <div class="table-responsive">
           <table id="battingTable">
             <thead>
@@ -43,10 +43,10 @@
             <tbody id="battingBody"></tbody>
           </table>
         </div>
-      </section>
+      </details>
 
-      <section style="margin-top:2rem;">
-        <h3>Bowling</h3>
+      <details class="stat-section" open>
+        <summary>Bowling</summary>
         <div class="table-responsive">
           <table id="bowlingTable">
             <thead>
@@ -62,10 +62,10 @@
             <tbody id="bowlingBody"></tbody>
           </table>
         </div>
-      </section>
+      </details>
 
-      <section style="margin-top:2rem;">
-        <h3>Fielding</h3>
+      <details class="stat-section" open>
+        <summary>Fielding</summary>
         <div class="table-responsive">
           <table id="fieldingTable">
             <thead>
@@ -80,7 +80,7 @@
             <tbody id="fieldingBody"></tbody>
           </table>
         </div>
-      </section>
+      </details>
     </main>
     <footer>
       © <span id="year"></span> Champions 11 CC

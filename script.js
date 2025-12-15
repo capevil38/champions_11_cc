@@ -21,7 +21,14 @@ function getCareerStatsById(data, id) {
 }
 
 // Get top players by a numeric field (e.g., Runs, Wkts)
-function getTopPlayers(data, fieldName, limit = 5, ascending = false) {
+function getTopPlayers(
+  data,
+  fieldName,
+  limit = 5,
+  ascending = false,
+  options = {}
+) {
+  const { ignoreZero = false } = options;
   const normalize = (val) => {
     if (val === null || val === undefined || val === '-') {
       return ascending ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
@@ -29,7 +36,12 @@ function getTopPlayers(data, fieldName, limit = 5, ascending = false) {
     return Number(val);
   };
   return data.player_career_stats
-    .filter((p) => p[fieldName] != null && p[fieldName] !== '-')
+    .filter((p) => {
+      const value = p[fieldName];
+      if (value == null || value === '-') return false;
+      if (ignoreZero && Number(value) === 0) return false;
+      return true;
+    })
     .sort((a, b) => {
       const aVal = normalize(a[fieldName]);
       const bVal = normalize(b[fieldName]);

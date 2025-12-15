@@ -40,7 +40,8 @@
         ];
         const container = document.getElementById('leaderboards-container');
         fields.forEach(({ title, field, ascending }) => {
-          const players = getTopPlayers(data, field, 10, ascending);
+          const options = field === 'Econ' ? { ignoreZero: true } : {};
+          const players = getTopPlayers(data, field, 10, ascending, options);
           const card = document.createElement('div');
           card.className = 'card';
           card.style.marginBottom = '1rem';
