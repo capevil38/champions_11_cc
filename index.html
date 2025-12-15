@@ -42,7 +42,7 @@
         <h2>Impact Players</h2>
         <span>Leading the charts</span>
       </div>
-      <div class="grid grid-2">
+      <div class="grid grid-3">
         <div class="card">
           <div class="card-title">Top Run Scorers</div>
           <div id="top-runs" class="stat-feed"></div>
@@ -50,6 +50,10 @@
         <div class="card">
           <div class="card-title">Top Wicket Takers</div>
           <div id="top-wickets" class="stat-feed"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Top Fielders</div>
+          <div id="top-fielders" class="stat-feed"></div>
         </div>
       </div>
     </main>
@@ -64,9 +68,16 @@
         const data = await loadData();
         // Team summary cards
         const summary = data.team_stats && data.team_stats.length ? data.team_stats[0] : {};
-        const highestTeamTotal =
-          data.matches && data.matches.length
-            ? data.matches.reduce((max, match) => Math.max(max, match['Team Runs'] || 0), 0)
+        const matches = data.matches || [];
+        const totals = matches.map((m) => m['Team Runs'] || 0);
+        const wickets = matches.map((m) => m['Team Wickets Lost'] || 0);
+        const highestTeamTotal = totals.length ? Math.max(...totals) : null;
+        const lowestTeamTotal = totals.length ? Math.min(...totals) : null;
+        const avgScore =
+          totals.length > 0 ? (totals.reduce((sum, val) => sum + val, 0) / totals.length).toFixed(1) : null;
+        const avgWkts =
+          wickets.length > 0
+            ? (wickets.reduce((sum, val) => sum + val, 0) / wickets.length).toFixed(1)
             : null;
         const items = [
           { label: 'Matches', value: summary.Matches },
@@ -75,6 +86,9 @@
           { label: 'Ties', value: summary.Tie },
           { label: 'No Result', value: summary['No Result'] },
           { label: 'Highest Total', value: highestTeamTotal },
+          { label: 'Lowest Total', value: lowestTeamTotal },
+          { label: 'Avg Score', value: avgScore },
+          { label: 'Avg Wkts Lost', value: avgWkts },
         ];
         const grid = document.getElementById('summary-grid');
         items.forEach((item) => {
@@ -87,8 +101,10 @@
         // Top runs and wickets
         const topRuns = getTopPlayers(data, 'Runs', 5);
         const topWkts = getTopPlayers(data, 'Wkts', 5);
+        const topFielders = getTopPlayers(data, 'Catches', 5);
         const runsContainer = document.getElementById('top-runs');
         const wicketsContainer = document.getElementById('top-wickets');
+        const fieldersContainer = document.getElementById('top-fielders');
         // function to build list
         function buildList(container, arr, field) {
           const list = document.createElement('ul');
@@ -98,13 +114,14 @@
             const player = getPlayerById(data, stat['PlayerID']);
             const li = document.createElement('li');
             li.style.marginBottom = '0.5rem';
-            li.innerHTML = `<strong>${i + 1}. <a href="player.html?id=${stat['PlayerID']}">${player['Player Name']}</a></strong> – ${formatNumber(stat[field])}`;
+            li.innerHTML = `<strong>${i + 1}. <a href="player.html?id=${stat['PlayerID']}">${player['Player Name']}</a></strong><span>${formatNumber(stat[field])}</span>`;
             list.appendChild(li);
           });
           container.appendChild(list);
         }
         buildList(runsContainer, topRuns, 'Runs');
         buildList(wicketsContainer, topWkts, 'Wkts');
+        buildList(fieldersContainer, topFielders, 'Catches');
         document.getElementById('year').textContent = new Date().getFullYear();
       });
     </script>
