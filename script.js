@@ -317,6 +317,100 @@ function getPlayerComparisonStats(data, playerId) {
   };
 }
 
+function computeBattingRating(entry) {
+  if (!entry) return 0;
+  const runs = entry.Runs || 0;
+  const strikeRate =
+    entry['Strike Rate'] != null ? parseFloat(entry['Strike Rate']) : null;
+  let score = runs;
+  if (strikeRate) {
+    score += strikeRate / 4;
+  }
+  if (runs >= 50) score += 12;
+  else if (runs >= 30) score += 6;
+  if (entry.Out === 'No') score += 5;
+  return parseFloat(Math.max(score, 0).toFixed(1));
+}
+
+function computeBowlingRating(entry) {
+  if (!entry) return 0;
+  const wickets = entry.Wkts || 0;
+  const runs = entry['Bowl Runs'] || 0;
+  const economy =
+    entry.Economy != null ? parseFloat(entry.Economy) : null;
+  let score = wickets * 18;
+  score += Math.max(0, 20 - runs * 0.5);
+  if (economy != null) {
+    score += Math.max(0, 15 - economy * 2);
+  }
+  return parseFloat(Math.max(score, 0).toFixed(1));
+}
+
+function computeFieldingRating(entry) {
+  if (!entry) return 0;
+  const catches = entry.Catches || 0;
+  const runOuts = entry['Run Outs'] || 0;
+  const stumpings = entry.Stumpings || 0;
+  const score = catches * 5 + runOuts * 7 + stumpings * 6;
+  return parseFloat(score.toFixed(1));
+}
+
+function getBestBowlingSpells(data, limit = 10) {
+  return (data.bowling || [])
+    .map((entry) => ({
+      ...entry,
+      rating: computeBowlingRating(entry),
+    }))
+    .sort((a, b) => {
+      if ((b.Wkts || 0) !== (a.Wkts || 0)) {
+        return (b.Wkts || 0) - (a.Wkts || 0);
+      }
+      const econA = a.Economy != null ? parseFloat(a.Economy) : Infinity;
+      const econB = b.Economy != null ? parseFloat(b.Economy) : Infinity;
+      if (econA !== econB) return econA - econB;
+      return (a['Bowl Runs'] || 0) - (b['Bowl Runs'] || 0);
+    })
+    .slice(0, limit);
+}
+
+function calculateMatchRatings(data, matchId) {
+  const batting = getEntriesForMatch(data, matchId, 'batting');
+  const bowling = getEntriesForMatch(data, matchId, 'bowling');
+  const fielding = getEntriesForMatch(data, matchId, 'fielding');
+  const ratingsMap = new Map();
+  const ensureEntry = (playerId) => {
+    if (!ratingsMap.has(playerId)) {
+      ratingsMap.set(playerId, {
+        PlayerID: playerId,
+        batting: 0,
+        bowling: 0,
+        fielding: 0,
+      });
+    }
+    return ratingsMap.get(playerId);
+  };
+  batting.forEach((entry) => {
+    const rating = ensureEntry(entry.PlayerID);
+    rating.batting += computeBattingRating(entry);
+  });
+  bowling.forEach((entry) => {
+    const rating = ensureEntry(entry.PlayerID);
+    rating.bowling += computeBowlingRating(entry);
+  });
+  fielding.forEach((entry) => {
+    const rating = ensureEntry(entry.PlayerID);
+    rating.fielding += computeFieldingRating(entry);
+  });
+  return Array.from(ratingsMap.values())
+    .map((entry) => ({
+      ...entry,
+      overall: parseFloat(
+        (entry.batting + entry.bowling + entry.fielding).toFixed(1)
+      ),
+    }))
+    .sort((a, b) => b.overall - a.overall);
+}
+
 if (typeof window !== 'undefined') {
   window.DataAPI = {
     getApiBaseUrl,
@@ -330,6 +424,11 @@ if (typeof window !== 'undefined') {
     computeOpponentAnalytics,
     buildPlayerMatchIndex,
     getPlayerComparisonStats,
+    computeBattingRating,
+    computeBowlingRating,
+    computeFieldingRating,
+    getBestBowlingSpells,
+    calculateMatchRatings,
   };
   try {
     const host = window.location.hostname || '';

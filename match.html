@@ -79,6 +79,22 @@
           <tbody id="fieldingBody"></tbody>
         </table>
       </div>
+
+      <h3 style="margin-top:2rem;">Match Ratings</h3>
+      <div class="table-responsive">
+        <table id="ratingsTable">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Batting</th>
+              <th>Bowling</th>
+              <th>Fielding</th>
+              <th>Overall</th>
+            </tr>
+          </thead>
+          <tbody id="ratingsBody"></tbody>
+        </table>
+      </div>
     </main>
     <footer>
       © <span id="year"></span> Champions 11 CC
@@ -174,6 +190,25 @@
               <td>${formatNumber(entry.Catches)}</td>
               <td>${formatNumber(entry['Run Outs'])}</td>
               <td>${formatNumber(entry.Stumpings)}</td>
+            </tr>
+          `;
+        });
+        function formatDecimal(value) {
+          if (value == null || Number.isNaN(value)) return '-';
+          return parseFloat(value).toFixed(1);
+        }
+        const ratings = Analytics.calculateMatchRatings(data, matchId);
+        const ratingsBody = document.getElementById('ratingsBody');
+        ratings.forEach((entry) => {
+          const player = getPlayerById(data, entry.PlayerID);
+          const name = player ? player['Player Name'] : entry.PlayerID;
+          ratingsBody.innerHTML += `
+            <tr>
+              <td><a href="player.html?id=${entry.PlayerID}">${name}</a></td>
+              <td>${formatDecimal(entry.batting)}</td>
+              <td>${formatDecimal(entry.bowling)}</td>
+              <td>${formatDecimal(entry.fielding)}</td>
+              <td>${formatDecimal(entry.overall)}</td>
             </tr>
           `;
         });

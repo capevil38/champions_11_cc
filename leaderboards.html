@@ -91,6 +91,26 @@
           card.appendChild(list);
           container.appendChild(card);
         });
+        const spells = Analytics.getBestBowlingSpells(data, 8);
+        const spellsCard = document.createElement('div');
+        spellsCard.className = 'card';
+        const spellsList = document.createElement('ul');
+        spellsList.style.listStyle = 'none';
+        spellsList.style.padding = '0';
+        spells.forEach((spell, idx) => {
+          const player = getPlayerById(data, spell.PlayerID);
+          const li = document.createElement('li');
+          li.style.marginBottom = '0.4rem';
+          li.innerHTML = `
+            <strong>${idx + 1}. <a href="player.html?id=${spell.PlayerID}">${player['Player Name']}</a></strong>
+            – ${formatNumber(spell.Wkts)}/${formatNumber(spell['Bowl Runs'])} vs
+            <a href="match.html?id=${spell.MatchID}">${spell.MatchID}</a>
+          `;
+          spellsList.appendChild(li);
+        });
+        spellsCard.innerHTML = '<h3>Best Bowling Spells</h3>';
+        spellsCard.appendChild(spellsList);
+        container.appendChild(spellsCard);
         document.getElementById('year').textContent = new Date().getFullYear();
       });
     </script>
