@@ -82,7 +82,15 @@ function getBowlingEntries(data, playerId) {
 
 // Get entries for a match
 function getEntriesForMatch(data, matchId, type) {
-  return data[type].filter((e) => e['MatchID'] == matchId);
+  if (!data[type]) return [];
+  const targetId =
+    typeof matchId === 'number' ? matchId : Number.parseInt(matchId, 10);
+  if (Number.isNaN(targetId)) {
+    return [];
+  }
+  return data[type].filter(
+    (e) => Number.parseInt(e['MatchID'], 10) === targetId
+  );
 }
 
 // Parse query parameters from URL

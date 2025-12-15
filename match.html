@@ -82,14 +82,17 @@
     <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const params = getQueryParams();
-        const matchId = params.id;
+        const matchIdParam = params.id;
+        const matchId = matchIdParam ? Number.parseInt(matchIdParam, 10) : null;
         const headerEl = document.getElementById('match-header');
-        if (!matchId) {
+        if (!matchId || Number.isNaN(matchId)) {
           headerEl.innerHTML = '<h2>Match not found</h2>';
           return;
         }
         const data = await loadData();
-        const match = data.matches.find((m) => m.MatchID == matchId);
+        const match = data.matches.find(
+          (m) => Number.parseInt(m.MatchID, 10) === matchId
+        );
         if (!match) {
           headerEl.innerHTML = '<h2>Match not found</h2>';
           return;
