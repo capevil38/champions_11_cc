@@ -98,12 +98,14 @@
         // Info cards
         const info = [
           { label: 'Result', value: match['Match Result'] },
-          { label: 'Overs Format', value: match['Overs Format'] },
+          { label: 'Match Type', value: match['MatchType'] },
+          { label: 'Overs', value: match['Overs'] },
           { label: 'Innings', value: match['Innings Type'] },
-          { label: 'Toss Winner', value: match['Toss Winner'] },
-          { label: 'Toss Decision', value: match['Toss Decision'] },
-          { label: 'Team Runs/Wkts', value: `${formatNumber(match['Team Runs'])}/${formatNumber(match['Team Wickets'])}` },
-          { label: 'Opp Runs/Wkts', value: `${formatNumber(match['Opp Runs'])}/${formatNumber(match['Opp Wickets'])}` },
+          { label: 'Toss', value: match['Toss'] },
+          { label: 'Decision', value: match['Decision'] },
+          { label: 'Tournament', value: match['Tournament'] },
+          { label: 'Team Runs/Wkts', value: `${formatNumber(match['Team Runs'])}/${formatNumber(match['Team Wickets Lost'])}` },
+          { label: 'Opp Runs/Wkts', value: `${formatNumber(match['Opponent Runs'])}/${formatNumber(match['Opponent Wickets Lost'])}` },
         ];
         const cardsContainer = document.getElementById('match-cards');
         info.forEach((item) => {

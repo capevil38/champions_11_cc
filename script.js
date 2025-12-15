@@ -2,7 +2,8 @@
 
 // Load the dataset from the provided JSON file
 async function loadData() {
-  const response = await fetch('./data.json');
+  const dataUrl = new URL('data.json', window.location.href);
+  const response = await fetch(dataUrl.href);
   if (!response.ok) {
     throw new Error('Unable to load data');
   }

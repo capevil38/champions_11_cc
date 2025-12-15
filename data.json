@@ -10,7 +10,7 @@
       "Opponent Wickets Lost": 3,
       "Opponent Overs Played": 23,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 23,
       "Date": "2025-07-26",
@@ -33,7 +33,7 @@
       "Opponent Wickets Lost": 6,
       "Opponent Overs Played": 30,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 30,
       "Date": "2025-08-09",
@@ -56,7 +56,7 @@
       "Opponent Wickets Lost": 10,
       "Opponent Overs Played": 29.5,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 30,
       "Date": "2025-09-06",
@@ -79,7 +79,7 @@
       "Opponent Wickets Lost": 10,
       "Opponent Overs Played": 29.4,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 30,
       "Date": "2025-09-13",
@@ -102,7 +102,7 @@
       "Opponent Wickets Lost": 5,
       "Opponent Overs Played": 21,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 21,
       "Date": "2025-10-29",
@@ -125,7 +125,7 @@
       "Opponent Wickets Lost": 10,
       "Opponent Overs Played": 15.4,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 25,
       "Date": "2025-11-08",
@@ -148,7 +148,7 @@
       "Opponent Wickets Lost": 5,
       "Opponent Overs Played": 18.1,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 22,
       "Date": "2025-11-15",
@@ -171,7 +171,7 @@
       "Opponent Wickets Lost": 8,
       "Opponent Overs Played": 25,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 25,
       "Date": "2025-12-05",
@@ -194,7 +194,7 @@
       "Opponent Wickets Lost": 3,
       "Opponent Overs Played": 17.5,
       "Tournament": "Practice Match",
-      "Round": NaN,
+      "Round": null,
       "MatchType": "Limited Overs",
       "Overs": 23,
       "Date": "2025-12-13",
@@ -409,7 +409,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -420,7 +420,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -431,7 +431,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -442,7 +442,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -453,7 +453,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -464,7 +464,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -475,7 +475,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -486,7 +486,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -497,7 +497,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -508,7 +508,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18418557,
@@ -519,7 +519,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -530,7 +530,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -541,7 +541,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -552,7 +552,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -563,7 +563,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -574,7 +574,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -585,7 +585,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -596,7 +596,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -607,7 +607,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -618,7 +618,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -629,7 +629,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 18642464,
@@ -640,7 +640,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -651,7 +651,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -662,7 +662,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -673,7 +673,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -684,7 +684,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -695,7 +695,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -706,7 +706,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -717,7 +717,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -728,7 +728,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -739,7 +739,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19019010,
@@ -750,7 +750,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -761,7 +761,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -772,7 +772,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -783,7 +783,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -794,7 +794,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -805,7 +805,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -816,7 +816,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -827,7 +827,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -838,7 +838,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -849,7 +849,7 @@
       "Sixes": 4,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -860,7 +860,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19112746,
@@ -871,7 +871,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -882,7 +882,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -893,7 +893,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -904,7 +904,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -915,7 +915,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -926,7 +926,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -937,7 +937,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -948,7 +948,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -959,7 +959,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -970,7 +970,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19859354,
@@ -981,7 +981,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -992,7 +992,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1003,7 +1003,7 @@
       "Sixes": 2,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1014,7 +1014,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1025,7 +1025,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1036,7 +1036,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1047,7 +1047,7 @@
       "Sixes": 9,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1058,7 +1058,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1069,7 +1069,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1080,7 +1080,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1091,7 +1091,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 13848394,
@@ -1102,7 +1102,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1113,7 +1113,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1124,7 +1124,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1135,7 +1135,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1146,7 +1146,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1157,7 +1157,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1168,7 +1168,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1179,7 +1179,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1190,7 +1190,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1201,7 +1201,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1212,7 +1212,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 19989363,
@@ -1223,7 +1223,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1234,7 +1234,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1245,7 +1245,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1256,7 +1256,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1267,7 +1267,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1278,7 +1278,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1289,7 +1289,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1300,7 +1300,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20648752,
@@ -1311,7 +1311,7 @@
       "Sixes": 1,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1322,7 +1322,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1333,7 +1333,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1344,7 +1344,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1355,7 +1355,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1366,7 +1366,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1377,7 +1377,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1388,7 +1388,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1399,7 +1399,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1410,7 +1410,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1421,7 +1421,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": NaN
+      "Strike Rate": null
     },
     {
       "MatchID": 20156519,
@@ -1432,7 +1432,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": NaN
+      "Strike Rate": null
     }
   ],
   "bowling": [
@@ -1448,7 +1448,7 @@
       "Sixes": 0,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1462,7 +1462,7 @@
       "Sixes": 2,
       "Wides": 0,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1476,7 +1476,7 @@
       "Sixes": 1,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1490,7 +1490,7 @@
       "Sixes": 1,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1504,7 +1504,7 @@
       "Sixes": 0,
       "Wides": 0,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1518,7 +1518,7 @@
       "Sixes": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1532,7 +1532,7 @@
       "Sixes": 2,
       "Wides": 7,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1546,7 +1546,7 @@
       "Sixes": 3,
       "Wides": 1,
       "No-Balls": 2,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18418557,
@@ -1560,7 +1560,7 @@
       "Sixes": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1574,7 +1574,7 @@
       "Sixes": 0,
       "Wides": 8,
       "No-Balls": 2,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1588,7 +1588,7 @@
       "Sixes": 1,
       "Wides": 5,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1602,7 +1602,7 @@
       "Sixes": 0,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1616,7 +1616,7 @@
       "Sixes": 0,
       "Wides": 4,
       "No-Balls": 2,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1630,7 +1630,7 @@
       "Sixes": 1,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1644,7 +1644,7 @@
       "Sixes": 0,
       "Wides": 10,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1658,7 +1658,7 @@
       "Sixes": 0,
       "Wides": 6,
       "No-Balls": 3,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 18642464,
@@ -1672,7 +1672,7 @@
       "Sixes": 0,
       "Wides": 3,
       "No-Balls": 2,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1686,7 +1686,7 @@
       "Sixes": 0,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1700,7 +1700,7 @@
       "Sixes": 0,
       "Wides": 4,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1714,7 +1714,7 @@
       "Sixes": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1728,7 +1728,7 @@
       "Sixes": 0,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1742,7 +1742,7 @@
       "Sixes": 0,
       "Wides": 2,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1756,7 +1756,7 @@
       "Sixes": 0,
       "Wides": 7,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1770,7 +1770,7 @@
       "Sixes": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19019010,
@@ -1784,7 +1784,7 @@
       "Sixes": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19112746,
@@ -1798,7 +1798,7 @@
       "Sixes": 0,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19112746,
@@ -1812,7 +1812,7 @@
       "Sixes": 1,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19112746,
@@ -1826,7 +1826,7 @@
       "Sixes": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19112746,
@@ -1840,7 +1840,7 @@
       "Sixes": 2,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19112746,
@@ -1854,7 +1854,7 @@
       "Sixes": 0,
       "Wides": 7,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19112746,
@@ -1868,7 +1868,7 @@
       "Sixes": 0,
       "Wides": 6,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19859354,
@@ -1877,12 +1877,12 @@
       "Maidens": 0,
       "Runs": 26,
       "Wickets": 2,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 19859354,
@@ -1891,12 +1891,12 @@
       "Maidens": 0,
       "Runs": 20,
       "Wickets": 0,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 19859354,
@@ -1905,12 +1905,12 @@
       "Maidens": 0,
       "Runs": 33,
       "Wickets": 0,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 19859354,
@@ -1919,12 +1919,12 @@
       "Maidens": 0,
       "Runs": 30,
       "Wickets": 1,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 19859354,
@@ -1933,12 +1933,12 @@
       "Maidens": 0,
       "Runs": 44,
       "Wickets": 2,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 19859354,
@@ -1947,12 +1947,12 @@
       "Maidens": 0,
       "Runs": 44,
       "Wickets": 0,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 19859354,
@@ -1961,12 +1961,12 @@
       "Maidens": 0,
       "Runs": 9,
       "Wickets": 0,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 13848394,
@@ -1975,12 +1975,12 @@
       "Maidens": 0,
       "Runs": 23,
       "Wickets": 2,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 13848394,
@@ -1989,12 +1989,12 @@
       "Maidens": 0,
       "Runs": 22,
       "Wickets": 2,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 13848394,
@@ -2003,12 +2003,12 @@
       "Maidens": 0,
       "Runs": 9,
       "Wickets": 0,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 13848394,
@@ -2017,12 +2017,12 @@
       "Maidens": 0,
       "Runs": 18,
       "Wickets": 3,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 13848394,
@@ -2031,12 +2031,12 @@
       "Maidens": 0,
       "Runs": 20,
       "Wickets": 1,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 13848394,
@@ -2045,12 +2045,12 @@
       "Maidens": 0,
       "Runs": 41,
       "Wickets": 0,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 13848394,
@@ -2059,12 +2059,12 @@
       "Maidens": 0,
       "Runs": 24,
       "Wickets": 0,
-      "Dots": NaN,
-      "Fours": NaN,
-      "Sixes": NaN,
-      "Wides": NaN,
-      "No-Balls": NaN,
-      "Economy": NaN
+      "Dots": null,
+      "Fours": null,
+      "Sixes": null,
+      "Wides": null,
+      "No-Balls": null,
+      "Economy": null
     },
     {
       "MatchID": 19989363,
@@ -2078,7 +2078,7 @@
       "Sixes": 0,
       "Wides": 5,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19989363,
@@ -2092,7 +2092,7 @@
       "Sixes": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19989363,
@@ -2106,7 +2106,7 @@
       "Sixes": 1,
       "Wides": 7,
       "No-Balls": 2,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19989363,
@@ -2120,7 +2120,7 @@
       "Sixes": 1,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19989363,
@@ -2134,7 +2134,7 @@
       "Sixes": 0,
       "Wides": 6,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 19989363,
@@ -2148,7 +2148,7 @@
       "Sixes": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20648752,
@@ -2162,7 +2162,7 @@
       "Sixes": 0,
       "Wides": 7,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20648752,
@@ -2176,7 +2176,7 @@
       "Sixes": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20648752,
@@ -2190,7 +2190,7 @@
       "Sixes": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20648752,
@@ -2204,7 +2204,7 @@
       "Sixes": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20648752,
@@ -2218,7 +2218,7 @@
       "Sixes": 2,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20648752,
@@ -2232,7 +2232,7 @@
       "Sixes": 1,
       "Wides": 0,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20648752,
@@ -2246,7 +2246,7 @@
       "Sixes": 1,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20156519,
@@ -2260,7 +2260,7 @@
       "Sixes": 2,
       "Wides": 9,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20156519,
@@ -2274,7 +2274,7 @@
       "Sixes": 1,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20156519,
@@ -2288,7 +2288,7 @@
       "Sixes": 0,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20156519,
@@ -2302,7 +2302,7 @@
       "Sixes": 0,
       "Wides": 1,
       "No-Balls": 1,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20156519,
@@ -2316,7 +2316,7 @@
       "Sixes": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     },
     {
       "MatchID": 20156519,
@@ -2330,7 +2330,7 @@
       "Sixes": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": NaN
+      "Economy": null
     }
   ],
   "fielding": [
@@ -3129,8 +3129,8 @@
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 1,
-      "Catches": NaN,
-      "Run Outs": NaN,
+      "Catches": null,
+      "Run Outs": null,
       "Stumpings": 0
     },
     {
@@ -3156,8 +3156,8 @@
       "No-Balls": 1,
       "Fours Conceded": 5,
       "Sixes Conceded": 0,
-      "Catches": NaN,
-      "Run Outs": NaN,
+      "Catches": null,
+      "Run Outs": null,
       "Stumpings": 0
     },
     {
@@ -3183,9 +3183,9 @@
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": NaN,
-      "Run Outs": NaN,
-      "Stumpings": NaN
+      "Catches": null,
+      "Run Outs": null,
+      "Stumpings": null
     },
     {
       "PlayerID": "P25",
@@ -3210,9 +3210,9 @@
       "No-Balls": 0,
       "Fours Conceded": 6,
       "Sixes Conceded": 0,
-      "Catches": NaN,
-      "Run Outs": NaN,
-      "Stumpings": NaN
+      "Catches": null,
+      "Run Outs": null,
+      "Stumpings": null
     },
     {
       "PlayerID": "P26",
@@ -3237,9 +3237,9 @@
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": NaN,
-      "Run Outs": NaN,
-      "Stumpings": NaN
+      "Catches": null,
+      "Run Outs": null,
+      "Stumpings": null
     },
     {
       "PlayerID": "P27",
@@ -3264,9 +3264,9 @@
       "No-Balls": 0,
       "Fours Conceded": 0,
       "Sixes Conceded": 0,
-      "Catches": NaN,
-      "Run Outs": NaN,
-      "Stumpings": NaN
+      "Catches": null,
+      "Run Outs": null,
+      "Stumpings": null
     }
   ],
   "leaderboards": [

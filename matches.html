@@ -34,7 +34,7 @@
               <th data-field="Venue">Venue</th>
               <th data-field="Match Result">Result</th>
               <th data-field="Team Runs">Team R/W</th>
-              <th data-field="Opp Runs">Opp R/W</th>
+              <th data-field="Opponent Runs">Opp R/W</th>
             </tr>
           </thead>
           <tbody id="matchesBody"></tbody>
@@ -63,8 +63,8 @@
               <td>${match.Opponent || '-'}</td>
               <td>${match.Venue || '-'}</td>
               <td>${match['Match Result'] || '-'}</td>
-              <td>${formatNumber(match['Team Runs'])}/${formatNumber(match['Team Wickets'])}</td>
-              <td>${formatNumber(match['Opp Runs'])}/${formatNumber(match['Opp Wickets'])}</td>
+              <td>${formatNumber(match['Team Runs'])}/${formatNumber(match['Team Wickets Lost'])}</td>
+              <td>${formatNumber(match['Opponent Runs'])}/${formatNumber(match['Opponent Wickets Lost'])}</td>
             `;
             tbody.appendChild(row);
           });
@@ -85,7 +85,7 @@
               let aVal = a[sortField];
               let bVal = b[sortField];
               // handle numbers separately
-              if (['Team Runs', 'Opp Runs'].includes(sortField)) {
+              if (['Team Runs', 'Opponent Runs'].includes(sortField)) {
                 aVal = a[sortField] || 0;
                 bVal = b[sortField] || 0;
               } else if (sortField === 'Date') {
