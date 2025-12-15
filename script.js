@@ -69,6 +69,14 @@ if (typeof window !== 'undefined') {
     clearApiBaseUrl,
     resolveApiUrl,
   };
+  try {
+    const host = window.location.hostname || '';
+    if (host.includes('onrender.com') && !getApiBaseUrl()) {
+      setApiBaseUrl(window.location.origin);
+    }
+  } catch (err) {
+    // ignore
+  }
 }
 
 // Get player object by PlayerID

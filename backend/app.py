@@ -7,6 +7,7 @@ from typing import Any, Dict
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from .data_processor import dataset_template, parse_workbook_bytes
 
@@ -76,3 +77,10 @@ async def upload_workbook(file: UploadFile = File(...)) -> Dict[str, Any]:
         "matches": len(dataset.get("matches", [])),
         "players": len(dataset.get("players", [])),
     }
+
+# Serve the static frontend (HTML/CSS/JS) directly from the repository root
+app.mount(
+    "/",
+    StaticFiles(directory=BASE_DIR, html=True),
+    name="static",
+)
