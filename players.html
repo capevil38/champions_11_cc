@@ -36,6 +36,9 @@
                 <th data-field="matches">Matches</th>
                 <th data-field="innings">Innings</th>
                 <th data-field="runs">Runs</th>
+                <th data-field="balls">Balls</th>
+                <th data-field="fours">Fours</th>
+                <th data-field="sixes">Sixes</th>
                 <th data-field="avg">Avg</th>
                 <th data-field="sr">SR</th>
               </tr>
@@ -54,9 +57,14 @@
                 <th data-field="name">Name</th>
                 <th data-field="overs">Overs</th>
                 <th data-field="wkts">Wkts</th>
+                <th data-field="runs">Runs</th>
                 <th data-field="econ">Econ</th>
                 <th data-field="maidens">Maidens</th>
                 <th data-field="dots">Dot Balls</th>
+                <th data-field="foursconceded">4s Given</th>
+                <th data-field="sixesconceded">6s Given</th>
+                <th data-field="wides">Wides</th>
+                <th data-field="noballs">No-Balls</th>
               </tr>
             </thead>
             <tbody id="bowlingBody"></tbody>
@@ -92,12 +100,41 @@
         const searchInput = document.getElementById('playerSearch');
         const formatDecimal = (value) =>
           value != null ? parseFloat(value).toFixed(2) : '-';
+        const hasValue = (val) =>
+          !(
+            val === null ||
+            val === undefined ||
+            val === '' ||
+            val === '-'
+          );
+        const hasBattingData = (stat) =>
+          ['Runs', 'Balls', 'Fours', 'Sixes', 'Avg', 'SR'].some((field) =>
+            hasValue(stat[field])
+          );
+        const hasBowlingData = (stat) =>
+          [
+            'Wkts',
+            'Overs',
+            'Econ',
+            'Maidens',
+            'Dot Balls',
+            'Bowl Runs',
+            'Fours Conceded',
+            'Sixes Conceded',
+            'Wides',
+            'No-Balls',
+          ].some((field) => hasValue(stat[field]));
+        const hasFieldingData = (stat) =>
+          ['Catches', 'Run Outs', 'Stumpings'].some((field) =>
+            hasValue(stat[field])
+          );
         const sections = {
           batting: {
             tbody: document.getElementById('battingBody'),
             headers: document.querySelectorAll('#battingTable th'),
             sortField: '',
             ascending: true,
+            filterFn: hasBattingData,
             getValue: (stat, field) => {
               const player = getPlayerById(data, stat['PlayerID']);
               switch (field) {
@@ -113,6 +150,12 @@
                   return stat.Innings || 0;
                 case 'runs':
                   return stat.Runs || 0;
+                case 'balls':
+                  return stat.Balls || 0;
+                case 'fours':
+                  return stat.Fours || 0;
+                case 'sixes':
+                  return stat.Sixes || 0;
                 case 'avg':
                   return stat.Avg || 0;
                 case 'sr':
@@ -127,6 +170,9 @@
               <td>${formatNumber(stat.Matches)}</td>
               <td>${formatNumber(stat.Innings)}</td>
               <td>${formatNumber(stat.Runs)}</td>
+              <td>${formatNumber(stat.Balls)}</td>
+              <td>${formatNumber(stat.Fours)}</td>
+              <td>${formatNumber(stat.Sixes)}</td>
               <td>${formatDecimal(stat.Avg)}</td>
               <td>${formatDecimal(stat.SR)}</td>
             `,
@@ -136,6 +182,7 @@
             headers: document.querySelectorAll('#bowlingTable th'),
             sortField: '',
             ascending: true,
+            filterFn: hasBowlingData,
             getValue: (stat, field) => {
               const player = getPlayerById(data, stat['PlayerID']);
               switch (field) {
@@ -145,12 +192,22 @@
                   return stat.Overs != null ? parseFloat(stat.Overs) : 0;
                 case 'wkts':
                   return stat.Wkts || 0;
+                case 'runs':
+                  return stat['Bowl Runs'] || 0;
                 case 'econ':
                   return stat.Econ || 0;
                 case 'maidens':
                   return stat.Maidens || 0;
                 case 'dots':
                   return stat['Dot Balls'] || 0;
+                case 'foursconceded':
+                  return stat['Fours Conceded'] || 0;
+                case 'sixesconceded':
+                  return stat['Sixes Conceded'] || 0;
+                case 'wides':
+                  return stat.Wides || 0;
+                case 'noballs':
+                  return stat['No-Balls'] || 0;
                 default:
                   return 0;
               }
@@ -159,9 +216,14 @@
               <td><a href="player.html?id=${stat['PlayerID']}">${player['Player Name']}</a></td>
               <td>${stat.Overs != null ? stat.Overs : '-'}</td>
               <td>${formatNumber(stat.Wkts)}</td>
+              <td>${formatNumber(stat['Bowl Runs'])}</td>
               <td>${formatDecimal(stat.Econ)}</td>
               <td>${formatNumber(stat.Maidens)}</td>
               <td>${formatNumber(stat['Dot Balls'])}</td>
+              <td>${formatNumber(stat['Fours Conceded'])}</td>
+              <td>${formatNumber(stat['Sixes Conceded'])}</td>
+              <td>${formatNumber(stat.Wides)}</td>
+              <td>${formatNumber(stat['No-Balls'])}</td>
             `,
           },
           fielding: {
@@ -169,6 +231,7 @@
             headers: document.querySelectorAll('#fieldingTable th'),
             sortField: '',
             ascending: true,
+            filterFn: hasFieldingData,
             getValue: (stat, field) => {
               const player = getPlayerById(data, stat['PlayerID']);
               switch (field) {
@@ -223,7 +286,10 @@
         function updateTables() {
           const filtered = filterPlayers(data, searchInput.value);
           Object.values(sections).forEach((section) => {
-            const rows = sortSection(filtered, section);
+            const baseList = section.filterFn
+              ? filtered.filter(section.filterFn)
+              : filtered.slice();
+            const rows = sortSection(baseList, section);
             renderSection(section, rows);
           });
         }
