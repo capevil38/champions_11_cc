@@ -9,7 +9,7 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="container">
         <a class="navbar-brand" href="index.html">Champions 11 CC</a>
         <ul class="navbar-nav">
           <li><a href="index.html" class="active">Home</a></li>
@@ -25,24 +25,31 @@
     <section class="hero">
       <div class="container">
         <h1>Champions 11 Cricket Club</h1>
-        <p>Explore comprehensive stats of our players and matches. Celebrate our achievements and track our journey.</p>
+        <p>Season-long performance dashboards inspired by world-class cricket portals. Track every run, wicket and match moment in one dynamic hub.</p>
       </div>
     </section>
 
     <!-- Team Summary -->
     <main class="container">
-      <h2>Team Summary</h2>
+      <div class="section-heading">
+        <h2>Team Dashboard</h2>
+        <span>Season Snapshot</span>
+      </div>
       <div id="summary-grid" class="grid grid-3"></div>
 
       <!-- Top Players -->
-      <div class="grid grid-2" style="margin-top:2rem;">
-        <div>
-          <h3>Top Run Scorers</h3>
-          <div id="top-runs" class="card"></div>
+      <div class="section-heading">
+        <h2>Impact Players</h2>
+        <span>Leading the charts</span>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-title">Top Run Scorers</div>
+          <div id="top-runs" class="stat-feed"></div>
         </div>
-        <div>
-          <h3>Top Wicket Takers</h3>
-          <div id="top-wickets" class="card"></div>
+        <div class="card">
+          <div class="card-title">Top Wicket Takers</div>
+          <div id="top-wickets" class="stat-feed"></div>
         </div>
       </div>
     </main>

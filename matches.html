@@ -9,7 +9,7 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="container">
         <a class="navbar-brand" href="index.html">Champions 11 CC</a>
         <ul class="navbar-nav">
           <li><a href="index.html">Home</a></li>
@@ -21,9 +21,12 @@
       </div>
     </nav>
     <main class="container">
-      <h2>Matches</h2>
+      <div class="section-heading">
+        <h2>Matches</h2>
+        <span>Filter by opponent or venue</span>
+      </div>
       <div style="margin-bottom:1rem;">
-        <input type="text" id="matchSearch" placeholder="Search by opponent or venue..." style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px;" />
+        <input type="text" id="matchSearch" class="input-control" placeholder="Search by opponent or venue..." />
       </div>
       <div class="table-responsive">
         <table id="matchesTable">

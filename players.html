@@ -9,7 +9,7 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="container">
         <a class="navbar-brand" href="index.html">Champions 11 CC</a>
         <ul class="navbar-nav">
           <li><a href="index.html">Home</a></li>
@@ -22,9 +22,12 @@
     </nav>
 
     <main class="container">
-      <h2>Players</h2>
+      <div class="section-heading">
+        <h2>Players</h2>
+        <span>Career snapshots & roles</span>
+      </div>
       <div style="margin-bottom:1rem;">
-        <input type="text" id="playerSearch" placeholder="Search players..." style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px;" />
+        <input type="text" id="playerSearch" class="input-control" placeholder="Search players..." />
       </div>
       <details class="stat-section" open>
         <summary>Batting</summary>

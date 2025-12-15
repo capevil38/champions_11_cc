@@ -71,6 +71,21 @@ DEFAULT_DATASET_KEYS = [
 ]
 
 
+def overs_to_decimal(value: Any) -> float | None:
+    if value in (None, "", "-", 0):
+        return None
+    try:
+        num = float(value)
+    except (TypeError, ValueError):
+        return None
+    overs_part = int(num)
+    balls_part = round((num - overs_part) * 10)
+    total_balls = overs_part * 6 + balls_part
+    if total_balls <= 0:
+        return None
+    return total_balls / 6
+
+
 def clean_value(value: Any) -> Any:
     """Normalize workbook cell values."""
     if value is None:
@@ -164,6 +179,7 @@ def parse_workbook_bytes(contents: bytes) -> Dict[str, Any]:
         )
         dataset[cfg["key"]] = parsed
     validate_dataset(dataset)
+    enrich_dataset(dataset)
     return dataset
 
 
@@ -192,3 +208,26 @@ def validate_dataset(dataset: Dict[str, Any]) -> None:
         raise ValueError(
             "Player_Career_Stats sheet is missing records for: " + ", ".join(sorted(missing_stats))
         )
+
+
+def enrich_dataset(dataset: Dict[str, Any]) -> None:
+    """Compute derived metrics (strike rate, economy) when missing."""
+    for entry in dataset.get("batting", []):
+        sr = entry.get("Strike Rate")
+        runs = entry.get("Runs")
+        balls = entry.get("Balls")
+        if (sr is None or sr == "-") and runs is not None and balls:
+            entry["Strike Rate"] = round((float(runs) / float(balls)) * 100, 2)
+    for entry in dataset.get("bowling", []):
+        econ = entry.get("Economy")
+        runs = entry.get("Bowl Runs")
+        overs_value = entry.get("Overs")
+        if (econ is None or econ == "-") and runs is not None and overs_value not in (None, "", "-"):
+            decimal_overs = overs_to_decimal(overs_value)
+            if decimal_overs:
+                entry["Economy"] = round(float(runs) / decimal_overs, 2)
+
+
+def ensure_enriched(dataset: Dict[str, Any]) -> Dict[str, Any]:
+    enrich_dataset(dataset)
+    return dataset

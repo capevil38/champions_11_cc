@@ -395,7 +395,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 129.27
     },
     {
       "MatchID": 18418557,
@@ -406,7 +406,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 33.33
     },
     {
       "MatchID": 18418557,
@@ -417,7 +417,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 41.67
     },
     {
       "MatchID": 18418557,
@@ -428,7 +428,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 50.0
     },
     {
       "MatchID": 18418557,
@@ -439,7 +439,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 100.0
     },
     {
       "MatchID": 18418557,
@@ -450,7 +450,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 16.67
     },
     {
       "MatchID": 18418557,
@@ -461,7 +461,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 81.25
     },
     {
       "MatchID": 18418557,
@@ -472,7 +472,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 18418557,
@@ -483,7 +483,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": null
+      "Strike Rate": 16.67
     },
     {
       "MatchID": 18418557,
@@ -494,7 +494,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 18418557,
@@ -505,7 +505,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 66.67
     },
     {
       "MatchID": 18642464,
@@ -516,7 +516,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 126.32
     },
     {
       "MatchID": 18642464,
@@ -527,7 +527,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 68.42
     },
     {
       "MatchID": 18642464,
@@ -538,7 +538,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 120.69
     },
     {
       "MatchID": 18642464,
@@ -549,7 +549,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 70.0
     },
     {
       "MatchID": 18642464,
@@ -560,7 +560,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 88.89
     },
     {
       "MatchID": 18642464,
@@ -571,7 +571,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 88.89
     },
     {
       "MatchID": 18642464,
@@ -582,7 +582,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": null
+      "Strike Rate": 20.0
     },
     {
       "MatchID": 18642464,
@@ -593,7 +593,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 18642464,
@@ -604,7 +604,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 208.33
     },
     {
       "MatchID": 18642464,
@@ -615,7 +615,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 25.0
     },
     {
       "MatchID": 18642464,
@@ -626,7 +626,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 19019010,
@@ -637,7 +637,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 59.09
     },
     {
       "MatchID": 19019010,
@@ -648,7 +648,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 19019010,
@@ -659,7 +659,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 19019010,
@@ -670,7 +670,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": null
+      "Strike Rate": 70.37
     },
     {
       "MatchID": 19019010,
@@ -681,7 +681,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 77.78
     },
     {
       "MatchID": 19019010,
@@ -692,7 +692,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 111.11
     },
     {
       "MatchID": 19019010,
@@ -703,7 +703,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 107.14
     },
     {
       "MatchID": 19019010,
@@ -714,7 +714,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 84.85
     },
     {
       "MatchID": 19019010,
@@ -725,7 +725,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 100.0
     },
     {
       "MatchID": 19019010,
@@ -736,7 +736,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 60.87
     },
     {
       "MatchID": 19112746,
@@ -747,7 +747,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 134.15
     },
     {
       "MatchID": 19112746,
@@ -758,7 +758,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 18.75
     },
     {
       "MatchID": 19112746,
@@ -769,7 +769,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 20.0
     },
     {
       "MatchID": 19112746,
@@ -780,7 +780,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 110.53
     },
     {
       "MatchID": 19112746,
@@ -791,7 +791,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 44.44
     },
     {
       "MatchID": 19112746,
@@ -802,7 +802,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 155.56
     },
     {
       "MatchID": 19112746,
@@ -813,7 +813,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": null
+      "Strike Rate": 61.54
     },
     {
       "MatchID": 19112746,
@@ -824,7 +824,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 25.0
     },
     {
       "MatchID": 19112746,
@@ -835,7 +835,7 @@
       "Sixes": 4,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": null
+      "Strike Rate": 178.57
     },
     {
       "MatchID": 19112746,
@@ -846,7 +846,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 19112746,
@@ -857,7 +857,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 19859354,
@@ -868,7 +868,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 250.0
     },
     {
       "MatchID": 19859354,
@@ -879,7 +879,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 95.92
     },
     {
       "MatchID": 19859354,
@@ -890,7 +890,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 80.0
     },
     {
       "MatchID": 19859354,
@@ -901,7 +901,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 83.33
     },
     {
       "MatchID": 19859354,
@@ -912,7 +912,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 16.67
     },
     {
       "MatchID": 19859354,
@@ -923,7 +923,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": null
+      "Strike Rate": 33.33
     },
     {
       "MatchID": 19859354,
@@ -934,7 +934,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 140.0
     },
     {
       "MatchID": 19859354,
@@ -945,7 +945,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": null
+      "Strike Rate": 140.0
     },
     {
       "MatchID": 19859354,
@@ -956,7 +956,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Stumped",
-      "Strike Rate": null
+      "Strike Rate": 85.71
     },
     {
       "MatchID": 19859354,
@@ -967,7 +967,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 80.0
     },
     {
       "MatchID": 13848394,
@@ -978,7 +978,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 80.0
     },
     {
       "MatchID": 13848394,
@@ -989,7 +989,7 @@
       "Sixes": 2,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 146.15
     },
     {
       "MatchID": 13848394,
@@ -1000,7 +1000,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 46.88
     },
     {
       "MatchID": 13848394,
@@ -1011,7 +1011,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 57.14
     },
     {
       "MatchID": 13848394,
@@ -1022,7 +1022,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Run Out",
-      "Strike Rate": null
+      "Strike Rate": 86.96
     },
     {
       "MatchID": 13848394,
@@ -1033,7 +1033,7 @@
       "Sixes": 9,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 31.58
     },
     {
       "MatchID": 13848394,
@@ -1044,7 +1044,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 16.67
     },
     {
       "MatchID": 13848394,
@@ -1055,7 +1055,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 13848394,
@@ -1066,7 +1066,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 13848394,
@@ -1077,7 +1077,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 13848394,
@@ -1088,7 +1088,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 83.33
     },
     {
       "MatchID": 19989363,
@@ -1099,7 +1099,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 63.64
     },
     {
       "MatchID": 19989363,
@@ -1110,7 +1110,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 100.0
     },
     {
       "MatchID": 19989363,
@@ -1121,7 +1121,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 55.26
     },
     {
       "MatchID": 19989363,
@@ -1132,7 +1132,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 12.5
     },
     {
       "MatchID": 19989363,
@@ -1143,7 +1143,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 20.0
     },
     {
       "MatchID": 19989363,
@@ -1154,7 +1154,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 19989363,
@@ -1165,7 +1165,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 19989363,
@@ -1176,7 +1176,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 16.67
     },
     {
       "MatchID": 19989363,
@@ -1187,7 +1187,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 14.29
     },
     {
       "MatchID": 19989363,
@@ -1198,7 +1198,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 33.33
     },
     {
       "MatchID": 19989363,
@@ -1209,7 +1209,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 20648752,
@@ -1220,7 +1220,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 123.08
     },
     {
       "MatchID": 20648752,
@@ -1231,7 +1231,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 63.64
     },
     {
       "MatchID": 20648752,
@@ -1242,7 +1242,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 102.63
     },
     {
       "MatchID": 20648752,
@@ -1253,7 +1253,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 120.0
     },
     {
       "MatchID": 20648752,
@@ -1264,7 +1264,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 58.82
     },
     {
       "MatchID": 20648752,
@@ -1275,7 +1275,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 14.29
     },
     {
       "MatchID": 20648752,
@@ -1286,7 +1286,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 100.0
     },
     {
       "MatchID": 20648752,
@@ -1297,7 +1297,7 @@
       "Sixes": 1,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 152.94
     },
     {
       "MatchID": 20156519,
@@ -1308,7 +1308,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 111.11
     },
     {
       "MatchID": 20156519,
@@ -1319,7 +1319,7 @@
       "Sixes": 1,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 103.12
     },
     {
       "MatchID": 20156519,
@@ -1330,7 +1330,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 20156519,
@@ -1341,7 +1341,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 58.33
     },
     {
       "MatchID": 20156519,
@@ -1352,7 +1352,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 128.57
     },
     {
       "MatchID": 20156519,
@@ -1363,7 +1363,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 90.0
     },
     {
       "MatchID": 20156519,
@@ -1374,7 +1374,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     },
     {
       "MatchID": 20156519,
@@ -1385,7 +1385,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "LBW",
-      "Strike Rate": null
+      "Strike Rate": 50.0
     },
     {
       "MatchID": 20156519,
@@ -1396,7 +1396,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Caught",
-      "Strike Rate": null
+      "Strike Rate": 87.5
     },
     {
       "MatchID": 20156519,
@@ -1407,7 +1407,7 @@
       "Sixes": 0,
       "Out": "No",
       "Dismissal Type": "Not Out",
-      "Strike Rate": null
+      "Strike Rate": 55.56
     },
     {
       "MatchID": 20156519,
@@ -1418,7 +1418,7 @@
       "Sixes": 0,
       "Out": "Yes",
       "Dismissal Type": "Bowled",
-      "Strike Rate": null
+      "Strike Rate": 0.0
     }
   ],
   "bowling": [
@@ -1434,7 +1434,7 @@
       "Sixes Conceded": 0,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 7.67
     },
     {
       "MatchID": 18418557,
@@ -1448,7 +1448,7 @@
       "Sixes Conceded": 2,
       "Wides": 0,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 10.75
     },
     {
       "MatchID": 18418557,
@@ -1462,7 +1462,7 @@
       "Sixes Conceded": 1,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 9.67
     },
     {
       "MatchID": 18418557,
@@ -1476,7 +1476,7 @@
       "Sixes Conceded": 1,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 16.0
     },
     {
       "MatchID": 18418557,
@@ -1490,7 +1490,7 @@
       "Sixes Conceded": 0,
       "Wides": 0,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 9.0
     },
     {
       "MatchID": 18418557,
@@ -1504,7 +1504,7 @@
       "Sixes Conceded": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 8.5
     },
     {
       "MatchID": 18418557,
@@ -1518,7 +1518,7 @@
       "Sixes Conceded": 2,
       "Wides": 7,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 14.0
     },
     {
       "MatchID": 18418557,
@@ -1532,7 +1532,7 @@
       "Sixes Conceded": 3,
       "Wides": 1,
       "No-Balls": 2,
-      "Economy": null
+      "Economy": 15.0
     },
     {
       "MatchID": 18418557,
@@ -1546,7 +1546,7 @@
       "Sixes Conceded": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 11.0
     },
     {
       "MatchID": 18642464,
@@ -1560,7 +1560,7 @@
       "Sixes Conceded": 0,
       "Wides": 8,
       "No-Balls": 2,
-      "Economy": null
+      "Economy": 9.83
     },
     {
       "MatchID": 18642464,
@@ -1574,7 +1574,7 @@
       "Sixes Conceded": 1,
       "Wides": 5,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 13.5
     },
     {
       "MatchID": 18642464,
@@ -1588,7 +1588,7 @@
       "Sixes Conceded": 0,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 5.5
     },
     {
       "MatchID": 18642464,
@@ -1602,7 +1602,7 @@
       "Sixes Conceded": 0,
       "Wides": 4,
       "No-Balls": 2,
-      "Economy": null
+      "Economy": 6.5
     },
     {
       "MatchID": 18642464,
@@ -1616,7 +1616,7 @@
       "Sixes Conceded": 1,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 18.0
     },
     {
       "MatchID": 18642464,
@@ -1630,7 +1630,7 @@
       "Sixes Conceded": 0,
       "Wides": 10,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 6.0
     },
     {
       "MatchID": 18642464,
@@ -1644,7 +1644,7 @@
       "Sixes Conceded": 0,
       "Wides": 6,
       "No-Balls": 3,
-      "Economy": null
+      "Economy": 6.0
     },
     {
       "MatchID": 18642464,
@@ -1658,7 +1658,7 @@
       "Sixes Conceded": 0,
       "Wides": 3,
       "No-Balls": 2,
-      "Economy": null
+      "Economy": 11.0
     },
     {
       "MatchID": 19019010,
@@ -1672,7 +1672,7 @@
       "Sixes Conceded": 0,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 2.61
     },
     {
       "MatchID": 19019010,
@@ -1686,7 +1686,7 @@
       "Sixes Conceded": 0,
       "Wides": 4,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 9.0
     },
     {
       "MatchID": 19019010,
@@ -1700,7 +1700,7 @@
       "Sixes Conceded": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 4.67
     },
     {
       "MatchID": 19019010,
@@ -1714,7 +1714,7 @@
       "Sixes Conceded": 0,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 6.6
     },
     {
       "MatchID": 19019010,
@@ -1728,7 +1728,7 @@
       "Sixes Conceded": 0,
       "Wides": 2,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 5.0
     },
     {
       "MatchID": 19019010,
@@ -1742,7 +1742,7 @@
       "Sixes Conceded": 0,
       "Wides": 7,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 6.25
     },
     {
       "MatchID": 19019010,
@@ -1756,7 +1756,7 @@
       "Sixes Conceded": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 5.0
     },
     {
       "MatchID": 19019010,
@@ -1770,7 +1770,7 @@
       "Sixes Conceded": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 5.25
     },
     {
       "MatchID": 19112746,
@@ -1784,7 +1784,7 @@
       "Sixes Conceded": 0,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 7.17
     },
     {
       "MatchID": 19112746,
@@ -1798,7 +1798,7 @@
       "Sixes Conceded": 1,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 10.6
     },
     {
       "MatchID": 19112746,
@@ -1812,7 +1812,7 @@
       "Sixes Conceded": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 15.0
     },
     {
       "MatchID": 19112746,
@@ -1826,7 +1826,7 @@
       "Sixes Conceded": 2,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 5.0
     },
     {
       "MatchID": 19112746,
@@ -1840,7 +1840,7 @@
       "Sixes Conceded": 0,
       "Wides": 7,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 8.5
     },
     {
       "MatchID": 19112746,
@@ -1854,7 +1854,7 @@
       "Sixes Conceded": 0,
       "Wides": 6,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 5.65
     },
     {
       "MatchID": 19859354,
@@ -1868,7 +1868,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 8.67
     },
     {
       "MatchID": 19859354,
@@ -1882,7 +1882,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 6.67
     },
     {
       "MatchID": 19859354,
@@ -1896,7 +1896,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 16.5
     },
     {
       "MatchID": 19859354,
@@ -1910,7 +1910,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 10.0
     },
     {
       "MatchID": 19859354,
@@ -1924,7 +1924,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 8.8
     },
     {
       "MatchID": 19859354,
@@ -1938,7 +1938,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 11.0
     },
     {
       "MatchID": 19859354,
@@ -1952,7 +1952,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 9.0
     },
     {
       "MatchID": 13848394,
@@ -1966,7 +1966,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 7.67
     },
     {
       "MatchID": 13848394,
@@ -1980,7 +1980,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 7.33
     },
     {
       "MatchID": 13848394,
@@ -1994,7 +1994,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 4.5
     },
     {
       "MatchID": 13848394,
@@ -2008,7 +2008,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 6.0
     },
     {
       "MatchID": 13848394,
@@ -2022,7 +2022,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 4.0
     },
     {
       "MatchID": 13848394,
@@ -2036,7 +2036,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 8.2
     },
     {
       "MatchID": 13848394,
@@ -2050,7 +2050,7 @@
       "Sixes Conceded": null,
       "Wides": null,
       "No-Balls": null,
-      "Economy": null
+      "Economy": 6.0
     },
     {
       "MatchID": 19989363,
@@ -2064,7 +2064,7 @@
       "Sixes Conceded": 0,
       "Wides": 5,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 4.33
     },
     {
       "MatchID": 19989363,
@@ -2078,7 +2078,7 @@
       "Sixes Conceded": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 1.67
     },
     {
       "MatchID": 19989363,
@@ -2092,7 +2092,7 @@
       "Sixes Conceded": 1,
       "Wides": 7,
       "No-Balls": 2,
-      "Economy": null
+      "Economy": 6.2
     },
     {
       "MatchID": 19989363,
@@ -2106,7 +2106,7 @@
       "Sixes Conceded": 1,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 6.5
     },
     {
       "MatchID": 19989363,
@@ -2120,7 +2120,7 @@
       "Sixes Conceded": 0,
       "Wides": 6,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 8.5
     },
     {
       "MatchID": 19989363,
@@ -2134,7 +2134,7 @@
       "Sixes Conceded": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 1.5
     },
     {
       "MatchID": 20648752,
@@ -2148,7 +2148,7 @@
       "Sixes Conceded": 0,
       "Wides": 7,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 7.33
     },
     {
       "MatchID": 20648752,
@@ -2162,7 +2162,7 @@
       "Sixes Conceded": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 13.5
     },
     {
       "MatchID": 20648752,
@@ -2176,7 +2176,7 @@
       "Sixes Conceded": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 4.0
     },
     {
       "MatchID": 20648752,
@@ -2190,7 +2190,7 @@
       "Sixes Conceded": 0,
       "Wides": 0,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 5.0
     },
     {
       "MatchID": 20648752,
@@ -2204,7 +2204,7 @@
       "Sixes Conceded": 2,
       "Wides": 4,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 10.33
     },
     {
       "MatchID": 20648752,
@@ -2218,7 +2218,7 @@
       "Sixes Conceded": 1,
       "Wides": 0,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 9.18
     },
     {
       "MatchID": 20648752,
@@ -2232,7 +2232,7 @@
       "Sixes Conceded": 1,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 14.0
     },
     {
       "MatchID": 20156519,
@@ -2246,7 +2246,7 @@
       "Sixes Conceded": 2,
       "Wides": 9,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 12.33
     },
     {
       "MatchID": 20156519,
@@ -2260,7 +2260,7 @@
       "Sixes Conceded": 1,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 7.25
     },
     {
       "MatchID": 20156519,
@@ -2274,7 +2274,7 @@
       "Sixes Conceded": 0,
       "Wides": 3,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 5.0
     },
     {
       "MatchID": 20156519,
@@ -2288,7 +2288,7 @@
       "Sixes Conceded": 0,
       "Wides": 1,
       "No-Balls": 1,
-      "Economy": null
+      "Economy": 5.2
     },
     {
       "MatchID": 20156519,
@@ -2302,7 +2302,7 @@
       "Sixes Conceded": 0,
       "Wides": 2,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 9.0
     },
     {
       "MatchID": 20156519,
@@ -2316,7 +2316,7 @@
       "Sixes Conceded": 0,
       "Wides": 1,
       "No-Balls": 0,
-      "Economy": null
+      "Economy": 6.0
     }
   ],
   "fielding": [
@@ -3021,7 +3021,7 @@
       "Balls": 23,
       "Fours": 1,
       "Sixes": 0,
-      "Avg": "-",
+      "Avg": null,
       "SR": 60.87,
       "Balls Bowled": 18,
       "Overs": 3,
@@ -3048,7 +3048,7 @@
       "Balls": 0,
       "Fours": 0,
       "Sixes": 0,
-      "Avg": "-",
+      "Avg": null,
       "SR": 0,
       "Balls Bowled": 18,
       "Overs": 3,
@@ -3183,7 +3183,7 @@
       "Balls": 0,
       "Fours": 0,
       "Sixes": 0,
-      "Avg": "-",
+      "Avg": null,
       "SR": 0,
       "Balls Bowled": 12,
       "Overs": 2,

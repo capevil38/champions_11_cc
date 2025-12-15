@@ -8,7 +8,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="container">
         <a class="navbar-brand" href="index.html">Champions 11 CC</a>
         <ul class="navbar-nav">
           <li><a href="index.html">Home</a></li>
@@ -20,12 +20,15 @@
       </div>
     </nav>
     <main class="container">
-      <h2>Data Management</h2>
+      <div class="section-heading">
+        <h2>Data Management</h2>
+        <span>Upload master workbook & configure endpoint</span>
+      </div>
       <section class="card">
         <h3>API Configuration</h3>
         <p>Set the base URL of the Render backend (e.g., <code>https://champions11-api.onrender.com</code>).</p>
         <div style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center;">
-          <input type="url" id="apiBaseInput" placeholder="https://your-api.onrender.com" style="flex:1; min-width:220px; padding:0.5rem; border-radius:4px; border:1px solid #ccc;" />
+          <input type="url" id="apiBaseInput" class="input-control" placeholder="https://your-api.onrender.com" style="flex:1; min-width:220px;" />
           <button id="saveBaseBtn" class="btn-primary">Save</button>
           <button id="clearBaseBtn" class="btn-secondary">Clear</button>
         </div>

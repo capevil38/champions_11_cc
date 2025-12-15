@@ -9,7 +9,11 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from .data_processor import dataset_template, parse_workbook_bytes
+from .data_processor import (
+    dataset_template,
+    ensure_enriched,
+    parse_workbook_bytes,
+)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_FILE = Path(os.getenv("DATA_FILE", BASE_DIR / "data.json"))
@@ -18,7 +22,7 @@ DATA_FILE = Path(os.getenv("DATA_FILE", BASE_DIR / "data.json"))
 def load_dataset_from_disk() -> Dict[str, Any]:
     if DATA_FILE.exists():
         with DATA_FILE.open("r", encoding="utf-8") as source:
-            return json.load(source)
+            return ensure_enriched(json.load(source))
     return dataset_template()
 
 
