@@ -38,14 +38,33 @@
           { title: 'Runs', field: 'Runs' },
           { title: 'Wickets', field: 'Wkts' },
           { title: 'Batting Average', field: 'Avg' },
-          { title: 'Economy', field: 'Econ', ascending: true },
+          { title: 'Bowling Average', custom: 'bowlingAvg', ascending: true, ignoreZero: true },
+          { title: 'Economy', field: 'Econ', ascending: true, ignoreZero: true },
           { title: 'Strike Rate', field: 'SR' },
           { title: 'Catches', field: 'Catches' },
         ];
         const container = document.getElementById('leaderboards-container');
-        fields.forEach(({ title, field, ascending }) => {
-          const options = field === 'Econ' ? { ignoreZero: true } : {};
-          const players = getTopPlayers(data, field, 10, ascending, options);
+        fields.forEach((config) => {
+          const { title, field, ascending, ignoreZero, custom } = config;
+          let players;
+          if (custom === 'bowlingAvg') {
+            players = data.player_career_stats
+              .map((stat) => {
+                const wickets = Number(stat.Wkts || 0);
+                const runs = Number(stat['Bowl Runs'] || 0);
+                const value = wickets > 0 ? runs / wickets : null;
+                return { ...stat, __value: value };
+              })
+              .filter((stat) => stat.__value != null && (!ignoreZero || stat.__value !== 0))
+              .sort((a, b) => {
+                if (a.__value === b.__value) return 0;
+                return ascending ? a.__value - b.__value : b.__value - a.__value;
+              })
+              .slice(0, 10);
+          } else {
+            const options = ignoreZero ? { ignoreZero: true } : {};
+            players = getTopPlayers(data, field, 10, ascending, options);
+          }
           const card = document.createElement('div');
           card.className = 'card';
           card.style.marginBottom = '1rem';
@@ -54,9 +73,14 @@
           list.style.padding = '0';
           players.forEach((stat, idx) => {
             const player = getPlayerById(data, stat['PlayerID']);
-            let value = stat[field];
-            if (field === 'Avg' || field === 'Econ' || field === 'SR') {
-              value = value != null ? parseFloat(value).toFixed(2) : '-';
+            let value;
+            if (custom === 'bowlingAvg') {
+              value = stat.__value != null ? stat.__value.toFixed(2) : '-';
+            } else {
+              value = stat[field];
+              if (field === 'Avg' || field === 'Econ' || field === 'SR') {
+                value = value != null ? parseFloat(value).toFixed(2) : '-';
+              }
             }
             const li = document.createElement('li');
             li.style.marginBottom = '0.4rem';
