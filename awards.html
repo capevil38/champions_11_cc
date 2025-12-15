@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awards & Badges – Champions 11 CC</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Champions 11 CC</a>
+        <ul class="navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="leaderboards.html">Leaderboards</a></li>
+          <li><a href="awards.html" class="active">Awards</a></li>
+          <li><a href="admin.html">Upload</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <div class="section-heading">
+        <h2>Awards & Badges</h2>
+        <span>Automatic recognitions for standout performances</span>
+      </div>
+      <div class="grid grid-2" id="awards-summary"></div>
+      <details class="stat-section" style="margin-top:2rem;" open>
+        <summary>Badge Rulebook</summary>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Badge</th>
+                <th>Category</th>
+                <th>Scope</th>
+                <th>Description &amp; Rules</th>
+              </tr>
+            </thead>
+            <tbody id="badgeRuleBody"></tbody>
+          </table>
+        </div>
+      </details>
+      <div class="section-heading" style="margin-top:2rem;">
+        <h2>Recent Awards</h2>
+        <span>Match-by-match highlights</span>
+      </div>
+      <div id="badgeFeed"></div>
+    </main>
+    <footer>
+      © <span id="year"></span> Champions 11 CC
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const data = await loadData();
+        const badgeResults = Badges.calculateBadgeAwards(data);
+        const summary = document.getElementById('awards-summary');
+        const categories = {};
+        badgeResults.forEach(({ badge, recipients }) => {
+          const key = badge.category;
+          categories[key] = categories[key] || { count: 0, badges: [] };
+          categories[key].count += recipients.length;
+          categories[key].badges.push(badge);
+        });
+        Object.entries(categories).forEach(([category, info]) => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <div class="card-title">${category.replace('_', ' ').toUpperCase()}</div>
+            <div class="card-value">${info.count}</div>
+            <p class="muted-text">Badges awarded</p>
+          `;
+          summary.appendChild(card);
+        });
+        const badgeRuleBody = document.getElementById('badgeRuleBody');
+        badgeResults.forEach(({ badge }) => {
+          const row = document.createElement('tr');
+          const ruleText = badge.requires_manual_review
+            ? 'Requires manual review'
+            : badge.description;
+          row.innerHTML = `
+            <td>${badge.short_title} – <strong>${badge.name}</strong></td>
+            <td>${badge.category}</td>
+            <td>${badge.scope}</td>
+            <td>${ruleText}</td>
+          `;
+          badgeRuleBody.appendChild(row);
+        });
+        const feed = document.getElementById('badgeFeed');
+        badgeResults.forEach(({ badge, recipients }) => {
+          if (!recipients.length) return;
+          const section = document.createElement('section');
+          section.className = 'card';
+          section.style.marginBottom = '1.5rem';
+          section.innerHTML = `
+            <h3>${badge.name}</h3>
+            <p class="muted-text">${badge.description}</p>
+          `;
+          const list = document.createElement('ul');
+          list.style.listStyle = 'none';
+          list.style.padding = '0';
+          recipients
+            .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+            .forEach((recipient) => {
+              const li = document.createElement('li');
+              li.style.borderBottom = '1px solid var(--border)';
+              li.style.padding = '0.75rem 0';
+              const matchLink = recipient.matchId
+                ? `<a href="match.html?id=${recipient.matchId}">${recipient.matchId}</a>`
+                : '';
+              li.innerHTML = `
+                <div style="display:flex; justify-content:space-between;">
+                  <div>
+                    <strong><a href="player.html?id=${recipient.playerId}">${recipient.playerName}</a></strong>
+                    <div class="muted-text">${recipient.detail || ''}</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div>${recipient.opponent || ''}</div>
+                    <div class="muted-text">${recipient.date || ''} ${matchLink}</div>
+                  </div>
+                </div>
+              `;
+              list.appendChild(li);
+            });
+          section.appendChild(list);
+          feed.appendChild(section);
+        });
+      });
+    </script>
+  </body>
+</html>
