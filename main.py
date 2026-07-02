@@ -13,8 +13,15 @@ import pdf_parser
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "changeme")
 SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-change-in-production")
 
+IS_PRODUCTION = bool(os.environ.get("DATABASE_URL"))  # same signal database.py uses
+
 app = FastAPI(title="Champions 11 CC")
-app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=False, same_site="lax")
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SECRET_KEY,
+    https_only=IS_PRODUCTION,
+    same_site="none" if IS_PRODUCTION else "lax",
+)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
@@ -33,8 +40,11 @@ def is_admin(request: Request) -> bool:
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     players = db.list_players_with_stats()
+    bowlers = db.list_bowlers_with_stats()
+    fielders = db.list_fielders_with_stats()
     return templates.TemplateResponse("index.html", {
-        "request": request, "players": players, "admin": is_admin(request)
+        "request": request, "players": players, "bowlers": bowlers,
+        "fielders": fielders, "admin": is_admin(request)
     })
 
 
@@ -99,6 +109,42 @@ def admin_add_innings(
     return RedirectResponse("/admin", status_code=303)
 
 
+@app.post("/admin/add_bowling")
+def admin_add_bowling(
+    request: Request,
+    player_id: int = Form(...),
+    match_date: str = Form(...),
+    opponent: str = Form(""),
+    overs: str = Form("0"),
+    maidens: int = Form(0),
+    runs_conceded: int = Form(0),
+    wickets: int = Form(0),
+    wides: int = Form(0),
+    no_balls: int = Form(0),
+):
+    if not is_admin(request):
+        return RedirectResponse("/login")
+    balls_bowled = db.overs_to_balls(overs)
+    db.add_bowling(player_id, match_date, opponent, balls_bowled, maidens, runs_conceded, wickets, wides, no_balls)
+    return RedirectResponse("/admin", status_code=303)
+
+
+@app.post("/admin/add_fielding")
+def admin_add_fielding(
+    request: Request,
+    player_id: int = Form(...),
+    match_date: str = Form(...),
+    opponent: str = Form(""),
+    catches: int = Form(0),
+    run_outs: int = Form(0),
+    stumpings: int = Form(0),
+):
+    if not is_admin(request):
+        return RedirectResponse("/login")
+    db.add_fielding(player_id, match_date, opponent, catches, run_outs, stumpings)
+    return RedirectResponse("/admin", status_code=303)
+
+
 @app.post("/admin/add_player")
 def admin_add_player(request: Request, name: str = Form(...), role: str = Form("")):
     if not is_admin(request):
@@ -133,14 +179,20 @@ async def upload_scorecard(request: Request, scorecard: UploadFile = File(...)):
         })
 
     players = db.list_players()
-    for row in parsed["rows"]:
+    for row in parsed["batting_rows"]:
+        row["matched_player_id"] = db.find_player_id_by_name(row["clean_name"])
+    for row in parsed["bowling_rows"]:
+        row["matched_player_id"] = db.find_player_id_by_name(row["clean_name"])
+    for row in parsed["fielding_rows"]:
         row["matched_player_id"] = db.find_player_id_by_name(row["clean_name"])
 
     return templates.TemplateResponse("review_scorecard.html", {
         "request": request, "admin": True,
         "match_date": parsed["match_date"] or date.today().isoformat(),
         "opponent": parsed["opponent"] or "",
-        "rows": parsed["rows"],
+        "batting_rows": parsed["batting_rows"],
+        "bowling_rows": parsed["bowling_rows"],
+        "fielding_rows": parsed["fielding_rows"],
         "players": players,
     })
 
@@ -154,40 +206,78 @@ async def confirm_scorecard(request: Request):
     match_date = form.get("match_date")
     opponent = form.get("opponent", "")
 
-    names = form.getlist("name")
-    runs_list = form.getlist("runs")
-    balls_list = form.getlist("balls")
-    fours_list = form.getlist("fours")
-    sixes_list = form.getlist("sixes")
-    not_out_list = form.getlist("not_out")   # values = indices of rows the admin checked "not out" for
-    player_choice_list = form.getlist("player_choice")
-    skip_list = form.getlist("skip")  # indices of rows the admin chose to skip
+    def resolve_player(choice, fallback_name):
+        if choice.startswith("new:"):
+            new_name = (choice[4:] or fallback_name).strip()
+            existing_id = db.find_player_id_by_name(new_name)
+            if existing_id:
+                return existing_id
+            return db.add_player(new_name, "")
+        return int(choice)
 
-    skip_set = set(skip_list)
+    # --- Batting ---
+    bat_names = form.getlist("bat_name")
+    bat_runs = form.getlist("bat_runs")
+    bat_balls = form.getlist("bat_balls")
+    bat_fours = form.getlist("bat_fours")
+    bat_sixes = form.getlist("bat_sixes")
+    bat_not_out = set(form.getlist("bat_not_out"))
+    bat_player_choice = form.getlist("bat_player_choice")
+    bat_skip = set(form.getlist("bat_skip"))
 
-    for i, name in enumerate(names):
+    for i, name in enumerate(bat_names):
         idx = str(i)
-        if idx in skip_set:
+        if idx in bat_skip:
             continue
-
-        player_choice = player_choice_list[i]
-        if player_choice.startswith("new:"):
-            new_name = player_choice[4:] or name
-            player_id = db.add_player(new_name.strip(), "")
-        else:
-            player_id = int(player_choice)
-
-        not_out = idx in not_out_list
-
+        player_id = resolve_player(bat_player_choice[i], name)
         db.add_innings(
-            player_id=player_id,
-            match_date=match_date,
-            opponent=opponent,
-            runs=int(runs_list[i]),
-            balls=int(balls_list[i]),
-            fours=int(fours_list[i]),
-            sixes=int(sixes_list[i]),
-            not_out=not_out,
+            player_id=player_id, match_date=match_date, opponent=opponent,
+            runs=int(bat_runs[i]), balls=int(bat_balls[i]),
+            fours=int(bat_fours[i]), sixes=int(bat_sixes[i]),
+            not_out=idx in bat_not_out,
+        )
+
+    # --- Bowling ---
+    bowl_names = form.getlist("bowl_name")
+    bowl_overs = form.getlist("bowl_overs")
+    bowl_maidens = form.getlist("bowl_maidens")
+    bowl_runs = form.getlist("bowl_runs")
+    bowl_wickets = form.getlist("bowl_wickets")
+    bowl_wides = form.getlist("bowl_wides")
+    bowl_noballs = form.getlist("bowl_noballs")
+    bowl_player_choice = form.getlist("bowl_player_choice")
+    bowl_skip = set(form.getlist("bowl_skip"))
+
+    for i, name in enumerate(bowl_names):
+        idx = str(i)
+        if idx in bowl_skip:
+            continue
+        player_id = resolve_player(bowl_player_choice[i], name)
+        balls_bowled = db.overs_to_balls(bowl_overs[i])
+        db.add_bowling(
+            player_id=player_id, match_date=match_date, opponent=opponent,
+            balls_bowled=balls_bowled, maidens=int(bowl_maidens[i]),
+            runs_conceded=int(bowl_runs[i]), wickets=int(bowl_wickets[i]),
+            wides=int(bowl_wides[i]), no_balls=int(bowl_noballs[i]),
+        )
+
+    # --- Fielding ---
+    field_names = form.getlist("field_name")
+    field_catches = form.getlist("field_catches")
+    field_runouts = form.getlist("field_runouts")
+    field_stumpings = form.getlist("field_stumpings")
+    field_player_choice = form.getlist("field_player_choice")
+    field_skip = set(form.getlist("field_skip"))
+
+    for i, name in enumerate(field_names):
+        idx = str(i)
+        if idx in field_skip:
+            continue
+        player_id = resolve_player(field_player_choice[i], name)
+        db.add_fielding(
+            player_id=player_id, match_date=match_date, opponent=opponent,
+            catches=int(field_catches[i]), run_outs=int(field_runouts[i]),
+            stumpings=int(field_stumpings[i]),
         )
 
     return RedirectResponse("/admin", status_code=303)
