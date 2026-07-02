@@ -353,7 +353,7 @@ def list_fielders_with_stats():
             JOIN fielding f ON f.player_id = p.id
             GROUP BY p.id, p.name, p.role
             HAVING (COALESCE(SUM(f.catches), 0) + COALESCE(SUM(f.run_outs), 0) + COALESCE(SUM(f.stumpings), 0)) > 0
-            ORDER BY (catches + run_outs + stumpings) DESC
+            ORDER BY (COALESCE(SUM(f.catches), 0) + COALESCE(SUM(f.run_outs), 0) + COALESCE(SUM(f.stumpings), 0)) DESC
         """)
         rows = [dict(r) for r in cur.fetchall()]
     for r in rows:
