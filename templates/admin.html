@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Admin — Champions 11 CC{% endblock %}
+{% block content %}
+
+<div class="hero" style="margin-bottom:28px;">
+  <div class="eyebrow">Admin</div>
+  <h1 style="font-size:40px;">Log A Match</h1>
+  <p><a href="/admin/upload" class="btn" style="text-decoration:none;">Upload CricHeroes Scorecard PDF</a>
+     &nbsp; <span class="role">— parses the whole innings at once instead of typing each player in below.</span></p>
+</div>
+
+<div class="card">
+  <h2>Add Innings Manually</h2>
+  <form method="post" action="/admin/add_innings">
+    <div class="row-2">
+      <div class="field">
+        <label>Player</label>
+        <select name="player_id" required>
+          {% for p in players %}
+          <option value="{{ p.id }}">{{ p.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>Match Date</label>
+        <input type="date" name="match_date" value="{{ today }}" required>
+      </div>
+    </div>
+    <div class="field">
+      <label>Opponent</label>
+      <input type="text" name="opponent" placeholder="e.g. Warriors CC">
+    </div>
+    <div class="row-3">
+      <div class="field">
+        <label>Runs</label>
+        <input type="number" name="runs" min="0" required>
+      </div>
+      <div class="field">
+        <label>Balls Faced</label>
+        <input type="number" name="balls" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>4s</label>
+        <input type="number" name="fours" min="0" value="0">
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="field">
+        <label>6s</label>
+        <input type="number" name="sixes" min="0" value="0">
+      </div>
+      <div class="field checkbox" style="margin-top:26px;">
+        <input type="checkbox" id="not_out" name="not_out" value="true">
+        <label for="not_out">Not out</label>
+      </div>
+    </div>
+    <button class="btn" type="submit">Save Innings</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Add New Player</h2>
+  <form method="post" action="/admin/add_player">
+    <div class="row-2">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="field">
+        <label>Role</label>
+        <input type="text" name="role" placeholder="e.g. All-rounder">
+      </div>
+    </div>
+    <button class="btn" type="submit">Add Player</button>
+  </form>
+</div>
+
+{% endblock %}
