@@ -1,0 +1,8 @@
+Dockerfile
+requirements.txt
+main.py
+database.py
+pdf_parser.py
+README.md
+static/
+templates/
