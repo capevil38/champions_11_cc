@@ -122,7 +122,7 @@ def list_players_with_stats():
                 p.id, p.name, p.role,
                 COUNT(i.id) AS innings_count,
                 COALESCE(SUM(i.runs), 0) AS runs,
-                COALESCE(SUM(i.not_out), 0) AS not_outs,
+                COALESCE(SUM(CASE WHEN i.not_out THEN 1 ELSE 0 END), 0) AS not_outs,
                 COALESCE(MAX(i.runs), 0) AS high_score,
                 COALESCE(SUM(i.balls), 0) AS balls
             FROM players p
