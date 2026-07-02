@@ -1,3 +1,13 @@
+---
+title: Champions 11 CC
+emoji: 🏏
+colorFrom: green
+colorTo: yellow
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Champions 11 CC — Team Website
 
 A custom FastAPI site for the team: public leaderboard + player profiles, with
@@ -14,9 +24,9 @@ permanently** — no trial credits, no credit card.
 
 1. Go to https://supabase.com → sign up free → **New Project**.
 2. Pick any name/region, set a database password (save it somewhere).
-3. Once the project is ready: **Project Settings → Database → Connection string → URI**.
-   Copy it — looks like:
-   `postgresql://postgres:[PASSWORD]@db.xxxxxxxx.supabase.co:5432/postgres`
+3. Once the project is ready: click **Connect** → **Direct** tab → **Session pooler** →
+   copy the **URI**. Looks like:
+   `postgresql://postgres.xxxxxxxx:[PASSWORD]@aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres`
 4. That's it — the app creates its own tables automatically on first run.
 
 *(Free Supabase projects pause after a week of no traffic — visiting the site instantly wakes it back up, no data lost.)*
