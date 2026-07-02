@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap');
+
+:root {
+  --pitch: #16342B;
+  --pitch-dark: #0D211B;
+  --chalk: #F2EEE1;
+  --chalk-dim: #D9D3BF;
+  --leather: #9C4130;
+  --leather-bright: #C2543D;
+  --gold: #C9A24B;
+  --ink: #101A16;
+  --line: rgba(242, 238, 225, 0.14);
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--pitch);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0 2px, transparent 2px 140px);
+  color: var(--chalk);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+a { color: inherit; }
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 22px;
+  margin-bottom: 40px;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.brand .num {
+  font-family: 'Teko', sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.brand-text .name {
+  font-family: 'Teko', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.brand-text .tag {
+  font-size: 12px;
+  color: var(--chalk-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.header-links { display: flex; gap: 18px; align-items: center; }
+
+.header-links a, .header-links button {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--chalk-dim);
+  background: none;
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.header-links a:hover, .header-links button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  margin-bottom: 48px;
+}
+
+.hero .eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--leather-bright);
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-family: 'Teko', sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 0.95;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  max-width: 520px;
+  color: var(--chalk-dim);
+  font-size: 15px;
+}
+
+/* seam divider */
+.seam {
+  height: 18px;
+  margin: 40px 0;
+  position: relative;
+  opacity: 0.55;
+}
+.seam svg { width: 100%; height: 100%; display: block; }
+
+/* ---------- Scoreboard table ---------- */
+
+.section-title {
+  font-family: 'Teko', sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin: 0 0 18px;
+}
+
+.scoreboard {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(0,0,0,0.18);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.scoreboard th {
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  font-weight: 500;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(0,0,0,0.2);
+}
+
+.scoreboard td {
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.scoreboard tr:last-child td { border-bottom: none; }
+
+.scoreboard tbody tr { transition: background 0.15s; }
+.scoreboard tbody tr:hover { background: rgba(201,162,75,0.06); }
+
+.scoreboard .rank {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--chalk-dim);
+  width: 32px;
+}
+
+.scoreboard .player-name {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--chalk);
+}
+.scoreboard .player-name:hover { color: var(--gold); }
+.scoreboard .role {
+  display: block;
+  font-size: 11.5px;
+  color: var(--chalk-dim);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.scoreboard .num-cell {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  color: var(--chalk);
+}
+
+.scoreboard .num-cell.highlight {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ---------- Player profile ---------- */
+
+.profile-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.profile-head h1 {
+  font-family: 'Teko', sans-serif;
+  font-size: 48px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.profile-head .role { color: var(--chalk-dim); font-size: 14px; }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 28px 0 40px;
+}
+.stat-cell {
+  background: rgba(0,0,0,0.2);
+  padding: 18px 16px;
+}
+.stat-cell .val {
+  font-family: 'Teko', sans-serif;
+  font-size: 34px;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-cell .label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  margin-top: 4px;
+}
+
+/* ---------- Forms (login / admin) ---------- */
+
+.card {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.card h2 {
+  font-family: 'Teko', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 18px;
+  color: var(--gold);
+}
+
+.field { margin-bottom: 16px; }
+.field label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  margin-bottom: 6px;
+}
+.field input[type=text], .field input[type=number], .field input[type=password], .field input[type=date], .field select {
+  width: 100%;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  color: var(--chalk);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+}
+.field input:focus, .field select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.field.checkbox { display: flex; align-items: center; gap: 8px; }
+.field.checkbox label { margin: 0; text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--chalk); }
+
+.row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+.btn {
+  display: inline-block;
+  background: var(--leather);
+  color: var(--chalk);
+  border: none;
+  padding: 11px 22px;
+  border-radius: var(--radius);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn:hover { background: var(--leather-bright); }
+
+.error-msg {
+  color: var(--leather-bright);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.login-wrap {
+  max-width: 380px;
+  margin: 100px auto 0;
+}
+
+.empty-note {
+  color: var(--chalk-dim);
+  font-size: 13px;
+  padding: 20px 14px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 60px;
+  padding-top: 20px;
+  font-size: 12px;
+  color: var(--chalk-dim);
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 44px; }
+  .row-2, .row-3 { grid-template-columns: 1fr; }
+  .scoreboard th:nth-child(4), .scoreboard td:nth-child(4) { display: none; }
+}
