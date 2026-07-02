@@ -51,4 +51,82 @@
 <p class="empty-note">No squad members yet.</p>
 {% endif %}
 
+<div class="seam">
+  <svg viewBox="0 0 800 18" preserveAspectRatio="none">
+    <path d="M0,9 Q50,0 100,9 T200,9 T300,9 T400,9 T500,9 T600,9 T700,9 T800,9"
+          fill="none" stroke="#F2EEE1" stroke-width="1" stroke-dasharray="3,4"/>
+  </svg>
+</div>
+
+<div class="section-title">Bowling Leaderboard</div>
+
+{% if bowlers %}
+<table class="scoreboard">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Player</th>
+      <th>Wkts</th>
+      <th>Overs</th>
+      <th>Runs</th>
+      <th>Econ</th>
+      <th>Avg</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in bowlers %}
+    <tr>
+      <td class="rank">{{ loop.index }}</td>
+      <td><a class="player-name" href="/player/{{ b.id }}">{{ b.name }}</a></td>
+      <td class="num-cell highlight">{{ b.wickets }}</td>
+      <td class="num-cell">{{ b.overs }}</td>
+      <td class="num-cell">{{ b.runs_conceded }}</td>
+      <td class="num-cell">{{ b.economy }}</td>
+      <td class="num-cell">{{ b.average if b.average is not none else "—" }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty-note">No bowling figures logged yet.</p>
+{% endif %}
+
+<div class="seam">
+  <svg viewBox="0 0 800 18" preserveAspectRatio="none">
+    <path d="M0,9 Q50,0 100,9 T200,9 T300,9 T400,9 T500,9 T600,9 T700,9 T800,9"
+          fill="none" stroke="#F2EEE1" stroke-width="1" stroke-dasharray="3,4"/>
+  </svg>
+</div>
+
+<div class="section-title">Fielding Leaderboard</div>
+
+{% if fielders %}
+<table class="scoreboard">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Player</th>
+      <th>Catches</th>
+      <th>Run Outs</th>
+      <th>Stumpings</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in fielders %}
+    <tr>
+      <td class="rank">{{ loop.index }}</td>
+      <td><a class="player-name" href="/player/{{ f.id }}">{{ f.name }}</a></td>
+      <td class="num-cell">{{ f.catches }}</td>
+      <td class="num-cell">{{ f.run_outs }}</td>
+      <td class="num-cell">{{ f.stumpings }}</td>
+      <td class="num-cell highlight">{{ f.total_dismissals }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty-note">No fielding dismissals logged yet.</p>
+{% endif %}
+
 {% endblock %}
