@@ -45,6 +45,24 @@ def ph():
     return "%s" if USE_POSTGRES else "?"
 
 
+def overs_to_balls(overs_str):
+    """Cricket overs notation ('3.2' = 3 overs + 2 balls) -> total legal balls."""
+    s = str(overs_str).strip()
+    if "." in s:
+        whole, frac = s.split(".", 1)
+        whole = int(whole) if whole else 0
+        frac = int(frac[0]) if frac else 0
+    else:
+        whole, frac = int(s), 0
+    return whole * 6 + frac
+
+
+def balls_to_overs(balls):
+    """Total legal balls -> cricket overs notation string ('3.2')."""
+    whole, rem = divmod(balls, 6)
+    return f"{whole}.{rem}"
+
+
 def init_db():
     with get_conn() as conn:
         cur = conn.cursor()
@@ -70,6 +88,31 @@ def init_db():
                     not_out BOOLEAN NOT NULL DEFAULT FALSE
                 )
             """)
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS bowling (
+                    id SERIAL PRIMARY KEY,
+                    player_id INTEGER REFERENCES players(id) ON DELETE CASCADE,
+                    match_date DATE NOT NULL,
+                    opponent TEXT DEFAULT '',
+                    balls_bowled INTEGER NOT NULL DEFAULT 0,
+                    maidens INTEGER NOT NULL DEFAULT 0,
+                    runs_conceded INTEGER NOT NULL DEFAULT 0,
+                    wickets INTEGER NOT NULL DEFAULT 0,
+                    wides INTEGER NOT NULL DEFAULT 0,
+                    no_balls INTEGER NOT NULL DEFAULT 0
+                )
+            """)
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS fielding (
+                    id SERIAL PRIMARY KEY,
+                    player_id INTEGER REFERENCES players(id) ON DELETE CASCADE,
+                    match_date DATE NOT NULL,
+                    opponent TEXT DEFAULT '',
+                    catches INTEGER NOT NULL DEFAULT 0,
+                    run_outs INTEGER NOT NULL DEFAULT 0,
+                    stumpings INTEGER NOT NULL DEFAULT 0
+                )
+            """)
         else:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS players (
@@ -90,6 +133,31 @@ def init_db():
                     fours INTEGER NOT NULL DEFAULT 0,
                     sixes INTEGER NOT NULL DEFAULT 0,
                     not_out INTEGER NOT NULL DEFAULT 0
+                )
+            """)
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS bowling (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    player_id INTEGER REFERENCES players(id) ON DELETE CASCADE,
+                    match_date TEXT NOT NULL,
+                    opponent TEXT DEFAULT '',
+                    balls_bowled INTEGER NOT NULL DEFAULT 0,
+                    maidens INTEGER NOT NULL DEFAULT 0,
+                    runs_conceded INTEGER NOT NULL DEFAULT 0,
+                    wickets INTEGER NOT NULL DEFAULT 0,
+                    wides INTEGER NOT NULL DEFAULT 0,
+                    no_balls INTEGER NOT NULL DEFAULT 0
+                )
+            """)
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS fielding (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    player_id INTEGER REFERENCES players(id) ON DELETE CASCADE,
+                    match_date TEXT NOT NULL,
+                    opponent TEXT DEFAULT '',
+                    catches INTEGER NOT NULL DEFAULT 0,
+                    run_outs INTEGER NOT NULL DEFAULT 0,
+                    stumpings INTEGER NOT NULL DEFAULT 0
                 )
             """)
         conn.commit()
@@ -155,6 +223,8 @@ def get_player(player_id):
             (player_id,),
         )
         player["innings"] = [dict(r) for r in cur.fetchall()]
+    player["bowling"] = get_player_bowling(player_id)
+    player["fielding"] = get_player_fielding(player_id)
     return player
 
 
@@ -206,5 +276,112 @@ def add_innings(player_id, match_date, opponent, runs, balls, fours, sixes, not_
             f"""INSERT INTO innings (player_id, match_date, opponent, runs, balls, fours, sixes, not_out)
                 VALUES ({p}, {p}, {p}, {p}, {p}, {p}, {p}, {p})""",
             (player_id, match_date, opponent, runs, balls, fours, sixes, not_out),
+        )
+        conn.commit()
+
+
+# ---------- Bowling ----------
+
+def list_bowlers_with_stats():
+    """Every player with aggregate career bowling stats, best-figures first."""
+    with get_conn() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT
+                p.id, p.name, p.role,
+                COUNT(b.id) AS innings_bowled,
+                COALESCE(SUM(b.balls_bowled), 0) AS balls_bowled,
+                COALESCE(SUM(b.maidens), 0) AS maidens,
+                COALESCE(SUM(b.runs_conceded), 0) AS runs_conceded,
+                COALESCE(SUM(b.wickets), 0) AS wickets
+            FROM players p
+            JOIN bowling b ON b.player_id = p.id
+            GROUP BY p.id, p.name, p.role
+            HAVING COUNT(b.id) > 0
+            ORDER BY wickets DESC, runs_conceded ASC
+        """)
+        rows = [dict(r) for r in cur.fetchall()]
+
+    for r in rows:
+        r["overs"] = balls_to_overs(r["balls_bowled"])
+        r["economy"] = round(r["runs_conceded"] * 6 / r["balls_bowled"], 2) if r["balls_bowled"] > 0 else 0.0
+        r["average"] = round(r["runs_conceded"] / r["wickets"], 2) if r["wickets"] > 0 else None
+    return rows
+
+
+def get_player_bowling(player_id):
+    with get_conn() as conn:
+        cur = conn.cursor()
+        p = ph()
+        cur.execute(
+            f"""SELECT match_date, opponent, balls_bowled, maidens, runs_conceded, wickets, wides, no_balls
+                FROM bowling WHERE player_id = {p} ORDER BY match_date DESC""",
+            (player_id,),
+        )
+        rows = [dict(r) for r in cur.fetchall()]
+    for r in rows:
+        r["overs"] = balls_to_overs(r["balls_bowled"])
+        r["economy"] = round(r["runs_conceded"] * 6 / r["balls_bowled"], 2) if r["balls_bowled"] > 0 else 0.0
+    return rows
+
+
+def add_bowling(player_id, match_date, opponent, balls_bowled, maidens, runs_conceded, wickets, wides=0, no_balls=0):
+    with get_conn() as conn:
+        cur = conn.cursor()
+        p = ph()
+        cur.execute(
+            f"""INSERT INTO bowling (player_id, match_date, opponent, balls_bowled, maidens, runs_conceded, wickets, wides, no_balls)
+                VALUES ({p}, {p}, {p}, {p}, {p}, {p}, {p}, {p}, {p})""",
+            (player_id, match_date, opponent, balls_bowled, maidens, runs_conceded, wickets, wides, no_balls),
+        )
+        conn.commit()
+
+
+# ---------- Fielding ----------
+
+def list_fielders_with_stats():
+    """Every player with aggregate career fielding stats, most dismissals first."""
+    with get_conn() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT
+                p.id, p.name, p.role,
+                COALESCE(SUM(f.catches), 0) AS catches,
+                COALESCE(SUM(f.run_outs), 0) AS run_outs,
+                COALESCE(SUM(f.stumpings), 0) AS stumpings
+            FROM players p
+            JOIN fielding f ON f.player_id = p.id
+            GROUP BY p.id, p.name, p.role
+            HAVING (COALESCE(SUM(f.catches), 0) + COALESCE(SUM(f.run_outs), 0) + COALESCE(SUM(f.stumpings), 0)) > 0
+            ORDER BY (catches + run_outs + stumpings) DESC
+        """)
+        rows = [dict(r) for r in cur.fetchall()]
+    for r in rows:
+        r["total_dismissals"] = r["catches"] + r["run_outs"] + r["stumpings"]
+    return rows
+
+
+def get_player_fielding(player_id):
+    with get_conn() as conn:
+        cur = conn.cursor()
+        p = ph()
+        cur.execute(
+            f"""SELECT match_date, opponent, catches, run_outs, stumpings
+                FROM fielding WHERE player_id = {p} ORDER BY match_date DESC""",
+            (player_id,),
+        )
+        return [dict(r) for r in cur.fetchall()]
+
+
+def add_fielding(player_id, match_date, opponent, catches=0, run_outs=0, stumpings=0):
+    if catches == 0 and run_outs == 0 and stumpings == 0:
+        return  # nothing to log
+    with get_conn() as conn:
+        cur = conn.cursor()
+        p = ph()
+        cur.execute(
+            f"""INSERT INTO fielding (player_id, match_date, opponent, catches, run_outs, stumpings)
+                VALUES ({p}, {p}, {p}, {p}, {p}, {p})""",
+            (player_id, match_date, opponent, catches, run_outs, stumpings),
         )
         conn.commit()
