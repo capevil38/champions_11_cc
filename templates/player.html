@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}{{ player.name }} — Champions 11 CC{% endblock %}
+{% block content %}
+
+<div class="profile-head">
+  <h1>{{ player.name }}</h1>
+  <span class="role">{{ player.role }}</span>
+</div>
+
+{% set innings_count = player.innings|length %}
+{% set total_runs = player.innings|sum(attribute='runs') %}
+{% set not_outs = player.innings|selectattr('not_out')|list|length %}
+{% set dismissals = innings_count - not_outs %}
+{% set high_score = (player.innings|map(attribute='runs')|list)|max if innings_count > 0 else 0 %}
+{% set total_balls = player.innings|sum(attribute='balls') %}
+
+<div class="stat-grid">
+  <div class="stat-cell"><div class="val">{{ innings_count }}</div><div class="label">Innings</div></div>
+  <div class="stat-cell"><div class="val">{{ total_runs }}</div><div class="label">Runs</div></div>
+  <div class="stat-cell"><div class="val">{{ high_score }}</div><div class="label">High Score</div></div>
+  <div class="stat-cell"><div class="val">{{ "%.2f"|format(total_runs / dismissals) if dismissals > 0 else "—" }}</div><div class="label">Average</div></div>
+  <div class="stat-cell"><div class="val">{{ "%.1f"|format(total_runs * 100 / total_balls) if total_balls > 0 else "—" }}</div><div class="label">Strike Rate</div></div>
+  <div class="stat-cell"><div class="val">{{ not_outs }}</div><div class="label">Not Outs</div></div>
+</div>
+
+<div class="section-title">Innings Log</div>
+
+{% if player.innings %}
+<table class="scoreboard">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Opponent</th>
+      <th>Runs</th>
+      <th>Balls</th>
+      <th>4s / 6s</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in player.innings %}
+    <tr>
+      <td class="num-cell">{{ i.match_date }}</td>
+      <td>{{ i.opponent or "—" }}</td>
+      <td class="num-cell highlight">{{ i.runs }}{% if i.not_out %}*{% endif %}</td>
+      <td class="num-cell">{{ i.balls }}</td>
+      <td class="num-cell">{{ i.fours }} / {{ i.sixes }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty-note">No innings logged yet.</p>
+{% endif %}
+
+{% endblock %}
