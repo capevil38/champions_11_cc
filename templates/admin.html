@@ -75,4 +75,96 @@
   </form>
 </div>
 
+<div class="card">
+  <h2>Add Bowling Figures Manually</h2>
+  <form method="post" action="/admin/add_bowling">
+    <div class="row-2">
+      <div class="field">
+        <label>Player</label>
+        <select name="player_id" required>
+          {% for p in players %}
+          <option value="{{ p.id }}">{{ p.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>Match Date</label>
+        <input type="date" name="match_date" value="{{ today }}" required>
+      </div>
+    </div>
+    <div class="field">
+      <label>Opponent</label>
+      <input type="text" name="opponent" placeholder="e.g. Warriors CC">
+    </div>
+    <div class="row-3">
+      <div class="field">
+        <label>Overs (e.g. 3.2)</label>
+        <input type="text" name="overs" value="0" required>
+      </div>
+      <div class="field">
+        <label>Maidens</label>
+        <input type="number" name="maidens" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>Runs Conceded</label>
+        <input type="number" name="runs_conceded" min="0" required>
+      </div>
+    </div>
+    <div class="row-3">
+      <div class="field">
+        <label>Wickets</label>
+        <input type="number" name="wickets" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>Wides</label>
+        <input type="number" name="wides" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>No Balls</label>
+        <input type="number" name="no_balls" min="0" value="0">
+      </div>
+    </div>
+    <button class="btn" type="submit">Save Bowling</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Add Fielding Figures Manually</h2>
+  <form method="post" action="/admin/add_fielding">
+    <div class="row-2">
+      <div class="field">
+        <label>Player</label>
+        <select name="player_id" required>
+          {% for p in players %}
+          <option value="{{ p.id }}">{{ p.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>Match Date</label>
+        <input type="date" name="match_date" value="{{ today }}" required>
+      </div>
+    </div>
+    <div class="field">
+      <label>Opponent</label>
+      <input type="text" name="opponent" placeholder="e.g. Warriors CC">
+    </div>
+    <div class="row-3">
+      <div class="field">
+        <label>Catches</label>
+        <input type="number" name="catches" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>Run Outs</label>
+        <input type="number" name="run_outs" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>Stumpings</label>
+        <input type="number" name="stumpings" min="0" value="0">
+      </div>
+    </div>
+    <button class="btn" type="submit">Save Fielding</button>
+  </form>
+</div>
+
 {% endblock %}
