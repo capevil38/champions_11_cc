@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Upload Scorecard — Champions 11 CC{% endblock %}
+{% block content %}
+
+<div class="hero" style="margin-bottom:28px;">
+  <div class="eyebrow">Admin</div>
+  <h1 style="font-size:40px;">Upload Match Scorecard</h1>
+  <p>Drop in the CricHeroes "Summary Scorecard" PDF after a match. It'll pull out
+     Champions 11 CC's batting figures automatically — you'll get a chance to
+     check everything before it's saved.</p>
+</div>
+
+<div class="card">
+  {% if error %}<div class="error-msg">{{ error }}</div>{% endif %}
+  <form method="post" action="/admin/upload" enctype="multipart/form-data">
+    <div class="field">
+      <label>Scorecard PDF</label>
+      <input type="file" name="scorecard" accept="application/pdf" required
+             style="width:100%; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:10px 12px; border-radius:var(--radius);">
+    </div>
+    <button class="btn" type="submit">Parse Scorecard</button>
+  </form>
+</div>
+
+<p class="empty-note">Prefer to enter a single innings by hand instead? <a href="/admin" style="color:var(--gold);">Go back to manual entry</a>.</p>
+
+{% endblock %}
