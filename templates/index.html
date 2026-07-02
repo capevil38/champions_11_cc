@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Champions 11 CC — Squad{% endblock %}
+{% block content %}
+
+<div class="hero">
+  <div class="eyebrow">Season Leaderboard</div>
+  <h1>The Squad, By The Numbers</h1>
+  <p>Every run, every not-out, every fifty — logged after every match. Tap a name for the full scorecard history.</p>
+</div>
+
+<div class="seam">
+  <svg viewBox="0 0 800 18" preserveAspectRatio="none">
+    <path d="M0,9 Q50,0 100,9 T200,9 T300,9 T400,9 T500,9 T600,9 T700,9 T800,9"
+          fill="none" stroke="#F2EEE1" stroke-width="1" stroke-dasharray="3,4"/>
+  </svg>
+</div>
+
+<div class="section-title">Leaderboard</div>
+
+{% if players %}
+<table class="scoreboard">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Player</th>
+      <th>Runs</th>
+      <th>Inns</th>
+      <th>HS</th>
+      <th>Avg</th>
+      <th>SR</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in players %}
+    <tr>
+      <td class="rank">{{ loop.index }}</td>
+      <td>
+        <a class="player-name" href="/player/{{ p.id }}">{{ p.name }}</a>
+        <span class="role">{{ p.role }}</span>
+      </td>
+      <td class="num-cell highlight">{{ p.runs }}</td>
+      <td class="num-cell">{{ p.innings_count }}</td>
+      <td class="num-cell">{{ p.high_score }}</td>
+      <td class="num-cell">{{ "—" if p.is_avg_undefined else p.average }}</td>
+      <td class="num-cell">{{ p.strike_rate }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty-note">No squad members yet.</p>
+{% endif %}
+
+{% endblock %}
