@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Champions 11 CC{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/" style="text-decoration:none; color:inherit;">
+        <div class="brand">
+          <span class="num">11</span>
+          <div class="brand-text">
+            <div class="name">Champions&nbsp;11&nbsp;CC</div>
+            <div class="tag">Chennai · Club Cricket</div>
+          </div>
+        </div>
+      </a>
+      <nav class="header-links">
+        <a href="/">Squad</a>
+        {% if admin %}
+          <a href="/admin">Admin</a>
+          <a href="/logout">Log out</a>
+        {% else %}
+          <a href="/login">Admin</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    {% block content %}{% endblock %}
+
+    <footer>
+      Champions 11 CC — squad stats, kept honest one innings at a time.
+    </footer>
+  </div>
+</body>
+</html>
