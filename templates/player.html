@@ -52,4 +52,96 @@
 <p class="empty-note">No innings logged yet.</p>
 {% endif %}
 
+{% set bowl_balls = player.bowling|sum(attribute='balls_bowled') %}
+{% set bowl_runs = player.bowling|sum(attribute='runs_conceded') %}
+{% set bowl_wkts = player.bowling|sum(attribute='wickets') %}
+
+{% if player.bowling %}
+<div class="seam">
+  <svg viewBox="0 0 800 18" preserveAspectRatio="none">
+    <path d="M0,9 Q50,0 100,9 T200,9 T300,9 T400,9 T500,9 T600,9 T700,9 T800,9"
+          fill="none" stroke="#F2EEE1" stroke-width="1" stroke-dasharray="3,4"/>
+  </svg>
+</div>
+
+<div class="stat-grid">
+  <div class="stat-cell"><div class="val">{{ player.bowling|length }}</div><div class="label">Innings Bowled</div></div>
+  <div class="stat-cell"><div class="val">{{ bowl_wkts }}</div><div class="label">Wickets</div></div>
+  <div class="stat-cell"><div class="val">{{ bowl_runs }}</div><div class="label">Runs Conceded</div></div>
+  <div class="stat-cell"><div class="val">{{ "%.2f"|format(bowl_runs / bowl_wkts) if bowl_wkts > 0 else "—" }}</div><div class="label">Average</div></div>
+  <div class="stat-cell"><div class="val">{{ "%.2f"|format(bowl_runs * 6 / bowl_balls) if bowl_balls > 0 else "—" }}</div><div class="label">Economy</div></div>
+</div>
+
+<div class="section-title">Bowling Log</div>
+<table class="scoreboard">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Opponent</th>
+      <th>Overs</th>
+      <th>Maidens</th>
+      <th>Runs</th>
+      <th>Wkts</th>
+      <th>Econ</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for bw in player.bowling %}
+    <tr>
+      <td class="num-cell">{{ bw.match_date }}</td>
+      <td>{{ bw.opponent or "—" }}</td>
+      <td class="num-cell">{{ bw.overs }}</td>
+      <td class="num-cell">{{ bw.maidens }}</td>
+      <td class="num-cell">{{ bw.runs_conceded }}</td>
+      <td class="num-cell highlight">{{ bw.wickets }}</td>
+      <td class="num-cell">{{ bw.economy }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% if player.fielding %}
+<div class="seam">
+  <svg viewBox="0 0 800 18" preserveAspectRatio="none">
+    <path d="M0,9 Q50,0 100,9 T200,9 T300,9 T400,9 T500,9 T600,9 T700,9 T800,9"
+          fill="none" stroke="#F2EEE1" stroke-width="1" stroke-dasharray="3,4"/>
+  </svg>
+</div>
+
+{% set total_catches = player.fielding|sum(attribute='catches') %}
+{% set total_runouts = player.fielding|sum(attribute='run_outs') %}
+{% set total_stumpings = player.fielding|sum(attribute='stumpings') %}
+
+<div class="stat-grid">
+  <div class="stat-cell"><div class="val">{{ total_catches }}</div><div class="label">Catches</div></div>
+  <div class="stat-cell"><div class="val">{{ total_runouts }}</div><div class="label">Run Outs</div></div>
+  <div class="stat-cell"><div class="val">{{ total_stumpings }}</div><div class="label">Stumpings</div></div>
+</div>
+
+<div class="section-title">Fielding Log</div>
+<table class="scoreboard">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Opponent</th>
+      <th>Catches</th>
+      <th>Run Outs</th>
+      <th>Stumpings</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for fl in player.fielding %}
+    <tr>
+      <td class="num-cell">{{ fl.match_date }}</td>
+      <td>{{ fl.opponent or "—" }}</td>
+      <td class="num-cell">{{ fl.catches }}</td>
+      <td class="num-cell">{{ fl.run_outs }}</td>
+      <td class="num-cell">{{ fl.stumpings }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
 {% endblock %}
