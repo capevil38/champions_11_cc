@@ -205,16 +205,31 @@ _FIELDER_PATTERNS = [
 ]
 
 
+def _split_multi_names(raw: str):
+    """CricHeroes sometimes credits a dismissal to more than one fielder, e.g.
+    'run out (Ravi Shankar/Jeeva A)' for a relay throw. Split on '/', '&', or ','
+    so each person gets their own credit instead of one bogus combined 'player'."""
+    s = raw.strip()
+    s = re.sub(r"^\(|\)$", "", s).strip()
+    parts = re.split(r"\s*/\s*|\s*&\s*|\s*,\s*", s)
+    return [p.strip() for p in parts if p.strip()]
+
+
 def _extract_fielding_from_status(status: str):
-    """Returns (dismissal_type, clean_fielder_name) or None if no fielder is credited."""
+    """Returns a list of (dismissal_type, clean_fielder_name) tuples — usually
+    zero or one, but two for a shared run-out."""
     s = status.strip()
     for dismissal_type, pattern in _FIELDER_PATTERNS:
         m = pattern.match(s)
         if m:
-            name = _clean_name(m.group("name"))
-            if name:
-                return dismissal_type, name
-    return None
+            raw_names = _split_multi_names(m.group("name"))
+            results = []
+            for raw_name in raw_names:
+                name = _clean_name(raw_name)
+                if name:
+                    results.append((dismissal_type, name))
+            return results
+    return []
 
 
 def _aggregate_fielding(batting_rows):
@@ -222,19 +237,17 @@ def _aggregate_fielding(batting_rows):
     (ours) out of their dismissal text."""
     summary = {}
     for row in batting_rows:
-        result = _extract_fielding_from_status(row["status"])
-        if not result:
-            continue
-        dismissal_type, fielder_name = result
-        key = fielder_name
-        if key not in summary:
-            summary[key] = {"clean_name": fielder_name, "catches": 0, "stumpings": 0, "run_outs": 0}
-        if dismissal_type == "catch":
-            summary[key]["catches"] += 1
-        elif dismissal_type == "stumping":
-            summary[key]["stumpings"] += 1
-        elif dismissal_type == "run_out":
-            summary[key]["run_outs"] += 1
+        results = _extract_fielding_from_status(row["status"])
+        for dismissal_type, fielder_name in results:
+            key = fielder_name
+            if key not in summary:
+                summary[key] = {"clean_name": fielder_name, "catches": 0, "stumpings": 0, "run_outs": 0}
+            if dismissal_type == "catch":
+                summary[key]["catches"] += 1
+            elif dismissal_type == "stumping":
+                summary[key]["stumpings"] += 1
+            elif dismissal_type == "run_out":
+                summary[key]["run_outs"] += 1
     return list(summary.values())
 
 
