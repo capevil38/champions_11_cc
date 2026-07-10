@@ -280,6 +280,35 @@ def add_innings(player_id, match_date, opponent, runs, balls, fours, sixes, not_
         conn.commit()
 
 
+def match_already_logged(match_date, opponent):
+    """True if ANY batting/bowling/fielding row already exists for this date+opponent."""
+    with get_conn() as conn:
+        cur = conn.cursor()
+        p = ph()
+        for table in ("innings", "bowling", "fielding"):
+            cur.execute(
+                f"SELECT 1 FROM {table} WHERE match_date = {p} AND opponent = {p} LIMIT 1",
+                (match_date, opponent),
+            )
+            if cur.fetchone():
+                return True
+        return False
+
+
+def delete_match_data(match_date, opponent):
+    """Removes all batting/bowling/fielding rows for this date+opponent — used when
+    re-uploading a scorecard to replace, rather than duplicate, existing data."""
+    with get_conn() as conn:
+        cur = conn.cursor()
+        p = ph()
+        for table in ("innings", "bowling", "fielding"):
+            cur.execute(
+                f"DELETE FROM {table} WHERE match_date = {p} AND opponent = {p}",
+                (match_date, opponent),
+            )
+        conn.commit()
+
+
 # ---------- Bowling ----------
 
 def list_bowlers_with_stats():
