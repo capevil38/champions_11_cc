@@ -186,10 +186,15 @@ async def upload_scorecard(request: Request, scorecard: UploadFile = File(...)):
     for row in parsed["fielding_rows"]:
         row["matched_player_id"] = db.find_player_id_by_name(row["clean_name"])
 
+    match_date = parsed["match_date"] or date.today().isoformat()
+    opponent = parsed["opponent"] or ""
+    already_logged = db.match_already_logged(match_date, opponent)
+
     return templates.TemplateResponse("review_scorecard.html", {
         "request": request, "admin": True,
-        "match_date": parsed["match_date"] or date.today().isoformat(),
-        "opponent": parsed["opponent"] or "",
+        "match_date": match_date,
+        "opponent": opponent,
+        "already_logged": already_logged,
         "batting_rows": parsed["batting_rows"],
         "bowling_rows": parsed["bowling_rows"],
         "fielding_rows": parsed["fielding_rows"],
@@ -205,6 +210,20 @@ async def confirm_scorecard(request: Request):
     form = await request.form()
     match_date = form.get("match_date")
     opponent = form.get("opponent", "")
+    replace_existing = form.get("replace_existing") == "yes"
+
+    if db.match_already_logged(match_date, opponent) and not replace_existing:
+        return templates.TemplateResponse("upload_scorecard.html", {
+            "request": request, "admin": True,
+            "error": (
+                f"Data for {match_date} vs {opponent or 'this opponent'} is already logged. "
+                f"Re-upload the PDF and tick \"Replace existing data\" on the review page if you "
+                f"want to overwrite it, or leave it as is if this was uploaded by mistake."
+            ),
+        })
+
+    if replace_existing:
+        db.delete_match_data(match_date, opponent)
 
     def resolve_player(choice, fallback_name):
         if choice.startswith("new:"):
