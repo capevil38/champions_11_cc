@@ -10,6 +10,21 @@
 </div>
 
 <form method="post" action="/admin/confirm_scorecard">
+
+  {% if already_logged %}
+  <div class="card" style="border-color: var(--leather-bright);">
+    <h2 style="color: var(--leather-bright);">⚠ This match may already be logged</h2>
+    <p style="margin: 0 0 16px; color: var(--chalk-dim); font-size: 14px;">
+      Data already exists for <strong>{{ match_date }}</strong> vs <strong>{{ opponent or "this opponent" }}</strong>.
+      Saving again will add duplicate entries on top of what's already there — unless you choose to replace it below.
+    </p>
+    <div class="field checkbox">
+      <input type="checkbox" id="replace_existing" name="replace_existing" value="yes">
+      <label for="replace_existing">Replace existing data for this match (deletes the old entries first, then saves these)</label>
+    </div>
+  </div>
+  {% endif %}
+
   <div class="card">
     <h2>Match Info</h2>
     <div class="row-2">
@@ -26,6 +41,7 @@
 
   <div class="card">
     <h2>Batting — Champions 11 CC</h2>
+    {% if batting_rows %}
     <table class="scoreboard" style="margin-bottom: 4px;">
       <thead>
         <tr>
@@ -40,16 +56,16 @@
         </tr>
       </thead>
       <tbody>
-        {% for row in rows %}
+        {% for row in batting_rows %}
         <tr>
-          <td><input type="checkbox" name="skip" value="{{ loop.index0 }}"></td>
+          <td><input type="checkbox" name="bat_skip" value="{{ loop.index0 }}"></td>
           <td>
-            <input type="hidden" name="name" value="{{ row.clean_name }}">
+            <input type="hidden" name="bat_name" value="{{ row.clean_name }}">
             <strong>{{ row.clean_name }}</strong>
             <span class="role" style="display:block;">{{ row.status }}</span>
           </td>
           <td>
-            <select name="player_choice" style="background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px 8px; border-radius:var(--radius); font-size:13px;">
+            <select name="bat_player_choice" style="background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px 8px; border-radius:var(--radius); font-size:13px;">
               <option value="new:{{ row.clean_name }}" {% if not row.matched_player_id %}selected{% endif %}>
                 + Add "{{ row.clean_name }}" as new player
               </option>
@@ -58,19 +74,116 @@
               {% endfor %}
             </select>
           </td>
-          <td><input type="number" name="runs" value="{{ row.runs }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
-          <td><input type="number" name="balls" value="{{ row.balls }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
-          <td><input type="number" name="fours" value="{{ row.fours }}" min="0" style="width:48px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
-          <td><input type="number" name="sixes" value="{{ row.sixes }}" min="0" style="width:48px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
-          <td><input type="checkbox" name="not_out" value="{{ loop.index0 }}" {% if row.not_out %}checked{% endif %}></td>
+          <td><input type="number" name="bat_runs" value="{{ row.runs }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bat_balls" value="{{ row.balls }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bat_fours" value="{{ row.fours }}" min="0" style="width:48px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bat_sixes" value="{{ row.sixes }}" min="0" style="width:48px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="checkbox" name="bat_not_out" value="{{ loop.index0 }}" {% if row.not_out %}checked{% endif %}></td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-    <p class="empty-note" style="padding-left:0;">Only Champions 11 CC's batting innings were pulled from the PDF. Bowling figures aren't tracked yet.</p>
+    {% else %}
+    <p class="empty-note">No Champions 11 CC batting rows found.</p>
+    {% endif %}
   </div>
 
-  <button class="btn" type="submit">Save All Innings</button>
+  <div class="card">
+    <h2>Bowling — Champions 11 CC</h2>
+    {% if bowling_rows %}
+    <table class="scoreboard" style="margin-bottom: 4px;">
+      <thead>
+        <tr>
+          <th>Skip</th>
+          <th>Parsed As</th>
+          <th>Assign To</th>
+          <th>Overs</th>
+          <th>Maidens</th>
+          <th>Runs</th>
+          <th>Wkts</th>
+          <th>WD</th>
+          <th>NB</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in bowling_rows %}
+        <tr>
+          <td><input type="checkbox" name="bowl_skip" value="{{ loop.index0 }}"></td>
+          <td>
+            <input type="hidden" name="bowl_name" value="{{ row.clean_name }}">
+            <strong>{{ row.clean_name }}</strong>
+          </td>
+          <td>
+            <select name="bowl_player_choice" style="background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px 8px; border-radius:var(--radius); font-size:13px;">
+              <option value="new:{{ row.clean_name }}" {% if not row.matched_player_id %}selected{% endif %}>
+                + Add "{{ row.clean_name }}" as new player
+              </option>
+              {% for p in players %}
+              <option value="{{ p.id }}" {% if p.id == row.matched_player_id %}selected{% endif %}>{{ p.name }}</option>
+              {% endfor %}
+            </select>
+          </td>
+          <td><input type="text" name="bowl_overs" value="{{ row.overs }}" style="width:52px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bowl_maidens" value="{{ row.maidens }}" min="0" style="width:52px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bowl_runs" value="{{ row.runs_conceded }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bowl_wickets" value="{{ row.wickets }}" min="0" style="width:48px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bowl_wides" value="{{ row.wides }}" min="0" style="width:48px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="bowl_noballs" value="{{ row.no_balls }}" min="0" style="width:48px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="empty-note">No Champions 11 CC bowling figures found in this PDF (we may have batted second with no bowler table detected).</p>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <h2>Fielding — Champions 11 CC</h2>
+    {% if fielding_rows %}
+    <table class="scoreboard" style="margin-bottom: 4px;">
+      <thead>
+        <tr>
+          <th>Skip</th>
+          <th>Parsed As</th>
+          <th>Assign To</th>
+          <th>Catches</th>
+          <th>Run Outs</th>
+          <th>Stumpings</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in fielding_rows %}
+        <tr>
+          <td><input type="checkbox" name="field_skip" value="{{ loop.index0 }}"></td>
+          <td>
+            <input type="hidden" name="field_name" value="{{ row.clean_name }}">
+            <strong>{{ row.clean_name }}</strong>
+          </td>
+          <td>
+            <select name="field_player_choice" style="background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px 8px; border-radius:var(--radius); font-size:13px;">
+              <option value="new:{{ row.clean_name }}" {% if not row.matched_player_id %}selected{% endif %}>
+                + Add "{{ row.clean_name }}" as new player
+              </option>
+              {% for p in players %}
+              <option value="{{ p.id }}" {% if p.id == row.matched_player_id %}selected{% endif %}>{{ p.name }}</option>
+              {% endfor %}
+            </select>
+          </td>
+          <td><input type="number" name="field_catches" value="{{ row.catches }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="field_runouts" value="{{ row.run_outs }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+          <td><input type="number" name="field_stumpings" value="{{ row.stumpings }}" min="0" style="width:56px; background:var(--ink); border:1px solid var(--line); color:var(--chalk); padding:6px; border-radius:var(--radius);"></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="empty-note" style="padding-left:0;">Catches, run-outs, and stumpings are read from the opposition's dismissal notes — double check these, since the PDF's wording can vary.</p>
+    {% else %}
+    <p class="empty-note">No fielding dismissals (catches/run-outs/stumpings) detected for this innings.</p>
+    {% endif %}
+  </div>
+
+  <button class="btn" type="submit">Save Everything</button>
   <a href="/admin/upload" class="btn" style="background:transparent; border:1px solid var(--line); margin-left:10px;">Cancel</a>
 </form>
 
