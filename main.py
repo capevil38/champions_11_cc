@@ -179,12 +179,21 @@ async def upload_scorecard(request: Request, scorecard: UploadFile = File(...)):
         })
 
     players = db.list_players()
+    
+    # Batch lookup all player names at once instead of N+1 queries
+    all_names = (
+        [r["clean_name"] for r in parsed["batting_rows"]] +
+        [r["clean_name"] for r in parsed["bowling_rows"]] +
+        [r["clean_name"] for r in parsed["fielding_rows"]]
+    )
+    player_id_map = db.find_players_by_names(all_names)
+    
     for row in parsed["batting_rows"]:
-        row["matched_player_id"] = db.find_player_id_by_name(row["clean_name"])
+        row["matched_player_id"] = player_id_map.get(row["clean_name"])
     for row in parsed["bowling_rows"]:
-        row["matched_player_id"] = db.find_player_id_by_name(row["clean_name"])
+        row["matched_player_id"] = player_id_map.get(row["clean_name"])
     for row in parsed["fielding_rows"]:
-        row["matched_player_id"] = db.find_player_id_by_name(row["clean_name"])
+        row["matched_player_id"] = player_id_map.get(row["clean_name"])
 
     match_date = parsed["match_date"] or date.today().isoformat()
     opponent = parsed["opponent"] or ""
@@ -244,17 +253,19 @@ async def confirm_scorecard(request: Request):
     bat_player_choice = form.getlist("bat_player_choice")
     bat_skip = set(form.getlist("bat_skip"))
 
+    # Batch insert innings records
+    innings_records = []
     for i, name in enumerate(bat_names):
         idx = str(i)
         if idx in bat_skip:
             continue
         player_id = resolve_player(bat_player_choice[i], name)
-        db.add_innings(
-            player_id=player_id, match_date=match_date, opponent=opponent,
-            runs=int(bat_runs[i]), balls=int(bat_balls[i]),
-            fours=int(bat_fours[i]), sixes=int(bat_sixes[i]),
-            not_out=idx in bat_not_out,
-        )
+        innings_records.append((
+            player_id, match_date, opponent,
+            int(bat_runs[i]), int(bat_balls[i]),
+            int(bat_fours[i]), int(bat_sixes[i]),
+            idx in bat_not_out,
+        ))
 
     # --- Bowling ---
     bowl_names = form.getlist("bowl_name")
@@ -267,18 +278,19 @@ async def confirm_scorecard(request: Request):
     bowl_player_choice = form.getlist("bowl_player_choice")
     bowl_skip = set(form.getlist("bowl_skip"))
 
+    bowling_records = []
     for i, name in enumerate(bowl_names):
         idx = str(i)
         if idx in bowl_skip:
             continue
         player_id = resolve_player(bowl_player_choice[i], name)
         balls_bowled = db.overs_to_balls(bowl_overs[i])
-        db.add_bowling(
-            player_id=player_id, match_date=match_date, opponent=opponent,
-            balls_bowled=balls_bowled, maidens=int(bowl_maidens[i]),
-            runs_conceded=int(bowl_runs[i]), wickets=int(bowl_wickets[i]),
-            wides=int(bowl_wides[i]), no_balls=int(bowl_noballs[i]),
-        )
+        bowling_records.append((
+            player_id, match_date, opponent,
+            balls_bowled, int(bowl_maidens[i]),
+            int(bowl_runs[i]), int(bowl_wickets[i]),
+            int(bowl_wides[i]), int(bowl_noballs[i]),
+        ))
 
     # --- Fielding ---
     field_names = form.getlist("field_name")
@@ -288,15 +300,27 @@ async def confirm_scorecard(request: Request):
     field_player_choice = form.getlist("field_player_choice")
     field_skip = set(form.getlist("field_skip"))
 
+    fielding_records = []
     for i, name in enumerate(field_names):
         idx = str(i)
         if idx in field_skip:
             continue
         player_id = resolve_player(field_player_choice[i], name)
-        db.add_fielding(
-            player_id=player_id, match_date=match_date, opponent=opponent,
-            catches=int(field_catches[i]), run_outs=int(field_runouts[i]),
-            stumpings=int(field_stumpings[i]),
-        )
+        catches = int(field_catches[i])
+        run_outs = int(field_runouts[i])
+        stumpings = int(field_stumpings[i])
+        if catches == 0 and run_outs == 0 and stumpings == 0:
+            continue  # nothing to log
+        fielding_records.append((
+            player_id, match_date, opponent,
+            catches, run_outs, stumpings,
+        ))
+
+    # Batch commit all records in a single transaction
+    with db.get_conn() as conn:
+        db.add_innings_batch(conn, innings_records)
+        db.add_bowling_batch(conn, bowling_records)
+        db.add_fielding_batch(conn, fielding_records)
+        conn.commit()
 
     return RedirectResponse("/admin", status_code=303)
